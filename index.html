@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RW 01 Pondok Sukatani Permai</title>
+<style>
+:root{
+  --navy:#07366f; --blue:#0b57a5; --green:#16833b;
+  --gold:#f2bd32; --light:#f5f8fc; --text:#17324d;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f8fc;color:var(--text)}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--navy);color:#fff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between;gap:20px}
+header{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0001}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:70px;height:70px;object-fit:contain}
+.brand h1{margin:0;color:#124b91;font-size:28px}
+.brand p{margin:2px 0 0;font-size:12px;font-weight:bold}
+nav{display:flex;gap:18px;align-items:center;font-weight:700;font-size:14px}
+nav a:hover{color:var(--green)}
+.login{background:var(--gold);padding:12px 18px;border-radius:10px;color:#182b43}
+.hero{min-height:430px;padding:70px 7%;display:flex;align-items:center;color:#fff;
+background:linear-gradient(90deg,#062f63eF,#0b57a580),url('logo-rw01.png');
+background-size:cover;background-position:center;position:relative}
+.hero:after{content:"";position:absolute;inset:auto 0 -1px 0;height:35px;background:#fff;clip-path:polygon(0 100%,20% 25%,40% 75%,60% 15%,80% 65%,100% 20%,100% 100%)}
+.hero-content{max-width:700px;position:relative;z-index:1}
+.hero h2{font-size:48px;margin:0 0 10px}
+.hero h3{font-size:26px;color:#ffd34d;margin:0 0 20px}
+.hero p{font-size:18px;line-height:1.6}
+.btn{display:inline-block;padding:13px 20px;border-radius:10px;font-weight:bold;margin:8px 8px 0 0}
+.btn-gold{background:var(--gold);color:#172b45}.btn-green{background:var(--green);color:#fff}
+.container{width:min(1150px,90%);margin:45px auto}
+.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:25px}
+.card{background:#fff;border-radius:18px;padding:28px;box-shadow:0 5px 22px #16395b12;border:1px solid #dfe8f1}
+.card h2{color:var(--navy);margin-top:0}
+.card h3{margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+td{padding:10px;border-bottom:1px solid #e8eef4}
+td:first-child{font-weight:bold;width:38%}
+.section-title{text-align:center;color:var(--navy);font-size:30px;margin:55px 0 25px}
+.missions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mission{background:#fff;padding:22px;border-radius:16px;border-top:5px solid var(--green);box-shadow:0 4px 15px #0000000b}
+.number{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;align-items:center;justify-content:center;font-weight:bold}
+.structure{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:18px}
+.rt{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rt div{padding:18px;border-radius:12px;background:#eef7ef;font-weight:bold;text-align:center}
+.programs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.program{padding:20px;background:#f1f7ff;border-radius:14px;text-align:center;font-weight:bold}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery div{height:150px;border-radius:14px;background:linear-gradient(135deg,#0b57a5,#16833b);display:flex;align-items:end;padding:15px;color:#fff;font-weight:bold}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+footer{background:var(--navy);color:#fff;padding:30px 5%;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){
+  nav{display:none}.grid,.structure,.contact{grid-template-columns:1fr}
+  .missions{grid-template-columns:1fr 1fr}.programs{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}.hero h2{font-size:36px}
+}
+@media(max-width:600px){
+  .topbar{font-size:11px}.brand img{width:55px;height:55px}.brand h1{font-size:22px}
+  .missions,.programs,.gallery{grid-template-columns:1fr}.hero{padding:55px 6%}.hero h2{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>📍 Kel. Sukatani – Kec. Rajeg – Kab. Tangerang</span>
+  <span>Instagram: @seputarrw01 &nbsp; | &nbsp; TikTok: @seputarrw01 &nbsp; | &nbsp; ✉ seputarrw01@gmail.com</span>
+</div>
+
+<header>
+  <div class="brand">
+    <img src="logo-rw01.png" alt="Logo RW 01">
+    <div><h1>RW 01</h1><p>PONDOK SUKATANI PERMAI</p><p>Kel. Sukatani • Kec. Rajeg • Kab. Tangerang</p></div>
+  </div>
+  <nav>
+    <a href="#">Beranda</a><a href="#">Profil</a><a href="#">Informasi</a>
+    <a href="#">Kegiatan</a><a href="#">Pelayanan</a><a href="#">Keuangan</a><a href="#">Kontak</a>
+    <a class="login" href="#">🔐 Login Pengurus</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Profil RW 01</h2>
+    <h3>Pondok Sukatani Permai</h3>
+    <p>Selamat datang di portal resmi RW 01. Media informasi, komunikasi, pelayanan, dan transparansi administrasi untuk seluruh warga.</p>
+    <a class="btn btn-gold" href="#profil">Tentang RW 01</a>
+    <a class="btn btn-green" href="#keuangan">Transparansi Keuangan</a>
+  </div>
+</section>
+
+<main class="container" id="profil">
+  <div class="grid">
+    <section class="card">
+      <h2>🏠 Tentang RW 01</h2>
+      <p>RW 01 Pondok Sukatani Permai merupakan bagian dari wilayah Kelurahan Sukatani, Kecamatan Rajeg, Kabupaten Tangerang, Banten yang menaungi 4 wilayah RT: RT 01, RT 02, RT 03, dan RT 04.</p>
+      <p>Website ini menjadi media informasi, komunikasi, pelayanan, serta transparansi administrasi RW kepada warga.</p>
+      <p><b>Bersama Membangun Lingkungan, Bersama Menjaga Kebersamaan.</b></p>
+    </section>
+    <section class="card">
+      <h2>📍 Identitas Wilayah</h2>
+      <table>
+        <tr><td>Nama Wilayah</td><td>RW 01 Pondok Sukatani Permai</td></tr>
+        <tr><td>Kelurahan</td><td>Sukatani</td></tr>
+        <tr><td>Kecamatan</td><td>Rajeg</td></tr>
+        <tr><td>Kabupaten</td><td>Tangerang</td></tr>
+        <tr><td>Provinsi</td><td>Banten</td></tr>
+        <tr><td>Jumlah RT</td><td>4 RT</td></tr>
+      </table>
+    </section>
+  </div>
+
+  <h2 class="section-title">Visi & Misi</h2>
+  <div class="grid">
+    <section class="card">
+      <h2>🎯 Visi</h2>
+      <p><b>“Terwujudnya RW 01 yang aman, nyaman, tertib, guyub, religius, transparan, dan berdaya melalui kebersamaan serta partisipasi seluruh warga.”</b></p>
+    </section>
+    <section class="card">
+      <h2>🤝 Misi</h2>
+      <p>1. Meningkatkan pelayanan warga.</p>
+      <p>2. Mendorong keamanan dan ketertiban.</p>
+      <p>3. Menjaga kebersihan dan lingkungan.</p>
+      <p>4. Memperkuat kebersamaan dan keagamaan.</p>
+      <p>5. Mendorong pemuda, olahraga, dan kreativitas.</p>
+      <p>6. Mewujudkan transparansi dan tata kelola.</p>
+    </section>
+  </div>
+
+  <h2 class="section-title">Struktur Wilayah & Pengurus</h2>
+  <div class="structure">
+    <section class="card">
+      <h2>🏘️ RT di RW 01</h2>
+      <div class="rt">
+        <div>RT 01</div><div>RT 02</div><div>RT 03</div><div>RT 04</div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>👥 Pengurus RW</h2>
+      <h3>Ketua RW 01</h3><p><b>Muhammad Irfani Abdur Rahman</b></p>
+      <p>Wakil Ketua: [Nama]</p><p>Sekretaris: [Nama]</p><p>Bendahara: [Nama]</p>
+    </section>
+    <section class="card">
+      <h2>📌 Administrasi</h2>
+      <p>Data warga dan administrasi rinci tetap dikelola masing-masing RT.</p>
+      <p>Website RW berfokus pada informasi dan administrasi tingkat RW.</p>
+    </section>
+  </div>
+
+  <h2 class="section-title">Program Kerja RW 01</h2>
+  <div class="programs">
+    <div class="program">🛡️ Keamanan</div><div class="program">🏗️ Infrastruktur</div>
+    <div class="program">🌱 Lingkungan</div><div class="program">🕌 Keagamaan</div>
+    <div class="program">💼 Ekonomi & UMKM</div><div class="program">⚽ Pemuda, Olahraga & Seni</div>
+    <div class="program">📦 Perlengkapan</div><div class="program">🤝 Sosial & Kemasyarakatan</div>
+  </div>
+
+  <h2 class="section-title">Galeri Kegiatan</h2>
+  <div class="gallery">
+    <div>Kerja Bakti Lingkungan</div><div>Kegiatan Keagamaan</div>
+    <div>Kegiatan Pemuda</div><div>Peringatan Hari Besar</div>
+  </div>
+
+  <h2 class="section-title" id="keuangan">Transparansi Keuangan</h2>
+  <section class="card" style="text-align:center">
+    <p>Contoh tampilan yang nantinya terhubung langsung ke sistem keuangan RW.</p>
+    <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+      <div><small>Saldo Kas RW</small><h2>Rp 0</h2></div>
+      <div><small>Pemasukan Bulan Ini</small><h2>Rp 0</h2></div>
+      <div><small>Pengeluaran Bulan Ini</small><h2>Rp 0</h2></div>
+    </div>
+    <a class="btn btn-green" href="#">Lihat Laporan Keuangan</a>
+  </section>
+
+  <h2 class="section-title">Hubungi RW 01</h2>
+  <div class="contact">
+    <section class="card"><h2>📍 Alamat</h2><p>RW 01 Pondok Sukatani Permai<br>Kelurahan Sukatani, Kecamatan Rajeg,<br>Kabupaten Tangerang, Banten.</p></section>
+    <section class="card"><h2>📱 Media & Email</h2><p>Instagram: @seputarrw01</p><p>TikTok: @seputarrw01</p><p>Email: seputarrw01@gmail.com</p></section>
+  </div>
+</main>
+
+<footer>
+  <div><b>RW 01 PONDOK SUKATANI PERMAI</b><br>Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang</div>
+  <div>© 2026 RW 01 • Semua Hak Dilindungi</div>
+</footer>
+</body>
+</html>
