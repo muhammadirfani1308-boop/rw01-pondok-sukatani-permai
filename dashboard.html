@@ -1,1 +1,669 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard Keuangan RW 01</title><style>:root{--n:#07366f;--b:#0b57a5;--g:#16833b;--gold:#f2bd32;--bg:#f4f7fb;--t:#17324d}*{box-sizing:border-box}body{margin:0;font-family:Arial;background:var(--bg);color:var(--t)}header{height:70px;background:white;display:flex;align-items:center;justify-content:space-between;padding:8px 25px;border-bottom:1px solid #e1e8f0}.brand{display:flex;align-items:center;gap:10px}.brand img{width:52px;height:52px;object-fit:contain}.brand b{color:var(--n);font-size:19px}.brand small{display:block;color:#708096}.user{font-size:13px}.user b{color:var(--g)}.layout{display:flex;min-height:calc(100vh - 70px)}aside{width:235px;background:var(--n);padding:20px 12px;color:#fff}aside h4{font-size:11px;opacity:.6;text-transform:uppercase;padding-left:10px}nav a{display:block;padding:12px;border-radius:9px;color:#fff;text-decoration:none;font-size:14px;font-weight:bold;margin:4px 0}nav a.active,nav a:hover{background:#ffffff1c}main{padding:28px;flex:1}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.top h1{margin:0;color:var(--n)}.top p{margin:5px 0;color:#708096}.btn{border:0;padding:11px 15px;border-radius:9px;font-weight:bold}.green{background:var(--g);color:#fff}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#fff;border:1px solid #e1e8f0;border-radius:15px;padding:20px;box-shadow:0 4px 15px #00000009}.card small{color:#718096}.card h2{color:var(--n);margin:8px 0}.up{color:var(--g)}.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:18px}.card h3{margin-top:0;color:var(--n)}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #edf1f5}th{font-size:11px;color:#708096}.badge{padding:5px 8px;border-radius:15px;font-size:10px;font-weight:bold}.ok{background:#e4f5e9;color:#16733a}.warn{background:#fff3d1;color:#806000}.bar{height:10px;background:#e8eef5;border-radius:20px;margin:7px 0 14px}.bar i{display:block;height:100%;border-radius:20px}.greenbar{background:var(--g);width:54%}.bluebar{background:var(--b);width:31%}.goldbar{background:var(--gold);width:15%}.note{font-size:12px;color:#718096;background:#f7f9fc;padding:10px;border-radius:8px}@media(max-width:950px){aside{display:none}.cards{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}@media(max-width:600px){main{padding:15px}.cards{grid-template-columns:1fr}.user{display:none}}</style></head><body><header><div class="brand"><img src="logo-rw01.png"><div><b>RW 01</b><small>Pondok Sukatani Permai • Administrasi Keuangan</small></div></div><div class="user">Login: <b id="role">Pengurus RW</b> &nbsp; <button class="btn" onclick="location.href='index.html'">Keluar</button></div></header><div class="layout"><aside><h4>Keuangan RW</h4><nav><a class="active">🏠 Dashboard</a><a>📥 Pemasukan</a><a>📤 Pengeluaran</a><a>🗑️ Iuran Sampah</a><a>🏘️ Setoran RT</a><a>📒 Buku Kas</a><a>📊 Laporan</a></nav><h4>Website</h4><nav><a href="https://muhammadirfani1308-boop.github.io/rw01-pondok-sukatani-permai/">🌐 Website RW</a></nav></aside><main><div class="top"><div><h1>Dashboard Keuangan</h1><p>Ringkasan kas RW 01 • Agustus 2026</p></div><button class="btn green">＋ Tambah Transaksi</button></div><div class="cards"><div class="card"><small>Saldo Kas RW</small><h2>Rp 12.450.000</h2><span>Saldo berjalan</span></div><div class="card"><small>Pemasukan Bulan Ini</small><h2>Rp 5.750.000</h2><span class="up">▲ 12,4% dari bulan lalu</span></div><div class="card"><small>Pengeluaran Bulan Ini</small><h2>Rp 2.300.000</h2><span>8,1% dari bulan lalu</span></div><div class="card"><small>Setoran RT</small><h2>3 / 4</h2><span>RT sudah setor</span></div></div><div class="grid"><section class="card"><h3>🏘️ Setoran RT — Agustus 2026</h3><table><tr><th>RT</th><th>Sampah</th><th>Setoran Lain</th><th>Total</th><th>Status</th></tr><tr><td>RT 01</td><td>Rp750.000</td><td>Rp250.000</td><td>Rp1.000.000</td><td><span class="badge ok">LUNAS</span></td></tr><tr><td>RT 02</td><td>Rp850.000</td><td>Rp250.000</td><td>Rp1.100.000</td><td><span class="badge ok">LUNAS</span></td></tr><tr><td>RT 03</td><td>Rp700.000</td><td>Rp0</td><td>Rp700.000</td><td><span class="badge warn">BELUM LENGKAP</span></td></tr><tr><td>RT 04</td><td>Rp800.000</td><td>Rp250.000</td><td>Rp1.050.000</td><td><span class="badge ok">LUNAS</span></td></tr></table><p class="note">RT tidak perlu login. Ketua/Bendahara mencatat setoran tunai atau transfer setelah diterima.</p></section><section class="card"><h3>📊 Pemasukan</h3><p>Iuran Sampah <b style="float:right">54%</b></p><div class="bar"><i class="greenbar"></i></div><p>Setoran RT <b style="float:right">31%</b></p><div class="bar"><i class="bluebar"></i></div><p>Lain-lain <b style="float:right">15%</b></p><div class="bar"><i class="goldbar"></i></div></section></div><section class="card" style="margin-top:18px"><h3>📒 Transaksi Terbaru</h3><table><tr><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Keterangan</th><th>Nominal</th></tr><tr><td>26/08/2026</td><td class="up">Pemasukan</td><td>Iuran Sampah</td><td>Setoran RT 02</td><td>Rp850.000</td></tr><tr><td>25/08/2026</td><td class="up">Pemasukan</td><td>Setoran RT</td><td>Setoran RT 04</td><td>Rp250.000</td></tr><tr><td>24/08/2026</td><td>Pengeluaran</td><td>Operasional</td><td>Pembelian ATK RW</td><td>Rp175.000</td></tr></table></section></main></div></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Keuangan RW 01</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#17324d;
+}
+
+header{
+    background:#07366f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+h1,h2{
+    margin-top:5px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    border:0;
+    padding:12px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn{
+    background:#16833b;
+    color:white;
+}
+
+.logout{
+    background:#c33d3d;
+    color:white;
+}
+
+.hidden{
+    display:none;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.box{
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+.box small{
+    color:#777;
+}
+
+.box h2{
+    color:#07366f;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:10px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+th{
+    background:#f1f5f9;
+}
+
+.success{
+    background:#e8f7ed;
+    color:#16723a;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.error{
+    background:#fdeaea;
+    color:#a52e2e;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+@media(max-width:700px){
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    table{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo-rw01.png" class="logo">
+    <h1>Dashboard Keuangan RW 01</h1>
+    <p>Pondok Sukatani Permai</p>
+</header>
+
+
+<div class="container">
+
+<!-- LOGIN -->
+<div id="loginBox" class="card">
+
+<h2>🔐 Login Pengurus</h2>
+
+<p>
+Silakan login menggunakan akun Bendahara/Admin RW.
+</p>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Masukkan email">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Masukkan password">
+
+<button class="btn" onclick="login()">
+    LOGIN
+</button>
+
+<div id="loginMessage"></div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+<div class="card">
+
+<div style="display:flex;justify-content:space-between;align-items:center;">
+
+<div>
+<h2>Dashboard Bendahara</h2>
+<p>Kelola pemasukan dan pengeluaran RW 01.</p>
+</div>
+
+<button class="logout" onclick="logout()">
+    Keluar
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RINGKASAN -->
+
+<div class="grid">
+
+<div class="box">
+<small>Saldo Kas</small>
+<h2 id="saldo">Rp 0</h2>
+</div>
+
+<div class="box">
+<small>Total Pemasukan</small>
+<h2 id="totalMasuk">Rp 0</h2>
+</div>
+
+<div class="box">
+<small>Total Pengeluaran</small>
+<h2 id="totalKeluar">Rp 0</h2>
+</div>
+
+<div class="box">
+<small>Jumlah Transaksi</small>
+<h2 id="jumlahTransaksi">0</h2>
+</div>
+
+</div>
+
+
+<!-- FORM INPUT -->
+
+<div class="card">
+
+<h2>➕ Input Keuangan</h2>
+
+<label>Tanggal</label>
+<input type="date" id="tanggal">
+
+<label>Jenis Transaksi</label>
+
+<select id="jenis">
+<option value="pemasukan">Pemasukan</option>
+<option value="pengeluaran">Pengeluaran</option>
+</select>
+
+
+<label>Kategori</label>
+
+<select id="kategori">
+
+<option>Iuran Sampah</option>
+<option>Setoran RT</option>
+<option>Iuran RT</option>
+<option>Donasi / CSR</option>
+<option>Kegiatan RW</option>
+<option>Operasional RW</option>
+<option>Infrastruktur</option>
+<option>Lain-lain</option>
+
+</select>
+
+
+<label>RT</label>
+
+<select id="rt">
+
+<option value="">Umum</option>
+<option value="RT 01">RT 01</option>
+<option value="RT 02">RT 02</option>
+<option value="RT 03">RT 03</option>
+<option value="RT 04">RT 04</option>
+
+</select>
+
+
+<label>Nominal</label>
+
+<input
+type="number"
+id="nominal"
+placeholder="Contoh: 500000"
+>
+
+
+<label>Metode Pembayaran</label>
+
+<select id="metode">
+
+<option>Transfer</option>
+<option>Tunai</option>
+
+</select>
+
+
+<label>Keterangan</label>
+
+<textarea
+id="keterangan"
+placeholder="Contoh: Setoran iuran sampah RT 01 bulan Agustus"
+></textarea>
+
+
+<button class="btn" onclick="simpanTransaksi()">
+
+💾 SIMPAN TRANSAKSI
+
+</button>
+
+<div id="saveMessage"></div>
+
+</div>
+
+
+<!-- RIWAYAT -->
+
+<div class="card">
+
+<h2>📋 Riwayat Transaksi</h2>
+
+<div style="overflow-x:auto;">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Tanggal</th>
+<th>Jenis</th>
+<th>Kategori</th>
+<th>RT</th>
+<th>Nominal</th>
+<th>Metode</th>
+<th>Keterangan</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelTransaksi">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* Koneksi Supabase RW 01 */
+
+const SUPABASE_URL =
+"https://uvkroruendiuunckuaki.supabase.co";
+
+/*
+Gunakan publishable/anon key project Supabase Bapak
+yang sudah digunakan pada website sebelumnya.
+*/
+
+const SUPABASE_KEY =
+"sb_publishable_MC7NV3ex-Ib4K9HUYJ3aLQ_R3C9FTCR";
+
+const supabaseClient =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+
+/* FORMAT RUPIAH */
+
+function rupiah(angka){
+
+return new Intl.NumberFormat(
+"id-ID",
+{
+style:"currency",
+currency:"IDR",
+maximumFractionDigits:0
+}
+).format(Number(angka)||0);
+
+}
+
+
+/* LOGIN */
+
+async function login(){
+
+const email =
+document.getElementById("email").value;
+
+const password =
+document.getElementById("password").value;
+
+
+const {error} =
+await supabaseClient.auth.signInWithPassword({
+
+email:email,
+password:password
+
+});
+
+
+if(error){
+
+document.getElementById("loginMessage").innerHTML =
+'<div class="error">'+
+error.message+
+'</div>';
+
+return;
+
+}
+
+
+document.getElementById("loginBox")
+.classList.add("hidden");
+
+document.getElementById("dashboard")
+.classList.remove("hidden");
+
+loadData();
+
+}
+
+
+/* LOGOUT */
+
+async function logout(){
+
+await supabaseClient.auth.signOut();
+
+location.reload();
+
+}
+
+
+/* LOAD DATA */
+
+async function loadData(){
+
+const {data,error} =
+await supabaseClient
+.from("transaksi_keuangan")
+.select("*")
+.order("tanggal",{ascending:false});
+
+
+if(error){
+
+console.log(error);
+
+return;
+
+}
+
+
+const transaksi = data || [];
+
+
+let masuk = 0;
+let keluar = 0;
+
+
+transaksi.forEach(function(item){
+
+if(item.jenis === "pemasukan"){
+
+masuk += Number(item.nominal);
+
+}else{
+
+keluar += Number(item.nominal);
+
+}
+
+});
+
+
+document.getElementById("saldo").innerText =
+rupiah(masuk-keluar);
+
+document.getElementById("totalMasuk").innerText =
+rupiah(masuk);
+
+document.getElementById("totalKeluar").innerText =
+rupiah(keluar);
+
+document.getElementById("jumlahTransaksi").innerText =
+transaksi.length;
+
+
+const tbody =
+document.getElementById("tabelTransaksi");
+
+
+tbody.innerHTML="";
+
+
+transaksi.forEach(function(item){
+
+const row =
+document.createElement("tr");
+
+
+row.innerHTML = `
+
+<td>${item.tanggal || "-"}</td>
+
+<td>${item.jenis || "-"}</td>
+
+<td>${item.kategori || "-"}</td>
+
+<td>${item.rt || "-"}</td>
+
+<td>${rupiah(item.nominal)}</td>
+
+<td>${item.metode || "-"}</td>
+
+<td>${item.keterangan || "-"}</td>
+
+`;
+
+
+tbody.appendChild(row);
+
+});
+
+}
+
+
+/* SIMPAN TRANSAKSI */
+
+async function simpanTransaksi(){
+
+const tanggal =
+document.getElementById("tanggal").value;
+
+const jenis =
+document.getElementById("jenis").value;
+
+const kategori =
+document.getElementById("kategori").value;
+
+const rt =
+document.getElementById("rt").value;
+
+const nominal =
+Number(document.getElementById("nominal").value);
+
+const metode =
+document.getElementById("metode").value;
+
+const keterangan =
+document.getElementById("keterangan").value;
+
+
+if(!tanggal){
+
+alert("Tanggal belum diisi.");
+
+return;
+
+}
+
+
+if(!nominal || nominal <= 0){
+
+alert("Nominal belum diisi.");
+
+return;
+
+}
+
+
+const {error} =
+await supabaseClient
+.from("transaksi_keuangan")
+.insert({
+
+tanggal:tanggal,
+
+jenis:jenis,
+
+kategori:kategori,
+
+rt:rt || null,
+
+nominal:nominal,
+
+metode:metode,
+
+keterangan:keterangan || null
+
+});
+
+
+if(error){
+
+document.getElementById("saveMessage").innerHTML =
+'<div class="error">'+
+error.message+
+'</div>';
+
+return;
+
+}
+
+
+document.getElementById("saveMessage").innerHTML =
+'<div class="success">'+
+'✅ Transaksi berhasil disimpan.'
++
+'</div>';
+
+
+document.getElementById("nominal").value="";
+
+document.getElementById("keterangan").value="";
+
+
+loadData();
+
+}
+
+
+/* CEK SESSION */
+
+async function cekLogin(){
+
+const {data} =
+await supabaseClient.auth.getSession();
+
+
+if(data.session){
+
+document.getElementById("loginBox")
+.classList.add("hidden");
+
+document.getElementById("dashboard")
+.classList.remove("hidden");
+
+loadData();
+
+}
+
+}
+
+
+/* TANGGAL HARI INI */
+
+document.getElementById("tanggal").value =
+new Date().toISOString().substring(0,10);
+
+
+cekLogin();
+
+</script>
+
+</body>
+</html>
