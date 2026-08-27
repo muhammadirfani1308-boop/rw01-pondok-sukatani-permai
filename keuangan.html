@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transparansi Keuangan RW 01</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#17324d;
+}
+
+header{
+    background:#07366f;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+header img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+}
+
+header h1{
+    margin:8px 0 5px;
+}
+
+header p{
+    margin:0;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+.intro{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.card small{
+    color:#777;
+}
+
+.card h2{
+    color:#07366f;
+    margin-bottom:5px;
+}
+
+.masuk{
+    color:#16833b!important;
+}
+
+.keluar{
+    color:#c33d3d!important;
+}
+
+.filter{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
+}
+
+.filter button{
+    padding:9px 14px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.filter button.active{
+    background:#07366f;
+    color:white;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px 8px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    font-size:13px;
+}
+
+th{
+    background:#f1f5f9;
+    color:#555;
+}
+
+footer{
+    background:#07366f;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+.loading{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+
+.error{
+    background:#fdeaea;
+    color:#a52e2e;
+    padding:15px;
+    border-radius:8px;
+}
+
+@media(max-width:700px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    th,td{
+        font-size:12px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="logo-rw01.png">
+
+<h1>Transparansi Keuangan RW 01</h1>
+
+<p>Pondok Sukatani Permai</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="intro">
+
+<h2>💰 Transparansi Keuangan RW 01</h2>
+
+<p>
+Halaman ini digunakan untuk memberikan informasi keuangan
+RW 01 secara terbuka kepada seluruh warga.
+</p>
+
+<p>
+Data diperbarui berdasarkan pencatatan Bendahara/Admin RW.
+</p>
+
+</div>
+
+
+<!-- RINGKASAN -->
+
+<div class="grid">
+
+<div class="card">
+
+<small>Saldo Kas RW</small>
+
+<h2 id="saldo">
+Memuat...
+</h2>
+
+</div>
+
+
+<div class="card">
+
+<small>Total Pemasukan</small>
+
+<h2 id="pemasukan" class="masuk">
+Memuat...
+</h2>
+
+</div>
+
+
+<div class="card">
+
+<small>Total Pengeluaran</small>
+
+<h2 id="pengeluaran" class="keluar">
+Memuat...
+</h2>
+
+</div>
+
+</div>
+
+
+<!-- TRANSAKSI -->
+
+<div class="card">
+
+<h2>📋 Riwayat Keuangan</h2>
+
+<div class="filter">
+
+<button class="active" onclick="filterData('semua',this)">
+Semua
+</button>
+
+<button onclick="filterData('pemasukan',this)">
+Pemasukan
+</button>
+
+<button onclick="filterData('pengeluaran',this)">
+Pengeluaran
+</button>
+
+<button onclick="filterData('RT 01',this)">
+RT 01
+</button>
+
+<button onclick="filterData('RT 02',this)">
+RT 02
+</button>
+
+<button onclick="filterData('RT 03',this)">
+RT 03
+</button>
+
+<button onclick="filterData('RT 04',this)">
+RT 04
+</button>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Tanggal</th>
+
+<th>Jenis</th>
+
+<th>Kategori</th>
+
+<th>RT</th>
+
+<th>Keterangan</th>
+
+<th>Metode</th>
+
+<th>Nominal</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="tabel">
+
+<tr>
+
+<td colspan="7" class="loading">
+
+Memuat data keuangan...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+RW 01 Pondok Sukatani Permai
+
+<br>
+
+Transparansi Keuangan Warga
+
+</footer>
+
+
+<script>
+
+/* SUPABASE */
+
+const SUPABASE_URL =
+"https://uvkroruendiuunckuaki.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_MC7NV3ex-Ib4K9HUYJ3aLQ_R3C9FTCR";
+
+const db =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+
+/* DATA */
+
+let semuaData = [];
+
+let filterAktif = "semua";
+
+
+/* RUPIAH */
+
+function rupiah(angka){
+
+return new Intl.NumberFormat(
+"id-ID",
+{
+style:"currency",
+currency:"IDR",
+maximumFractionDigits:0
+}
+).format(Number(angka)||0);
+
+}
+
+
+/* LOAD */
+
+async function loadData(){
+
+const {data,error} =
+
+await db
+.from("transaksi_keuangan")
+.select("*")
+.order("tanggal",{ascending:false});
+
+
+if(error){
+
+document.getElementById("tabel").innerHTML =
+
+`
+<tr>
+<td colspan="7">
+
+<div class="error">
+
+Gagal mengambil data keuangan.
+
+</div>
+
+</td>
+</tr>
+`;
+
+return;
+
+}
+
+
+semuaData = data || [];
+
+
+/* HITUNG */
+
+let pemasukan = 0;
+
+let pengeluaran = 0;
+
+
+semuaData.forEach(function(item){
+
+if(item.jenis === "pemasukan"){
+
+pemasukan += Number(item.nominal);
+
+}
+
+if(item.jenis === "pengeluaran"){
+
+pengeluaran += Number(item.nominal);
+
+}
+
+});
+
+
+document.getElementById("pemasukan").innerText =
+rupiah(pemasukan);
+
+
+document.getElementById("pengeluaran").innerText =
+rupiah(pengeluaran);
+
+
+document.getElementById("saldo").innerText =
+rupiah(pemasukan-pengeluaran);
+
+
+/* TAMPILKAN */
+
+tampilkan();
+
+}
+
+
+/* TAMPILKAN */
+
+function tampilkan(){
+
+let data = semuaData;
+
+
+if(
+filterAktif === "pemasukan" ||
+filterAktif === "pengeluaran"
+){
+
+data = semuaData.filter(
+item => item.jenis === filterAktif
+);
+
+}
+
+
+else if(
+filterAktif.startsWith("RT")
+){
+
+data = semuaData.filter(
+item => item.rt === filterAktif
+);
+
+}
+
+
+const tabel =
+document.getElementById("tabel");
+
+
+tabel.innerHTML = "";
+
+
+if(data.length === 0){
+
+tabel.innerHTML =
+
+`
+<tr>
+<td colspan="7" class="loading">
+Belum ada transaksi.
+</td>
+</tr>
+`;
+
+return;
+
+}
+
+
+data.forEach(function(item){
+
+const tr =
+document.createElement("tr");
+
+
+tr.innerHTML = `
+
+<td>${item.tanggal || "-"}</td>
+
+<td>
+${item.jenis === "pemasukan"
+? "Pemasukan"
+: "Pengeluaran"}
+</td>
+
+<td>${item.kategori || "-"}</td>
+
+<td>${item.rt || "-"}</td>
+
+<td>${item.keterangan || "-"}</td>
+
+<td>${item.metode || "-"}</td>
+
+<td>${rupiah(item.nominal)}</td>
+
+`;
+
+
+tabel.appendChild(tr);
+
+});
+
+}
+
+
+/* FILTER */
+
+function filterData(filter,tombol){
+
+filterAktif = filter;
+
+
+document
+.querySelectorAll(".filter button")
+.forEach(function(button){
+
+button.classList.remove("active");
+
+});
+
+
+tombol.classList.add("active");
+
+
+tampilkan();
+
+}
+
+
+/* MULAI */
+
+loadData();
+
+</script>
+
+</body>
+
+</html>
