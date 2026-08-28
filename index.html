@@ -1,96 +1,219 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login Pengurus - RW 01</title>/* ===== TAMPILAN BARU RW 01 ===== */
-header{
-  background:rgba(255,255,255,.97);
-  padding:12px 5%;
-  box-shadow:0 4px 18px rgba(0,0,0,.10);
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>RW 01 Pondok Sukatani Permai</title>
+
+<style>
+:root{
+  --blue:#07366f;
+  --green:#16833b;
+  --gold:#f2bd32;
+  --light:#f4f7fb;
+  --text:#26364a;
 }
 
-.brand{
-  font-size:18px;
-  letter-spacing:.2px;
+*{
+  box-sizing:border-box;
 }
 
-.brand img{
-  width:65px;
-  height:65px;
-  padding:3px;
-  border-radius:50%;
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#07366f,#16833b);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
-nav a{
-  transition:all .25s ease;
-}
-
-nav a:hover{
-  transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.hero{
-  min-height:390px;
-  padding:65px 7%;
-  background:
-    linear-gradient(135deg,
-    rgba(7,54,111,.98),
-    rgba(22,131,59,.96));
-}
-
-.hero h1{
-  font-size:42px;
-  letter-spacing:-.5px;
-}
-
-.hero p{
-  max-width:680px;
-  font-size:16px;
-}
-
-.heroLogo{
-  width:120px;
-  height:120px;
+.box{
+  width:min(440px,100%);
   background:white;
-  border-radius:50%;
-  padding:8px;
+  border-radius:24px;
+  padding:32px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
 }
 
-.welcome{
-  border-top:5px solid var(--green);
+.logo{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  margin-bottom:10px;
 }
 
-.quick .card{
+h1{
+  margin:5px 0;
+  color:var(--blue);
+  font-size:25px;
+}
+
+.sub{
+  margin:0 0 25px;
+  color:#718096;
+  font-size:14px;
+}
+
+label{
+  display:block;
+  text-align:left;
+  margin:14px 0 6px;
+  font-size:13px;
+  font-weight:bold;
+  color:var(--text);
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #d9e1eb;
+  border-radius:11px;
+  font-size:15px;
+  outline:none;
+}
+
+input:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(22,131,59,.12);
+}
+
+.btn{
+  width:100%;
   border:0;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  border-radius:11px;
+  padding:14px;
+  margin-top:20px;
+  background:var(--green);
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.quick .card:hover{
-  transform:translateY(-5px);
+.btn:hover{
+  background:#116b30;
 }
 
-.metric{
-  border-top:4px solid var(--green);
-  transition:.2s;
+.transparansi{
+  display:block;
+  margin-top:15px;
+  padding:13px;
+  border-radius:11px;
+  background:#eef6ff;
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:bold;
+  border:1px solid #d8e7f8;
 }
 
-.metric:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(0,0,0,.10);
+.transparansi:hover{
+  background:#e3f0ff;
 }
 
-footer{
-  margin-top:40px;
-}<style>:root{--n:#07366f;--g:#16833b;--gold:#f2bd32;--bg:#f4f7fb}*{box-sizing:border-box}body{margin:0;font-family:Arial;background:linear-gradient(135deg,#07366f,#16833b);min-height:100vh;display:grid;place-items:center}.box{background:#fff;width:min(430px,92%);padding:34px;border-radius:22px;box-shadow:0 20px 60px #0004;text-align:center}.logo{width:90px;height:90px;object-fit:contain}.h{color:var(--n);font-size:25px;margin:10px 0 3px}.sub{color:#6b7a8d;margin:0 0 25px}label{text-align:left;display:block;font-size:13px;font-weight:700;margin:14px 0 6px}input{width:100%;padding:13px;border:1px solid #d8e1eb;border-radius:10px;font-size:15px}.btn{width:100%;border:0;border-radius:10px;padding:13px;margin-top:20px;background:var(--g);color:white;font-weight:700;font-size:15px;cursor:pointer}.demo{margin-top:18px;font-size:12px;color:#718096;background:#f6f8fb;padding:10px;border-radius:10px}.error{color:#c33;font-size:13px;margin-top:10px;display:none}</style></head><body><div class="box"><img class="logo" src="logo-rw01.png"><div class="h">Login Pengurus RW 01</div><p class="sub">Pondok Sukatani Permai</p><form id="f"><label>Email / Username</label><input id="u" required placeholder="Ketua RW / Bendahara RW"><label>Password</label><input id="p" type="password" required placeholder="Masukkan password"><button class="btn">Masuk ke Dashboard</button><div class="error" id="e">Login demo gagal.</div></form><div class="demo">Prototype tahap 3. Login ini masih simulasi dan <b>belum aman untuk data asli</b>. Database & autentikasi akan dibuat pada tahap backend.</div></div><script>f.onsubmit=e=>{e.preventDefault();if((u.value.toLowerCase().includes('ketua')||u.value.toLowerCase().includes('bendahara'))&&p.value){location.href='dashboard.html'}else{document.getElementById('e').style.display='block';e.preventDefault()}}</script><a href="keuangan.html"
-   style="
-   display:block;
-   width:fit-content;
-   margin:30px auto;
-   padding:14px 24px;
-   background:#16833b;
-   color:white;
-   text-decoration:none;
-   border-radius:10px;
-   font-weight:bold;
-   font-family:Arial,sans-serif;
-   box-shadow:0 4px 10px rgba(0,0,0,.15);
-   ">
-   💰 Transparansi Keuangan RW 01
-</a></body></html>
+.error{
+  display:none;
+  margin-top:12px;
+  color:#c62828;
+  font-size:13px;
+}
+
+.info{
+  margin-top:20px;
+  padding:11px;
+  border-radius:10px;
+  background:#f6f8fb;
+  color:#718096;
+  font-size:12px;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:11px;
+  color:#9aa7b5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <img class="logo" src="logo-rw01.png" alt="Logo RW 01">
+
+  <h1>RW 01 Pondok Sukatani Permai</h1>
+
+  <p class="sub">
+    Sistem Informasi & Transparansi Keuangan RW
+  </p>
+
+  <form id="f">
+
+    <label>Email / Username</label>
+    <input
+      id="u"
+      required
+      placeholder="Ketua RW / Bendahara RW"
+    >
+
+    <label>Password</label>
+    <input
+      id="p"
+      type="password"
+      required
+      placeholder="Masukkan password"
+    >
+
+    <button class="btn" type="submit">
+      🔐 Masuk ke Dashboard
+    </button>
+
+    <div class="error" id="e">
+      Login gagal. Silakan periksa username dan password.
+    </div>
+
+  </form>
+
+  <a class="transparansi" href="keuangan.html">
+    💰 Lihat Transparansi Keuangan
+  </a>
+
+  <div class="info">
+    Portal resmi RW 01 Pondok Sukatani Permai
+  </div>
+
+  <div class="footer">
+    Kelurahan Sukatani · Kecamatan Rajeg · Kabupaten Tangerang
+  </div>
+
+</div>
+
+<script>
+document.getElementById("f").onsubmit = function(e){
+
+  e.preventDefault();
+
+  const username =
+    document.getElementById("u").value.toLowerCase();
+
+  const password =
+    document.getElementById("p").value;
+
+  if(
+    (username.includes("ketua") ||
+     username.includes("bendahara")) &&
+    password
+  ){
+    location.href = "dashboard.html";
+  }else{
+    document.getElementById("e").style.display = "block";
+  }
+
+};
+</script>
+
+</body>
+</html>
