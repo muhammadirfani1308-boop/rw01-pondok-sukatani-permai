@@ -1,219 +1,1187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>RW 01 Pondok Sukatani Permai</title>
 
 <style>
 :root{
-  --blue:#07366f;
-  --green:#16833b;
-  --gold:#f2bd32;
-  --light:#f4f7fb;
-  --text:#26364a;
+    --blue:#07366f;
+    --blue2:#0b4b91;
+    --green:#16833b;
+    --green2:#1fa854;
+    --gold:#f2bd32;
+    --white:#ffffff;
+    --text:#17324d;
+    --muted:#6b7a8d;
+    --bg:#f5f8fc;
 }
 
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#07366f,#16833b);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
 }
 
-.box{
-  width:min(440px,100%);
-  background:white;
-  border-radius:24px;
-  padding:32px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#052b59;
+    color:white;
+    padding:9px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
 }
 
-.logo{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  margin-bottom:10px;
+.top-left{
+    display:flex;
+    gap:20px;
+    align-items:center;
 }
 
-h1{
-  margin:5px 0;
-  color:var(--blue);
-  font-size:25px;
+.top-right{
+    display:flex;
+    gap:14px;
 }
 
-.sub{
-  margin:0 0 25px;
-  color:#718096;
-  font-size:14px;
+.topbar span{
+    opacity:.95;
 }
 
-label{
-  display:block;
-  text-align:left;
-  margin:14px 0 6px;
-  font-size:13px;
-  font-weight:bold;
-  color:var(--text);
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background:white;
+    min-height:92px;
+    padding:12px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-input{
-  width:100%;
-  padding:14px;
-  border:1px solid #d9e1eb;
-  border-radius:11px;
-  font-size:15px;
-  outline:none;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
-input:focus{
-  border-color:var(--green);
-  box-shadow:0 0 0 3px rgba(22,131,59,.12);
+.brand img{
+    width:68px;
+    height:68px;
+    object-fit:contain;
+}
+
+.brand-text h2{
+    color:var(--blue);
+    font-size:27px;
+    line-height:1;
+}
+
+.brand-text strong{
+    color:var(--green);
+    display:block;
+    font-size:16px;
+    margin-top:5px;
+    letter-spacing:.3px;
+}
+
+.brand-text small{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#26384d;
+    font-weight:bold;
+    font-size:14px;
+    padding:10px 13px;
+    border-radius:8px;
+    transition:.25s;
+}
+
+.nav-menu a:hover{
+    color:var(--blue);
+    background:#f0f5fb;
+}
+
+.nav-menu .active{
+    color:var(--blue);
+}
+
+.nav-menu .finance{
+    background:var(--blue);
+    color:white;
+    padding:11px 17px;
+    margin-left:8px;
+    box-shadow:0 5px 15px rgba(7,54,111,.2);
+}
+
+.nav-menu .finance:hover{
+    background:var(--green);
+    color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 85% 20%,rgba(31,168,84,.35),transparent 30%),
+        linear-gradient(120deg,#052e64,#07366f 55%,#16833b);
+    color:white;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:550px;
+    height:550px;
+    border:80px solid rgba(255,255,255,.035);
+    border-radius:50%;
+    right:-180px;
+    top:-250px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border:55px solid rgba(242,189,50,.10);
+    border-radius:50%;
+    left:-230px;
+    bottom:-300px;
+}
+
+.hero-inner{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-content{
+    padding:35px 0;
+}
+
+.hero-label{
+    color:var(--gold);
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1.12;
+    margin-bottom:18px;
+    letter-spacing:-1px;
+}
+
+.hero h1 span{
+    color:#52d57e;
+}
+
+.hero p{
+    max-width:620px;
+    font-size:17px;
+    color:rgba(255,255,255,.9);
+    margin-bottom:28px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
 .btn{
-  width:100%;
-  border:0;
-  border-radius:11px;
-  padding:14px;
-  margin-top:20px;
-  background:var(--green);
-  color:white;
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.25s;
 }
 
-.btn:hover{
-  background:#116b30;
+.btn-primary{
+    background:white;
+    color:var(--blue);
 }
 
-.transparansi{
-  display:block;
-  margin-top:15px;
-  padding:13px;
-  border-radius:11px;
-  background:#eef6ff;
-  color:var(--blue);
-  text-decoration:none;
-  font-weight:bold;
-  border:1px solid #d8e7f8;
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
 }
 
-.transparansi:hover{
-  background:#e3f0ff;
+.btn-outline{
+    border:1px solid rgba(255,255,255,.6);
+    color:white;
 }
 
-.error{
-  display:none;
-  margin-top:12px;
-  color:#c62828;
-  font-size:13px;
+.btn-outline:hover{
+    background:white;
+    color:var(--blue);
 }
 
-.info{
-  margin-top:20px;
-  padding:11px;
-  border-radius:10px;
-  background:#f6f8fb;
-  color:#718096;
-  font-size:12px;
+/* HERO VISUAL */
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.footer{
-  margin-top:18px;
-  font-size:11px;
-  color:#9aa7b5;
+.logo-card{
+    width:min(400px,90%);
+    min-height:350px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(12px);
+    border-radius:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:35px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+.logo-card img{
+    width:210px;
+    height:210px;
+    object-fit:contain;
+    filter:drop-shadow(0 15px 20px rgba(0,0,0,.25));
+}
+
+.logo-card h3{
+    margin-top:15px;
+    font-size:21px;
+}
+
+.logo-card p{
+    margin:3px 0 0;
+    font-size:13px;
+    opacity:.8;
+}
+
+/* =========================
+   QUICK INFO
+========================= */
+
+.quick{
+    width:90%;
+    max-width:1250px;
+    margin:-45px auto 0;
+    position:relative;
+    z-index:10;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.quick-card{
+    background:white;
+    border-radius:17px;
+    padding:23px;
+    display:flex;
+    align-items:center;
+    gap:17px;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    border-top:4px solid var(--blue);
+    transition:.25s;
+}
+
+.quick-card:nth-child(2){
+    border-top-color:var(--green);
+}
+
+.quick-card:nth-child(3){
+    border-top-color:var(--gold);
+}
+
+.quick-card:hover{
+    transform:translateY(-5px);
+}
+
+.quick-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#edf4fc;
+    font-size:24px;
+    flex-shrink:0;
+}
+
+.quick-card h3{
+    color:var(--blue);
+    font-size:17px;
+}
+
+.quick-card p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    width:90%;
+    max-width:1250px;
+    margin:70px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title small{
+    color:var(--green);
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.section-title h2{
+    color:var(--blue);
+    font-size:32px;
+    margin:5px 0;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.about-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+}
+
+.about-card h3{
+    color:var(--blue);
+    margin-bottom:12px;
+}
+
+.about-card p{
+    color:#56677a;
+    font-size:15px;
+}
+
+.about-highlight{
+    background:linear-gradient(135deg,var(--blue),var(--green));
+    color:white;
+}
+
+.about-highlight h3{
+    color:white;
+}
+
+.about-highlight p{
+    color:rgba(255,255,255,.9);
+}
+
+/* =========================
+   PROGRAM
+========================= */
+
+.program-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+}
+
+.program{
+    background:white;
+    border-radius:17px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    transition:.25s;
+    border-bottom:4px solid transparent;
+}
+
+.program:hover{
+    transform:translateY(-5px);
+    border-bottom-color:var(--green);
+}
+
+.program-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.program h3{
+    color:var(--blue);
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.program p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* =========================
+   FINANCE CTA
+========================= */
+
+.finance-section{
+    width:90%;
+    max-width:1250px;
+    margin:70px auto;
+}
+
+.finance-box{
+    background:linear-gradient(120deg,#07366f,#0a488a 55%,#16833b);
+    border-radius:25px;
+    padding:42px 45px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    box-shadow:0 15px 40px rgba(7,54,111,.2);
+}
+
+.finance-box h2{
+    font-size:30px;
+    margin-bottom:7px;
+}
+
+.finance-box p{
+    color:rgba(255,255,255,.85);
+}
+
+.finance-btn{
+    background:white;
+    color:var(--blue);
+    padding:14px 23px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.finance-btn:hover{
+    background:var(--gold);
+    color:#17324d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#052b59;
+    color:white;
+    margin-top:80px;
+}
+
+.footer-main{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    padding:50px 0;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.footer-brand img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+.footer h3{
+    margin-bottom:13px;
+    font-size:16px;
+}
+
+.footer p,
+.footer a{
+    color:rgba(255,255,255,.75);
+    font-size:13px;
+}
+
+.footer a{
+    display:block;
+    text-decoration:none;
+    margin:7px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:17px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:rgba(255,255,255,.65);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .nav-menu a{
+        padding:8px 7px;
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .program-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-main{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:750px){
+
+    .topbar{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .top-left{
+        display:block;
+    }
+
+    .top-right{
+        display:none;
+    }
+
+    .navbar{
+        position:relative;
+        flex-direction:column;
+        gap:12px;
+        padding:15px;
+    }
+
+    .brand{
+        width:100%;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .nav-menu .finance{
+        margin-left:0;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:10px;
+        text-align:center;
+    }
+
+    .hero-content{
+        padding:55px 0 20px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        padding-bottom:55px;
+    }
+
+    .logo-card{
+        min-height:290px;
+    }
+
+    .logo-card img{
+        width:160px;
+        height:160px;
+    }
+
+    .quick{
+        grid-template-columns:1fr;
+        margin-top:20px;
+    }
+
+    .section{
+        margin:55px auto;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr;
+    }
+
+    .finance-box{
+        flex-direction:column;
+        text-align:center;
+        padding:35px 25px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-brand{
+        justify-content:center;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:5px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
+<!-- TOP BAR -->
 
-  <img class="logo" src="logo-rw01-removebg-preview.png" alt="Logo RW 01">
+<div class="topbar">
 
-  <h1>RW 01 Pondok Sukatani Permai</h1>
-
-  <p class="sub">
-    Sistem Informasi & Transparansi Keuangan RW
-  </p>
-
-  <form id="f">
-
-    <label>Email / Username</label>
-    <input
-      id="u"
-      required
-      placeholder="Ketua RW / Bendahara RW"
-    >
-
-    <label>Password</label>
-    <input
-      id="p"
-      type="password"
-      required
-      placeholder="Masukkan password"
-    >
-
-    <button class="btn" type="submit">
-      🔐 Masuk ke Dashboard
-    </button>
-
-    <div class="error" id="e">
-      Login gagal. Silakan periksa username dan password.
+    <div class="top-left">
+        <span>📍 RW 01 Pondok Sukatani Permai</span>
+        <span>✉️ rw01psp@gmail.com</span>
     </div>
 
-  </form>
-
-  <a class="transparansi" href="keuangan.html">
-    💰 Lihat Transparansi Keuangan
-  </a>
-
-  <div class="info">
-    Portal resmi RW 01 Pondok Sukatani Permai
-  </div>
-
-  <div class="footer">
-    Kelurahan Sukatani · Kecamatan Rajeg · Kabupaten Tangerang
-  </div>
+    <div class="top-right">
+        <span>Facebook</span>
+        <span>Instagram</span>
+        <span>WhatsApp</span>
+    </div>
 
 </div>
 
-<script>
-document.getElementById("f").onsubmit = function(e){
 
-  e.preventDefault();
+<!-- NAVBAR -->
 
-  const username =
-    document.getElementById("u").value.toLowerCase();
+<nav class="navbar">
 
-  const password =
-    document.getElementById("p").value;
+    <div class="brand">
 
-  if(
-    (username.includes("ketua") ||
-     username.includes("bendahara")) &&
-    password
-  ){
-    location.href = "dashboard.html";
-  }else{
-    document.getElementById("e").style.display = "block";
-  }
+        <img src="logo-rw01-removebg-preview.png" alt="Logo RW 01">
 
-};
-</script>
+        <div class="brand-text">
+            <h2>RW 01</h2>
+            <strong>PONDOK SUKATANI PERMAI</strong>
+            <small>Bersama Membangun Lingkungan yang Lebih Baik</small>
+        </div>
+
+    </div>
+
+
+    <div class="nav-menu">
+
+        <a href="index.html" class="active">Beranda</a>
+
+        <a href="#profil">Profil RW</a>
+
+        <a href="#program">Program Kerja</a>
+
+        <a href="#informasi">Informasi</a>
+
+        <a href="keuangan.html">Keuangan</a>
+
+        <a href="#kontak">Kontak</a>
+
+        <a href="keuangan.html" class="finance">
+            💰 Transparansi Keuangan
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                SELAMAT DATANG DI WEBSITE RESMI RW 01
+            </div>
+
+            <h1>
+                Bersama Membangun
+                <span>Lingkungan yang Lebih Baik</span>
+            </h1>
+
+            <p>
+                Website resmi RW 01 Pondok Sukatani Permai sebagai
+                media informasi, pelayanan, komunikasi dan keterbukaan
+                kepada seluruh warga.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#profil" class="btn btn-primary">
+                    🏘️ Kenal Lebih Dekat
+                </a>
+
+                <a href="keuangan.html" class="btn btn-outline">
+                    📊 Transparansi Keuangan
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="logo-card">
+
+                <img src="logo-rw01-removebg-preview.png"
+                     alt="Logo RW 01">
+
+                <h3>RW 01</h3>
+
+                <p>Pondok Sukatani Permai</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK INFO -->
+
+<div class="quick">
+
+    <div class="quick-card">
+
+        <div class="quick-icon">🏘️</div>
+
+        <div>
+            <h3>Profil RW 01</h3>
+            <p>Pusat informasi lingkungan dan kepengurusan RW.</p>
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon">📋</div>
+
+        <div>
+            <h3>Program Kerja</h3>
+            <p>Program pembangunan dan kegiatan masyarakat.</p>
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon">💰</div>
+
+        <div>
+            <h3>Keuangan Terbuka</h3>
+            <p>Informasi keuangan RW dapat diakses warga.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PROFIL -->
+
+<section class="section" id="profil">
+
+    <div class="section-title">
+
+        <small>TENTANG KAMI</small>
+
+        <h2>RW 01 Pondok Sukatani Permai</h2>
+
+        <p>
+            Membangun lingkungan melalui kebersamaan dan pelayanan.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h3>🏘️ Tentang RW 01</h3>
+
+            <p>
+                RW 01 Pondok Sukatani Permai merupakan bagian dari
+                Kelurahan Sukatani, Kecamatan Rajeg, Kabupaten Tangerang.
+                Website ini menjadi sarana informasi dan komunikasi
+                antara pengurus dengan seluruh warga.
+            </p>
+
+        </div>
+
+
+        <div class="about-card about-highlight">
+
+            <h3>🤝 Semangat Kebersamaan</h3>
+
+            <p>
+                Silih asah, silih asih, silih asuh.
+                Bersama menjaga keamanan, kebersihan, kenyamanan,
+                serta membangun lingkungan yang harmonis dan aktif.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROGRAM -->
+
+<section class="section" id="program">
+
+    <div class="section-title">
+
+        <small>KEGIATAN RW</small>
+
+        <h2>Program Kerja RW 01</h2>
+
+        <p>
+            Beberapa bidang utama dalam pelayanan dan pembangunan warga.
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+        <div class="program">
+
+            <div class="program-icon">🛡️</div>
+
+            <h3>Keamanan</h3>
+
+            <p>
+                Mendorong lingkungan yang aman melalui kebersamaan
+                dan kepedulian warga.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">🏗️</div>
+
+            <h3>Pembangunan</h3>
+
+            <p>
+                Mendukung peningkatan sarana dan prasarana lingkungan.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">🌱</div>
+
+            <h3>Lingkungan</h3>
+
+            <p>
+                Menjaga kebersihan, penghijauan dan pengelolaan lingkungan.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">⚽</div>
+
+            <h3>Pemuda & Olahraga</h3>
+
+            <p>
+                Mendorong kegiatan olahraga, seni dan kreativitas pemuda.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">🕌</div>
+
+            <h3>Keagamaan</h3>
+
+            <p>
+                Mendukung kegiatan keagamaan dan kerohanian masyarakat.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">💼</div>
+
+            <h3>UMKM</h3>
+
+            <p>
+                Mendorong potensi ekonomi kreatif dan usaha warga.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">👥</div>
+
+            <h3>Kemasyarakatan</h3>
+
+            <p>
+                Memperkuat komunikasi, gotong royong dan kepedulian sosial.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <div class="program-icon">📦</div>
+
+            <h3>Perlengkapan</h3>
+
+            <p>
+                Mendukung ketersediaan sarana untuk kegiatan RW.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINANCE CTA -->
+
+<section class="finance-section" id="informasi">
+
+    <div class="finance-box">
+
+        <div>
+
+            <h2>💰 Transparansi Keuangan RW 01</h2>
+
+            <p>
+                Wujud keterbukaan dan pertanggungjawaban pengelolaan
+                keuangan kepada seluruh warga Pondok Sukatani Permai.
+            </p>
+
+        </div>
+
+
+        <a href="keuangan.html" class="finance-btn">
+            Lihat Transparansi →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="kontak">
+
+    <div class="footer-main">
+
+        <div>
+
+            <div class="footer-brand">
+
+                <img src="logo-rw01-removebg-preview.png"
+                     alt="Logo RW 01">
+
+                <div>
+                    <strong>RW 01</strong><br>
+                    <span>Pondok Sukatani Permai</span>
+                </div>
+
+            </div>
+
+            <p>
+                Bersama membangun lingkungan yang aman,
+                nyaman, bersih dan harmonis.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>MENU UTAMA</h3>
+
+            <a href="index.html">Beranda</a>
+
+            <a href="#profil">Profil RW</a>
+
+            <a href="#program">Program Kerja</a>
+
+            <a href="keuangan.html">Keuangan</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>INFORMASI</h3>
+
+            <a href="#informasi">Pengumuman</a>
+
+            <a href="#program">Kegiatan RW</a>
+
+            <a href="#kontak">Kontak</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>HUBUNGI KAMI</h3>
+
+            <p>📍 Pondok Sukatani Permai</p>
+
+            <p>Kelurahan Sukatani</p>
+
+            <p>Kecamatan Rajeg</p>
+
+            <p>Kabupaten Tangerang</p>
+
+            <p>✉️ rw01psp@gmail.com</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 RW 01 Pondok Sukatani Permai
+        </span>
+
+        <span>
+            Bersama Membangun Lingkungan yang Lebih Baik
+        </span>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
