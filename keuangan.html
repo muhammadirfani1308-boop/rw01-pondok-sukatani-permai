@@ -13,131 +13,222 @@
     box-sizing:border-box;
 }
 
+:root{
+    --blue:#07366f;
+    --green:#16833b;
+    --gold:#f2bd32;
+    --red:#c33d3d;
+    --bg:#f4f7fb;
+    --text:#17324d;
+}
+
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#17324d;
+    background:var(--bg);
+    color:var(--text);
 }
 
+/* HEADER */
 header{
-    background:#07366f;
+    background:linear-gradient(135deg,#07366f 0%,#0b5681 50%,#16833b 100%);
     color:white;
     text-align:center;
-    padding:25px 15px;
+    padding:30px 15px 38px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.logo-wrap{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:105px;
+    height:105px;
+    background:white;
+    border-radius:50%;
+    padding:8px;
+    box-shadow:0 8px 25px rgba(0,0,0,.22);
 }
 
 header img{
-    width:75px;
-    height:75px;
+    width:100%;
+    height:100%;
     object-fit:contain;
+    border-radius:50%;
 }
 
 header h1{
-    margin:8px 0 5px;
+    margin:15px 0 6px;
+    font-size:30px;
+    font-weight:800;
 }
 
 header p{
     margin:0;
+    opacity:.9;
+    font-size:15px;
 }
 
+/* CONTAINER */
 .container{
     max-width:1100px;
-    margin:auto;
-    padding:25px 15px;
+    margin:-18px auto 0;
+    padding:0 15px 30px;
 }
 
+/* INTRO */
 .intro{
     background:white;
-    padding:20px;
-    border-radius:15px;
+    padding:24px;
+    border-radius:18px;
     margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    border-left:5px solid var(--green);
 }
 
+.intro h2{
+    margin:0 0 10px;
+    color:var(--blue);
+    font-size:22px;
+}
+
+.intro p{
+    line-height:1.6;
+    color:#5f7184;
+    margin:7px 0;
+}
+
+/* RINGKASAN */
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    gap:18px;
     margin-bottom:20px;
 }
 
 .card{
     background:white;
-    padding:20px;
-    border-radius:14px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+}
+
+.summary-card{
+    position:relative;
+    overflow:hidden;
+    border-top:5px solid var(--blue);
+}
+
+.summary-card:nth-child(2){
+    border-top-color:var(--green);
+}
+
+.summary-card:nth-child(3){
+    border-top-color:var(--red);
+}
+
+.summary-icon{
+    font-size:25px;
+    margin-bottom:10px;
 }
 
 .card small{
-    color:#777;
+    color:#718096;
+    font-weight:bold;
+    font-size:13px;
 }
 
 .card h2{
-    color:#07366f;
-    margin-bottom:5px;
+    color:var(--blue);
+    margin:8px 0 0;
+    font-size:22px;
 }
 
 .masuk{
-    color:#16833b!important;
+    color:var(--green)!important;
 }
 
 .keluar{
-    color:#c33d3d!important;
+    color:var(--red)!important;
 }
 
+/* RIWAYAT */
+.history-card{
+    padding:24px;
+}
+
+.history-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 15px;
+    color:var(--blue);
+    font-size:22px;
+}
+
+/* FILTER */
 .filter{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
-    margin-bottom:15px;
+    margin:15px 0 20px;
 }
 
 .filter button{
-    padding:9px 14px;
-    border:1px solid #ddd;
+    padding:9px 15px;
+    border:1px solid #dce3eb;
     background:white;
-    border-radius:8px;
+    color:var(--text);
+    border-radius:20px;
     cursor:pointer;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.filter button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
 
 .filter button.active{
-    background:#07366f;
+    background:var(--blue);
     color:white;
+    border-color:var(--blue);
 }
 
+/* TABEL */
 .table-wrapper{
     overflow-x:auto;
+    border-radius:12px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
+    min-width:750px;
 }
 
 th,td{
-    padding:12px 8px;
-    border-bottom:1px solid #eee;
+    padding:13px 10px;
+    border-bottom:1px solid #edf1f5;
     text-align:left;
     font-size:13px;
 }
 
 th{
     background:#f1f5f9;
-    color:#555;
+    color:var(--blue);
+    font-weight:bold;
 }
 
-footer{
-    background:#07366f;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
+tbody tr:hover{
+    background:#f8fafc;
 }
 
+/* PESAN */
 .loading{
     text-align:center;
-    padding:20px;
+    padding:25px;
     color:#777;
 }
 
@@ -145,17 +236,75 @@ footer{
     background:#fdeaea;
     color:#a52e2e;
     padding:15px;
-    border-radius:8px;
+    border-radius:10px;
 }
 
+/* FOOTER */
+footer{
+    background:var(--blue);
+    color:white;
+    text-align:center;
+    padding:22px;
+    margin-top:10px;
+    line-height:1.7;
+}
+
+.footer-title{
+    font-weight:bold;
+    font-size:15px;
+}
+
+.footer-sub{
+    font-size:13px;
+    opacity:.85;
+}
+
+/* HP */
 @media(max-width:700px){
+
+    header{
+        padding:25px 15px 32px;
+    }
+
+    header h1{
+        font-size:24px;
+        line-height:1.25;
+    }
+
+    header p{
+        font-size:14px;
+    }
+
+    .logo-wrap{
+        width:90px;
+        height:90px;
+    }
+
+    .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
 
     .grid{
         grid-template-columns:1fr;
+        gap:12px;
     }
 
-    th,td{
+    .card{
+        padding:18px;
+    }
+
+    .intro{
+        padding:20px;
+    }
+
+    .history-card{
+        padding:18px;
+    }
+
+    .filter button{
         font-size:12px;
+        padding:8px 12px;
     }
 
 }
@@ -166,175 +315,179 @@ footer{
 
 <header>
 
-<img src="logo-rw01.png">
+    <div class="logo-wrap">
+        <img src="logo-rw01-removebg-preview.png" alt="Logo RW 01">
+    </div>
 
-<h1>Transparansi Keuangan RW 01</h1>
+    <h1>Transparansi Keuangan RW 01</h1>
 
-<p>Pondok Sukatani Permai</p>
+    <p>Pondok Sukatani Permai</p>
 
 </header>
 
 
 <div class="container">
 
-<div class="intro">
+    <div class="intro">
 
-<h2>💰 Transparansi Keuangan RW 01</h2>
+        <h2>💰 Transparansi Keuangan RW 01</h2>
 
-<p>
-Halaman ini digunakan untuk memberikan informasi keuangan
-RW 01 secara terbuka kepada seluruh warga.
-</p>
+        <p>
+            Halaman ini digunakan untuk memberikan informasi keuangan
+            RW 01 secara terbuka kepada seluruh warga.
+        </p>
 
-<p>
-Data diperbarui berdasarkan pencatatan Bendahara/Admin RW.
-</p>
+        <p>
+            Data diperbarui berdasarkan pencatatan Bendahara/Admin RW.
+        </p>
 
-</div>
-
-
-<!-- RINGKASAN -->
-
-<div class="grid">
-
-<div class="card">
-
-<small>Saldo Kas RW</small>
-
-<h2 id="saldo">
-Memuat...
-</h2>
-
-</div>
+    </div>
 
 
-<div class="card">
+    <!-- RINGKASAN -->
 
-<small>Total Pemasukan</small>
+    <div class="grid">
 
-<h2 id="pemasukan" class="masuk">
-Memuat...
-</h2>
+        <div class="card summary-card">
 
-</div>
+            <div class="summary-icon">💰</div>
 
+            <small>Saldo Kas RW</small>
 
-<div class="card">
+            <h2 id="saldo">
+                Memuat...
+            </h2>
 
-<small>Total Pengeluaran</small>
-
-<h2 id="pengeluaran" class="keluar">
-Memuat...
-</h2>
-
-</div>
-
-</div>
+        </div>
 
 
-<!-- TRANSAKSI -->
+        <div class="card summary-card">
 
-<div class="card">
+            <div class="summary-icon">📈</div>
 
-<h2>📋 Riwayat Keuangan</h2>
+            <small>Total Pemasukan</small>
 
-<div class="filter">
+            <h2 id="pemasukan" class="masuk">
+                Memuat...
+            </h2>
 
-<button class="active" onclick="filterData('semua',this)">
-Semua
-</button>
-
-<button onclick="filterData('pemasukan',this)">
-Pemasukan
-</button>
-
-<button onclick="filterData('pengeluaran',this)">
-Pengeluaran
-</button>
-
-<button onclick="filterData('RT 01',this)">
-RT 01
-</button>
-
-<button onclick="filterData('RT 02',this)">
-RT 02
-</button>
-
-<button onclick="filterData('RT 03',this)">
-RT 03
-</button>
-
-<button onclick="filterData('RT 04',this)">
-RT 04
-</button>
-
-</div>
+        </div>
 
 
-<div class="table-wrapper">
+        <div class="card summary-card">
 
-<table>
+            <div class="summary-icon">📉</div>
 
-<thead>
+            <small>Total Pengeluaran</small>
 
-<tr>
+            <h2 id="pengeluaran" class="keluar">
+                Memuat...
+            </h2>
 
-<th>Tanggal</th>
+        </div>
 
-<th>Jenis</th>
-
-<th>Kategori</th>
-
-<th>RT</th>
-
-<th>Keterangan</th>
-
-<th>Metode</th>
-
-<th>Nominal</th>
-
-</tr>
-
-</thead>
+    </div>
 
 
-<tbody id="tabel">
+    <!-- TRANSAKSI -->
 
-<tr>
+    <div class="card history-card">
 
-<td colspan="7" class="loading">
+        <h2 class="history-title">
+            📋 Riwayat Keuangan
+        </h2>
 
-Memuat data keuangan...
+        <div class="filter">
 
-</td>
+            <button class="active" onclick="filterData('semua',this)">
+                Semua
+            </button>
 
-</tr>
+            <button onclick="filterData('pemasukan',this)">
+                Pemasukan
+            </button>
 
-</tbody>
+            <button onclick="filterData('pengeluaran',this)">
+                Pengeluaran
+            </button>
 
-</table>
+            <button onclick="filterData('RT 01',this)">
+                RT 01
+            </button>
 
-</div>
+            <button onclick="filterData('RT 02',this)">
+                RT 02
+            </button>
 
-</div>
+            <button onclick="filterData('RT 03',this)">
+                RT 03
+            </button>
+
+            <button onclick="filterData('RT 04',this)">
+                RT 04
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Jenis</th>
+                        <th>Kategori</th>
+                        <th>RT</th>
+                        <th>Keterangan</th>
+                        <th>Metode</th>
+                        <th>Nominal</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tabel">
+
+                    <tr>
+
+                        <td colspan="7" class="loading">
+                            Memuat data keuangan...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
 
 </div>
 
 
 <footer>
 
-RW 01 Pondok Sukatani Permai
+    <div class="footer-title">
+        RW 01 Pondok Sukatani Permai
+    </div>
 
-<br>
-
-Transparansi Keuangan Warga
+    <div class="footer-sub">
+        Transparansi Keuangan Warga
+    </div>
 
 </footer>
 
 
 <script>
 
-/* SUPABASE */
+/* ==============================
+   SUPABASE
+================================ */
 
 const SUPABASE_URL =
 "https://uvkroruendiuunckuaki.supabase.co";
@@ -344,230 +497,240 @@ const SUPABASE_KEY =
 
 const db =
 supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
+    SUPABASE_URL,
+    SUPABASE_KEY
 );
 
 
-/* DATA */
+/* ==============================
+   DATA
+================================ */
 
 let semuaData = [];
 
 let filterAktif = "semua";
 
 
-/* RUPIAH */
+/* ==============================
+   RUPIAH
+================================ */
 
 function rupiah(angka){
 
-return new Intl.NumberFormat(
-"id-ID",
-{
-style:"currency",
-currency:"IDR",
-maximumFractionDigits:0
-}
-).format(Number(angka)||0);
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(Number(angka)||0);
 
 }
 
 
-/* LOAD */
+/* ==============================
+   LOAD DATA
+================================ */
 
 async function loadData(){
 
-const {data,error} =
+    const {data,error} =
 
-await db
-.from("transaksi_keuangan")
-.select("*")
-.order("tanggal",{ascending:false});
-
-
-if(error){
-
-document.getElementById("tabel").innerHTML =
-
-`
-<tr>
-<td colspan="7">
-
-<div class="error">
-
-Gagal mengambil data keuangan.
-
-</div>
-
-</td>
-</tr>
-`;
-
-return;
-
-}
+    await db
+    .from("transaksi_keuangan")
+    .select("*")
+    .order("tanggal",{ascending:false});
 
 
-semuaData = data || [];
+    if(error){
+
+        document.getElementById("tabel").innerHTML =
+
+        `
+        <tr>
+            <td colspan="7">
+
+                <div class="error">
+                    Gagal mengambil data keuangan.
+                </div>
+
+            </td>
+        </tr>
+        `;
+
+        return;
+
+    }
 
 
-/* HITUNG */
-
-let pemasukan = 0;
-
-let pengeluaran = 0;
+    semuaData = data || [];
 
 
-semuaData.forEach(function(item){
+    /* HITUNG */
 
-if(item.jenis === "pemasukan"){
+    let pemasukan = 0;
 
-pemasukan += Number(item.nominal);
-
-}
-
-if(item.jenis === "pengeluaran"){
-
-pengeluaran += Number(item.nominal);
-
-}
-
-});
+    let pengeluaran = 0;
 
 
-document.getElementById("pemasukan").innerText =
-rupiah(pemasukan);
+    semuaData.forEach(function(item){
+
+        if(item.jenis === "pemasukan"){
+
+            pemasukan += Number(item.nominal);
+
+        }
+
+        if(item.jenis === "pengeluaran"){
+
+            pengeluaran += Number(item.nominal);
+
+        }
+
+    });
 
 
-document.getElementById("pengeluaran").innerText =
-rupiah(pengeluaran);
+    document.getElementById("pemasukan").innerText =
+        rupiah(pemasukan);
 
 
-document.getElementById("saldo").innerText =
-rupiah(pemasukan-pengeluaran);
+    document.getElementById("pengeluaran").innerText =
+        rupiah(pengeluaran);
 
 
-/* TAMPILKAN */
+    document.getElementById("saldo").innerText =
+        rupiah(pemasukan-pengeluaran);
 
-tampilkan();
+
+    /* TAMPILKAN */
+
+    tampilkan();
 
 }
 
 
-/* TAMPILKAN */
+/* ==============================
+   TAMPILKAN
+================================ */
 
 function tampilkan(){
 
-let data = semuaData;
+    let data = semuaData;
 
 
-if(
-filterAktif === "pemasukan" ||
-filterAktif === "pengeluaran"
-){
+    if(
+        filterAktif === "pemasukan" ||
+        filterAktif === "pengeluaran"
+    ){
 
-data = semuaData.filter(
-item => item.jenis === filterAktif
-);
+        data = semuaData.filter(
+            item => item.jenis === filterAktif
+        );
+
+    }
+
+
+    else if(
+        filterAktif.startsWith("RT")
+    ){
+
+        data = semuaData.filter(
+            item => item.rt === filterAktif
+        );
+
+    }
+
+
+    const tabel =
+        document.getElementById("tabel");
+
+
+    tabel.innerHTML = "";
+
+
+    if(data.length === 0){
+
+        tabel.innerHTML =
+
+        `
+        <tr>
+            <td colspan="7" class="loading">
+                Belum ada transaksi.
+            </td>
+        </tr>
+        `;
+
+        return;
+
+    }
+
+
+    data.forEach(function(item){
+
+        const tr =
+            document.createElement("tr");
+
+
+        tr.innerHTML = `
+
+            <td>${item.tanggal || "-"}</td>
+
+            <td>
+                ${item.jenis === "pemasukan"
+                    ? "Pemasukan"
+                    : "Pengeluaran"}
+            </td>
+
+            <td>${item.kategori || "-"}</td>
+
+            <td>${item.rt || "-"}</td>
+
+            <td>${item.keterangan || "-"}</td>
+
+            <td>${item.metode || "-"}</td>
+
+            <td>${rupiah(item.nominal)}</td>
+
+        `;
+
+
+        tabel.appendChild(tr);
+
+    });
 
 }
 
 
-else if(
-filterAktif.startsWith("RT")
-){
-
-data = semuaData.filter(
-item => item.rt === filterAktif
-);
-
-}
-
-
-const tabel =
-document.getElementById("tabel");
-
-
-tabel.innerHTML = "";
-
-
-if(data.length === 0){
-
-tabel.innerHTML =
-
-`
-<tr>
-<td colspan="7" class="loading">
-Belum ada transaksi.
-</td>
-</tr>
-`;
-
-return;
-
-}
-
-
-data.forEach(function(item){
-
-const tr =
-document.createElement("tr");
-
-
-tr.innerHTML = `
-
-<td>${item.tanggal || "-"}</td>
-
-<td>
-${item.jenis === "pemasukan"
-? "Pemasukan"
-: "Pengeluaran"}
-</td>
-
-<td>${item.kategori || "-"}</td>
-
-<td>${item.rt || "-"}</td>
-
-<td>${item.keterangan || "-"}</td>
-
-<td>${item.metode || "-"}</td>
-
-<td>${rupiah(item.nominal)}</td>
-
-`;
-
-
-tabel.appendChild(tr);
-
-});
-
-}
-
-
-/* FILTER */
+/* ==============================
+   FILTER
+================================ */
 
 function filterData(filter,tombol){
 
-filterAktif = filter;
+    filterAktif = filter;
 
 
-document
-.querySelectorAll(".filter button")
-.forEach(function(button){
+    document
+    .querySelectorAll(".filter button")
+    .forEach(function(button){
 
-button.classList.remove("active");
+        button.classList.remove("active");
 
-});
-
-
-tombol.classList.add("active");
+    });
 
 
-tampilkan();
+    tombol.classList.add("active");
+
+
+    tampilkan();
 
 }
 
 
-/* MULAI */
+/* ==============================
+   MULAI
+================================ */
 
 loadData();
 
