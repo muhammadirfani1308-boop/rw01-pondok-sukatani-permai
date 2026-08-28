@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,60 +10,110 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f4f7fb;
     color:#17324d;
 }
 
+/* HEADER */
+
 header{
-    background:#07366f;
+    background:linear-gradient(135deg,#07366f,#16833b);
     color:white;
-    padding:20px;
+    padding:25px 20px;
     text-align:center;
-}
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .logo{
     width:80px;
     height:80px;
     object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:6px;
 }
 
-h1,h2{
-    margin-top:5px;
+header h1{
+    margin:10px 0 5px;
 }
 
-input,select,textarea{
+header p{
+    margin:0;
+    opacity:.9;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:18px;
+    margin-bottom:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.card h2{
+    color:#07366f;
+    margin-top:0;
+}
+
+/* LOGIN */
+
+.login-card{
+    max-width:450px;
+    margin:35px auto;
+}
+
+/* FORM */
+
+label{
+    display:block;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+input,
+select,
+textarea{
     width:100%;
     padding:12px;
-    margin-top:6px;
-    margin-bottom:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    box-sizing:border-box;
+    margin-bottom:14px;
+    border:1px solid #d8e0e8;
+    border-radius:9px;
+    font-family:inherit;
+    font-size:14px;
 }
+
+textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+/* BUTTON */
 
 button{
     border:0;
     padding:12px 18px;
-    border-radius:8px;
+    border-radius:9px;
     cursor:pointer;
     font-weight:bold;
+    font-size:14px;
 }
 
 .btn{
@@ -70,92 +121,339 @@ button{
     color:white;
 }
 
+.btn:hover{
+    background:#116c31;
+}
+
 .logout{
     background:#c33d3d;
     color:white;
 }
 
-.hidden{
-    display:none;
+.print{
+    background:#07366f;
+    color:white;
 }
+
+.secondary{
+    background:#edf2f7;
+    color:#17324d;
+}
+
+/* DASHBOARD TOP */
+
+.dashboard-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.dashboard-head p{
+    margin:4px 0 0;
+    color:#718096;
+}
+
+/* SUMMARY */
 
 .grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:16px;
+    margin-bottom:20px;
 }
 
 .box{
     background:white;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,.06);
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    border-top:4px solid #07366f;
+}
+
+.box:nth-child(2){
+    border-top-color:#16833b;
+}
+
+.box:nth-child(3){
+    border-top-color:#c33d3d;
+}
+
+.box:nth-child(4){
+    border-top-color:#f2bd32;
 }
 
 .box small{
-    color:#777;
+    color:#718096;
+    font-weight:bold;
 }
 
 .box h2{
+    margin:8px 0 0;
     color:#07366f;
+    font-size:22px;
+}
+
+/* FILTER */
+
+.filter-box{
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:12px;
+    align-items:end;
+}
+
+.filter-box label{
+    margin-bottom:5px;
+}
+
+/* TABLE */
+
+.table-wrapper{
+    overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
+    min-width:800px;
 }
 
-th,td{
-    padding:10px;
-    border-bottom:1px solid #eee;
+th,
+td{
+    padding:11px 9px;
+    border-bottom:1px solid #edf1f5;
     text-align:left;
+    font-size:13px;
 }
 
 th{
     background:#f1f5f9;
+    color:#07366f;
 }
+
+tbody tr:hover{
+    background:#f8fafc;
+}
+
+/* STATUS */
 
 .success{
     background:#e8f7ed;
     color:#16723a;
     padding:12px;
-    border-radius:8px;
-    margin-top:10px;
+    border-radius:9px;
+    margin-top:12px;
 }
 
 .error{
     background:#fdeaea;
     color:#a52e2e;
     padding:12px;
-    border-radius:8px;
-    margin-top:10px;
+    border-radius:9px;
+    margin-top:12px;
 }
 
-@media(max-width:700px){
+/* HIDDEN */
+
+.hidden{
+    display:none!important;
+}
+
+/* PRINT AREA */
+
+.print-report{
+    display:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
     .grid{
         grid-template-columns:1fr 1fr;
     }
 
-    table{
-        font-size:12px;
+    .filter-box{
+        grid-template-columns:1fr 1fr;
     }
+
+    .filter-box button{
+        grid-column:1/-1;
+    }
+
 }
+
+@media(max-width:600px){
+
+    .container{
+        padding:15px 10px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-head{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .filter-box{
+        grid-template-columns:1fr;
+    }
+
+    .filter-box button{
+        grid-column:auto;
+        width:100%;
+    }
+
+}
+
+/* =========================
+   CETAK PDF
+========================= */
+
+@media print{
+
+    body{
+        background:white;
+        color:black;
+    }
+
+    header,
+    #loginBox,
+    #dashboard,
+    .print-hide{
+        display:none!important;
+    }
+
+    .print-report{
+        display:block!important;
+    }
+
+    .print-report{
+        padding:20px;
+    }
+
+    .print-header{
+        display:flex;
+        align-items:center;
+        gap:18px;
+        border-bottom:3px solid #07366f;
+        padding-bottom:15px;
+        margin-bottom:20px;
+    }
+
+    .print-logo{
+        width:75px;
+        height:75px;
+        object-fit:contain;
+    }
+
+    .print-header h1{
+        margin:0;
+        font-size:22px;
+    }
+
+    .print-header p{
+        margin:3px 0;
+        font-size:13px;
+    }
+
+    .report-title{
+        text-align:center;
+        margin:20px 0;
+    }
+
+    .report-title h2{
+        margin:0;
+        font-size:20px;
+    }
+
+    .report-title p{
+        margin:5px 0;
+        font-size:13px;
+    }
+
+    .report-summary{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+        margin-bottom:20px;
+    }
+
+    .report-summary div{
+        border:1px solid #ddd;
+        padding:12px;
+        text-align:center;
+    }
+
+    .report-summary strong{
+        display:block;
+        margin-top:5px;
+    }
+
+    .print-report table{
+        width:100%;
+        border-collapse:collapse;
+        font-size:10px;
+    }
+
+    .print-report th,
+    .print-report td{
+        border:1px solid #bbb;
+        padding:7px;
+    }
+
+    .print-report th{
+        background:#eee;
+    }
+
+    .signature{
+        margin-top:45px;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        text-align:center;
+        gap:80px;
+    }
+
+    .signature p{
+        margin-bottom:65px;
+    }
+
+    .signature strong{
+        text-decoration:underline;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <img src="logo-rw01.png" class="logo">
-    <h1>Dashboard Keuangan RW 01</h1>
-    <p>Pondok Sukatani Permai</p>
+
+<img
+src="logo-rw01-removebg-preview.png"
+class="logo"
+>
+
+<h1>Dashboard Keuangan RW 01</h1>
+
+<p>Pondok Sukatani Permai</p>
+
 </header>
 
 
 <div class="container">
 
-<!-- LOGIN -->
-<div id="loginBox" class="card">
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginBox" class="card login-card">
 
 <h2>🔐 Login Pengurus</h2>
 
@@ -164,13 +462,26 @@ Silakan login menggunakan akun Bendahara/Admin RW.
 </p>
 
 <label>Email</label>
-<input type="email" id="email" placeholder="Masukkan email">
+
+<input
+type="email"
+id="email"
+placeholder="Masukkan email"
+>
 
 <label>Password</label>
-<input type="password" id="password" placeholder="Masukkan password">
 
-<button class="btn" onclick="login()">
-    LOGIN
+<input
+type="password"
+id="password"
+placeholder="Masukkan password"
+>
+
+<button
+class="btn"
+onclick="login()"
+>
+LOGIN
 </button>
 
 <div id="loginMessage"></div>
@@ -178,20 +489,30 @@ Silakan login menggunakan akun Bendahara/Admin RW.
 </div>
 
 
-<!-- DASHBOARD -->
+<!-- ================= DASHBOARD ================= -->
+
 <div id="dashboard" class="hidden">
+
 
 <div class="card">
 
-<div style="display:flex;justify-content:space-between;align-items:center;">
+<div class="dashboard-head">
 
 <div>
-<h2>Dashboard Bendahara</h2>
-<p>Kelola pemasukan dan pengeluaran RW 01.</p>
+
+<h2>💰 Dashboard Bendahara</h2>
+
+<p>
+Kelola pemasukan dan pengeluaran RW 01.
+</p>
+
 </div>
 
-<button class="logout" onclick="logout()">
-    Keluar
+<button
+class="logout"
+onclick="logout()"
+>
+Keluar
 </button>
 
 </div>
@@ -199,47 +520,81 @@ Silakan login menggunakan akun Bendahara/Admin RW.
 </div>
 
 
-<!-- RINGKASAN -->
+<!-- ================= RINGKASAN ================= -->
 
 <div class="grid">
 
 <div class="box">
+
 <small>Saldo Kas</small>
-<h2 id="saldo">Rp 0</h2>
+
+<h2 id="saldo">
+Rp 0
+</h2>
+
 </div>
 
+
 <div class="box">
+
 <small>Total Pemasukan</small>
-<h2 id="totalMasuk">Rp 0</h2>
+
+<h2 id="totalMasuk">
+Rp 0
+</h2>
+
 </div>
 
+
 <div class="box">
+
 <small>Total Pengeluaran</small>
-<h2 id="totalKeluar">Rp 0</h2>
+
+<h2 id="totalKeluar">
+Rp 0
+</h2>
+
 </div>
+
 
 <div class="box">
+
 <small>Jumlah Transaksi</small>
-<h2 id="jumlahTransaksi">0</h2>
-</div>
+
+<h2 id="jumlahTransaksi">
+0
+</h2>
 
 </div>
 
+</div>
 
-<!-- FORM INPUT -->
+
+<!-- ================= INPUT ================= -->
 
 <div class="card">
 
 <h2>➕ Input Keuangan</h2>
 
 <label>Tanggal</label>
-<input type="date" id="tanggal">
+
+<input
+type="date"
+id="tanggal"
+>
 
 <label>Jenis Transaksi</label>
 
 <select id="jenis">
-<option value="pemasukan">Pemasukan</option>
-<option value="pengeluaran">Pengeluaran</option>
+
+<option value="pemasukan">
+Pemasukan
+</option>
+
+<option value="pengeluaran">
+Pengeluaran
+</option>
+
 </select>
 
 
@@ -263,11 +618,25 @@ Silakan login menggunakan akun Bendahara/Admin RW.
 
 <select id="rt">
 
-<option value="">Umum</option>
-<option value="RT 01">RT 01</option>
-<option value="RT 02">RT 02</option>
-<option value="RT 03">RT 03</option>
-<option value="RT 04">RT 04</option>
+<option value="">
+Umum
+</option>
+
+<option value="RT 01">
+RT 01
+</option>
+
+<option value="RT 02">
+RT 02
+</option>
+
+<option value="RT 03">
+RT 03
+</option>
+
+<option value="RT 04">
+RT 04
+</option>
 
 </select>
 
@@ -299,10 +668,11 @@ placeholder="Contoh: Setoran iuran sampah RT 01 bulan Agustus"
 ></textarea>
 
 
-<button class="btn" onclick="simpanTransaksi()">
-
+<button
+class="btn"
+onclick="simpanTransaksi()"
+>
 💾 SIMPAN TRANSAKSI
-
 </button>
 
 <div id="saveMessage"></div>
@@ -310,13 +680,80 @@ placeholder="Contoh: Setoran iuran sampah RT 01 bulan Agustus"
 </div>
 
 
-<!-- RIWAYAT -->
+<!-- ================= FILTER ================= -->
+
+<div class="card">
+
+<h2>📅 Rekap & Cetak PDF</h2>
+
+<p>
+Pilih periode laporan yang ingin dicetak.
+</p>
+
+<div class="filter-box">
+
+<div>
+
+<label>Bulan</label>
+
+<select id="filterBulan">
+
+<option value="semua">
+Semua Bulan
+</option>
+
+<option value="01">Januari</option>
+<option value="02">Februari</option>
+<option value="03">Maret</option>
+<option value="04">April</option>
+<option value="05">Mei</option>
+<option value="06">Juni</option>
+<option value="07">Juli</option>
+<option value="08">Agustus</option>
+<option value="09">September</option>
+<option value="10">Oktober</option>
+<option value="11">November</option>
+<option value="12">Desember</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>Tahun</label>
+
+<select id="filterTahun">
+
+<option value="semua">
+Semua Tahun
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="print"
+onclick="cetakPDF()"
+>
+🖨️ CETAK REKAP PDF
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= RIWAYAT ================= -->
 
 <div class="card">
 
 <h2>📋 Riwayat Transaksi</h2>
 
-<div style="overflow-x:auto;">
+<div class="table-wrapper">
 
 <table>
 
@@ -346,22 +783,163 @@ placeholder="Contoh: Setoran iuran sampah RT 01 bulan Agustus"
 
 </div>
 
+
 </div>
+
+</div>
+
+
+<!-- ================= LAPORAN CETAK ================= -->
+
+<div class="print-report" id="printReport">
+
+<div class="print-header">
+
+<img
+src="logo-rw01-removebg-preview.png"
+class="print-logo"
+>
+
+<div>
+
+<h1>
+RW 01 PONDOK SUKATANI PERMAI
+</h1>
+
+<p>
+Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
+</p>
+
+</div>
+
+</div>
+
+
+<div class="report-title">
+
+<h2>
+REKAPITULASI KEUANGAN RW 01
+</h2>
+
+<p id="periodeCetak">
+Periode Semua Transaksi
+</p>
+
+</div>
+
+
+<div class="report-summary">
+
+<div>
+
+Total Pemasukan
+
+<strong id="printMasuk">
+Rp 0
+</strong>
+
+</div>
+
+
+<div>
+
+Total Pengeluaran
+
+<strong id="printKeluar">
+Rp 0
+</strong>
+
+</div>
+
+
+<div>
+
+Saldo
+
+<strong id="printSaldo">
+Rp 0
+</strong>
+
+</div>
+
+</div>
+
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No</th>
+<th>Tanggal</th>
+<th>Jenis</th>
+<th>Kategori</th>
+<th>RT</th>
+<th>Keterangan</th>
+<th>Metode</th>
+<th>Nominal</th>
+
+</tr>
+
+</thead>
+
+<tbody id="printTable">
+
+</tbody>
+
+</table>
+
+
+<div class="signature">
+
+<div>
+
+Mengetahui,
+
+<p></p>
+
+<strong>
+Muhammad Irfani Abdur Rahman, S.Pd., Gr.
+</strong>
+
+<br>
+
+Ketua RW 01
+
+</div>
+
+
+<div>
+
+Bendahara,
+
+<p></p>
+
+<strong>
+Asri Ajrin Karima
+</strong>
+
+<br>
+
+Bendahara RW 01
+
+</div>
+
+</div>
+
 
 </div>
 
 
 <script>
 
-/* Koneksi Supabase RW 01 */
+/* =========================
+   SUPABASE
+========================= */
 
 const SUPABASE_URL =
 "https://uvkroruendiuunckuaki.supabase.co";
-
-/*
-Gunakan publishable/anon key project Supabase Bapak
-yang sudah digunakan pada website sebelumnya.
-*/
 
 const SUPABASE_KEY =
 "sb_publishable_MC7NV3ex-Ib4K9HUYJ3aLQ_R3C9FTCR";
@@ -373,7 +951,14 @@ SUPABASE_KEY
 );
 
 
-/* FORMAT RUPIAH */
+/* DATA */
+
+let semuaTransaksi = [];
+
+
+/* =========================
+   RUPIAH
+========================= */
 
 function rupiah(angka){
 
@@ -389,15 +974,27 @@ maximumFractionDigits:0
 }
 
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
 
 async function login(){
 
 const email =
-document.getElementById("email").value;
+document.getElementById("email").value.trim();
 
 const password =
 document.getElementById("password").value;
+
+
+if(!email || !password){
+
+document.getElementById("loginMessage").innerHTML =
+'<div class="error">Email dan password wajib diisi.</div>';
+
+return;
+
+}
 
 
 const {error} =
@@ -421,10 +1018,12 @@ return;
 }
 
 
-document.getElementById("loginBox")
+document
+.getElementById("loginBox")
 .classList.add("hidden");
 
-document.getElementById("dashboard")
+document
+.getElementById("dashboard")
 .classList.remove("hidden");
 
 loadData();
@@ -432,7 +1031,9 @@ loadData();
 }
 
 
-/* LOGOUT */
+/* =========================
+   LOGOUT
+========================= */
 
 async function logout(){
 
@@ -443,7 +1044,9 @@ location.reload();
 }
 
 
-/* LOAD DATA */
+/* =========================
+   LOAD DATA
+========================= */
 
 async function loadData(){
 
@@ -458,27 +1061,57 @@ if(error){
 
 console.log(error);
 
+document.getElementById("tabelTransaksi").innerHTML =
+`
+<tr>
+<td colspan="7">
+<div class="error">
+Gagal mengambil data keuangan.
+</div>
+</td>
+</tr>
+`;
+
 return;
 
 }
 
 
-const transaksi = data || [];
+semuaTransaksi =
+data || [];
 
+
+hitungRingkasan();
+
+tampilkanTransaksi();
+
+isiTahun();
+
+}
+
+
+/* =========================
+   RINGKASAN
+========================= */
+
+function hitungRingkasan(){
 
 let masuk = 0;
+
 let keluar = 0;
 
 
-transaksi.forEach(function(item){
+semuaTransaksi.forEach(function(item){
 
 if(item.jenis === "pemasukan"){
 
-masuk += Number(item.nominal);
+masuk += Number(item.nominal)||0;
 
-}else{
+}
 
-keluar += Number(item.nominal);
+if(item.jenis === "pengeluaran"){
+
+keluar += Number(item.nominal)||0;
 
 }
 
@@ -495,17 +1128,41 @@ document.getElementById("totalKeluar").innerText =
 rupiah(keluar);
 
 document.getElementById("jumlahTransaksi").innerText =
-transaksi.length;
+semuaTransaksi.length;
 
+}
+
+
+/* =========================
+   TAMPIL TRANSAKSI
+========================= */
+
+function tampilkanTransaksi(){
 
 const tbody =
 document.getElementById("tabelTransaksi");
 
 
-tbody.innerHTML="";
+tbody.innerHTML = "";
 
 
-transaksi.forEach(function(item){
+if(semuaTransaksi.length === 0){
+
+tbody.innerHTML =
+`
+<tr>
+<td colspan="7">
+Belum ada transaksi.
+</td>
+</tr>
+`;
+
+return;
+
+}
+
+
+semuaTransaksi.forEach(function(item){
 
 const row =
 document.createElement("tr");
@@ -519,7 +1176,7 @@ row.innerHTML = `
 
 <td>${item.kategori || "-"}</td>
 
-<td>${item.rt || "-"}</td>
+<td>${item.rt || "Umum"}</td>
 
 <td>${rupiah(item.nominal)}</td>
 
@@ -537,7 +1194,9 @@ tbody.appendChild(row);
 }
 
 
-/* SIMPAN TRANSAKSI */
+/* =========================
+   SIMPAN TRANSAKSI
+========================= */
 
 async function simpanTransaksi(){
 
@@ -560,7 +1219,7 @@ const metode =
 document.getElementById("metode").value;
 
 const keterangan =
-document.getElementById("keterangan").value;
+document.getElementById("keterangan").value.trim();
 
 
 if(!tanggal){
@@ -586,19 +1245,13 @@ await supabaseClient
 .from("transaksi_keuangan")
 .insert({
 
-tanggal:tanggal,
-
-jenis:jenis,
-
-kategori:kategori,
-
-rt:rt || null,
-
-nominal:nominal,
-
-metode:metode,
-
-keterangan:keterangan || null
+tanggal: tanggal,
+jenis: jenis,
+kategori: kategori,
+rt: rt || null,
+nominal: nominal,
+metode: metode,
+keterangan: keterangan || null
 
 });
 
@@ -616,15 +1269,12 @@ return;
 
 
 document.getElementById("saveMessage").innerHTML =
-'<div class="success">'+
-'✅ Transaksi berhasil disimpan.'
-+
-'</div>';
+'<div class="success">✅ Transaksi berhasil disimpan.</div>';
 
 
-document.getElementById("nominal").value="";
+document.getElementById("nominal").value = "";
 
-document.getElementById("keterangan").value="";
+document.getElementById("keterangan").value = "";
 
 
 loadData();
@@ -632,7 +1282,316 @@ loadData();
 }
 
 
-/* CEK SESSION */
+/* =========================
+   TAHUN FILTER
+========================= */
+
+function isiTahun(){
+
+const select =
+document.getElementById("filterTahun");
+
+
+const tahunSekarang =
+new Date().getFullYear();
+
+
+const tahunSet =
+new Set();
+
+
+tahunSet.add(tahunSekarang);
+
+
+semuaTransaksi.forEach(function(item){
+
+if(item.tanggal){
+
+const tahun =
+String(item.tanggal).substring(0,4);
+
+if(tahun){
+
+tahunSet.add(Number(tahun));
+
+}
+
+}
+
+});
+
+
+select.innerHTML =
+'<option value="semua">Semua Tahun</option>';
+
+
+Array.from(tahunSet)
+.sort((a,b)=>b-a)
+.forEach(function(tahun){
+
+select.innerHTML +=
+`
+<option value="${tahun}">
+${tahun}
+</option>
+`;
+
+});
+
+}
+
+
+/* =========================
+   FILTER DATA
+========================= */
+
+function dataTerfilter(){
+
+const bulan =
+document.getElementById("filterBulan").value;
+
+const tahun =
+document.getElementById("filterTahun").value;
+
+
+return semuaTransaksi.filter(function(item){
+
+if(!item.tanggal){
+
+return false;
+
+}
+
+
+const tanggal =
+String(item.tanggal);
+
+const bulanData =
+tanggal.substring(5,7);
+
+const tahunData =
+tanggal.substring(0,4);
+
+
+if(
+bulan !== "semua" &&
+bulanData !== bulan
+){
+
+return false;
+
+}
+
+
+if(
+tahun !== "semua" &&
+tahunData !== String(tahun)
+){
+
+return false;
+
+}
+
+
+return true;
+
+});
+
+}
+
+
+/* =========================
+   CETAK PDF
+========================= */
+
+function cetakPDF(){
+
+const data =
+dataTerfilter();
+
+
+const bulan =
+document.getElementById("filterBulan").value;
+
+const tahun =
+document.getElementById("filterTahun").value;
+
+
+let namaBulan =
+"Semua Bulan";
+
+
+const daftarBulan = {
+
+"01":"Januari",
+"02":"Februari",
+"03":"Maret",
+"04":"April",
+"05":"Mei",
+"06":"Juni",
+"07":"Juli",
+"08":"Agustus",
+"09":"September",
+"10":"Oktober",
+"11":"November",
+"12":"Desember"
+
+};
+
+
+if(bulan !== "semua"){
+
+namaBulan =
+daftarBulan[bulan];
+
+}
+
+
+let periode =
+"Semua Transaksi";
+
+
+if(
+bulan !== "semua" &&
+tahun !== "semua"
+){
+
+periode =
+namaBulan+" "+tahun;
+
+}
+
+else if(
+bulan === "semua" &&
+tahun !== "semua"
+){
+
+periode =
+"Semua Bulan Tahun "+tahun;
+
+}
+
+else if(
+bulan !== "semua" &&
+tahun === "semua"
+){
+
+periode =
+namaBulan+" Semua Tahun";
+
+}
+
+
+document.getElementById("periodeCetak").innerText =
+"Periode: "+periode;
+
+
+let masuk = 0;
+
+let keluar = 0;
+
+
+data.forEach(function(item){
+
+if(item.jenis === "pemasukan"){
+
+masuk += Number(item.nominal)||0;
+
+}
+
+if(item.jenis === "pengeluaran"){
+
+keluar += Number(item.nominal)||0;
+
+}
+
+});
+
+
+document.getElementById("printMasuk").innerText =
+rupiah(masuk);
+
+document.getElementById("printKeluar").innerText =
+rupiah(keluar);
+
+document.getElementById("printSaldo").innerText =
+rupiah(masuk-keluar);
+
+
+/* TABEL PDF */
+
+const table =
+document.getElementById("printTable");
+
+
+table.innerHTML = "";
+
+
+if(data.length === 0){
+
+table.innerHTML =
+`
+<tr>
+<td colspan="8" style="text-align:center;">
+Tidak ada transaksi pada periode ini.
+</td>
+</tr>
+`;
+
+}else{
+
+data.forEach(function(item,index){
+
+const row =
+document.createElement("tr");
+
+
+row.innerHTML = `
+
+<td>${index+1}</td>
+
+<td>${item.tanggal || "-"}</td>
+
+<td>${item.jenis || "-"}</td>
+
+<td>${item.kategori || "-"}</td>
+
+<td>${item.rt || "Umum"}</td>
+
+<td>${item.keterangan || "-"}</td>
+
+<td>${item.metode || "-"}</td>
+
+<td>${rupiah(item.nominal)}</td>
+
+`;
+
+
+table.appendChild(row);
+
+});
+
+}
+
+
+/* BUKA PRINT */
+
+window.print();
+
+}
+
+
+/* =========================
+   TANGGAL HARI INI
+========================= */
+
+document.getElementById("tanggal").value =
+new Date().toISOString().substring(0,10);
+
+
+/* =========================
+   CEK SESSION
+========================= */
 
 async function cekLogin(){
 
@@ -642,10 +1601,12 @@ await supabaseClient.auth.getSession();
 
 if(data.session){
 
-document.getElementById("loginBox")
+document
+.getElementById("loginBox")
 .classList.add("hidden");
 
-document.getElementById("dashboard")
+document
+.getElementById("dashboard")
 .classList.remove("hidden");
 
 loadData();
@@ -653,12 +1614,6 @@ loadData();
 }
 
 }
-
-
-/* TANGGAL HARI INI */
-
-document.getElementById("tanggal").value =
-new Date().toISOString().substring(0,10);
 
 
 cekLogin();
