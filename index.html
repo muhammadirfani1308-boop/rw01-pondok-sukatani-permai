@@ -1,4 +1,84 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login Pengurus - RW 01</title><style>:root{--n:#07366f;--g:#16833b;--gold:#f2bd32;--bg:#f4f7fb}*{box-sizing:border-box}body{margin:0;font-family:Arial;background:linear-gradient(135deg,#07366f,#16833b);min-height:100vh;display:grid;place-items:center}.box{background:#fff;width:min(430px,92%);padding:34px;border-radius:22px;box-shadow:0 20px 60px #0004;text-align:center}.logo{width:90px;height:90px;object-fit:contain}.h{color:var(--n);font-size:25px;margin:10px 0 3px}.sub{color:#6b7a8d;margin:0 0 25px}label{text-align:left;display:block;font-size:13px;font-weight:700;margin:14px 0 6px}input{width:100%;padding:13px;border:1px solid #d8e1eb;border-radius:10px;font-size:15px}.btn{width:100%;border:0;border-radius:10px;padding:13px;margin-top:20px;background:var(--g);color:white;font-weight:700;font-size:15px;cursor:pointer}.demo{margin-top:18px;font-size:12px;color:#718096;background:#f6f8fb;padding:10px;border-radius:10px}.error{color:#c33;font-size:13px;margin-top:10px;display:none}</style></head><body><div class="box"><img class="logo" src="logo-rw01.png"><div class="h">Login Pengurus RW 01</div><p class="sub">Pondok Sukatani Permai</p><form id="f"><label>Email / Username</label><input id="u" required placeholder="Ketua RW / Bendahara RW"><label>Password</label><input id="p" type="password" required placeholder="Masukkan password"><button class="btn">Masuk ke Dashboard</button><div class="error" id="e">Login demo gagal.</div></form><div class="demo">Prototype tahap 3. Login ini masih simulasi dan <b>belum aman untuk data asli</b>. Database & autentikasi akan dibuat pada tahap backend.</div></div><script>f.onsubmit=e=>{e.preventDefault();if((u.value.toLowerCase().includes('ketua')||u.value.toLowerCase().includes('bendahara'))&&p.value){location.href='dashboard.html'}else{document.getElementById('e').style.display='block';e.preventDefault()}}</script><a href="keuangan.html"
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login Pengurus - RW 01</title>/* ===== TAMPILAN BARU RW 01 ===== */
+header{
+  background:rgba(255,255,255,.97);
+  padding:12px 5%;
+  box-shadow:0 4px 18px rgba(0,0,0,.10);
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:.2px;
+}
+
+.brand img{
+  width:65px;
+  height:65px;
+  padding:3px;
+  border-radius:50%;
+}
+
+nav a{
+  transition:all .25s ease;
+}
+
+nav a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.hero{
+  min-height:390px;
+  padding:65px 7%;
+  background:
+    linear-gradient(135deg,
+    rgba(7,54,111,.98),
+    rgba(22,131,59,.96));
+}
+
+.hero h1{
+  font-size:42px;
+  letter-spacing:-.5px;
+}
+
+.hero p{
+  max-width:680px;
+  font-size:16px;
+}
+
+.heroLogo{
+  width:120px;
+  height:120px;
+  background:white;
+  border-radius:50%;
+  padding:8px;
+}
+
+.welcome{
+  border-top:5px solid var(--green);
+}
+
+.quick .card{
+  border:0;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.quick .card:hover{
+  transform:translateY(-5px);
+}
+
+.metric{
+  border-top:4px solid var(--green);
+  transition:.2s;
+}
+
+.metric:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.10);
+}
+
+footer{
+  margin-top:40px;
+}<style>:root{--n:#07366f;--g:#16833b;--gold:#f2bd32;--bg:#f4f7fb}*{box-sizing:border-box}body{margin:0;font-family:Arial;background:linear-gradient(135deg,#07366f,#16833b);min-height:100vh;display:grid;place-items:center}.box{background:#fff;width:min(430px,92%);padding:34px;border-radius:22px;box-shadow:0 20px 60px #0004;text-align:center}.logo{width:90px;height:90px;object-fit:contain}.h{color:var(--n);font-size:25px;margin:10px 0 3px}.sub{color:#6b7a8d;margin:0 0 25px}label{text-align:left;display:block;font-size:13px;font-weight:700;margin:14px 0 6px}input{width:100%;padding:13px;border:1px solid #d8e1eb;border-radius:10px;font-size:15px}.btn{width:100%;border:0;border-radius:10px;padding:13px;margin-top:20px;background:var(--g);color:white;font-weight:700;font-size:15px;cursor:pointer}.demo{margin-top:18px;font-size:12px;color:#718096;background:#f6f8fb;padding:10px;border-radius:10px}.error{color:#c33;font-size:13px;margin-top:10px;display:none}</style></head><body><div class="box"><img class="logo" src="logo-rw01.png"><div class="h">Login Pengurus RW 01</div><p class="sub">Pondok Sukatani Permai</p><form id="f"><label>Email / Username</label><input id="u" required placeholder="Ketua RW / Bendahara RW"><label>Password</label><input id="p" type="password" required placeholder="Masukkan password"><button class="btn">Masuk ke Dashboard</button><div class="error" id="e">Login demo gagal.</div></form><div class="demo">Prototype tahap 3. Login ini masih simulasi dan <b>belum aman untuk data asli</b>. Database & autentikasi akan dibuat pada tahap backend.</div></div><script>f.onsubmit=e=>{e.preventDefault();if((u.value.toLowerCase().includes('ketua')||u.value.toLowerCase().includes('bendahara'))&&p.value){location.href='dashboard.html'}else{document.getElementById('e').style.display='block';e.preventDefault()}}</script><a href="keuangan.html"
    style="
    display:block;
    width:fit-content;
