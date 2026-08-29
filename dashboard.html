@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,7 +21,7 @@ body{
     color:#17324d;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:linear-gradient(135deg,#07366f,#16833b);
@@ -49,7 +48,7 @@ header p{
     opacity:.9;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1100px;
@@ -57,7 +56,7 @@ header p{
     padding:25px 15px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
     background:white;
@@ -72,14 +71,14 @@ header p{
     margin-top:0;
 }
 
-/* LOGIN */
+/* ================= LOGIN ================= */
 
 .login-card{
     max-width:450px;
     margin:35px auto;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 
 label{
     display:block;
@@ -105,7 +104,7 @@ textarea{
     resize:vertical;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 button{
     border:0;
@@ -135,12 +134,22 @@ button{
     color:white;
 }
 
+.whatsapp{
+    background:#16833b;
+    color:white;
+}
+
 .secondary{
     background:#edf2f7;
     color:#17324d;
 }
 
-/* DASHBOARD TOP */
+.receipt{
+    background:#f2bd32;
+    color:#17324d;
+}
+
+/* ================= DASHBOARD TOP ================= */
 
 .dashboard-head{
     display:flex;
@@ -154,7 +163,7 @@ button{
     color:#718096;
 }
 
-/* SUMMARY */
+/* ================= SUMMARY ================= */
 
 .grid{
     display:grid;
@@ -194,7 +203,7 @@ button{
     font-size:22px;
 }
 
-/* FILTER */
+/* ================= FILTER ================= */
 
 .filter-box{
     display:grid;
@@ -203,11 +212,7 @@ button{
     align-items:end;
 }
 
-.filter-box label{
-    margin-bottom:5px;
-}
-
-/* TABLE */
+/* ================= TABLE ================= */
 
 .table-wrapper{
     overflow-x:auto;
@@ -216,7 +221,7 @@ button{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:800px;
+    min-width:900px;
 }
 
 th,
@@ -236,7 +241,18 @@ tbody tr:hover{
     background:#f8fafc;
 }
 
-/* STATUS */
+.action-buttons{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+.action-buttons button{
+    padding:7px 10px;
+    font-size:12px;
+}
+
+/* ================= STATUS ================= */
 
 .success{
     background:#e8f7ed;
@@ -254,19 +270,187 @@ tbody tr:hover{
     margin-top:12px;
 }
 
-/* HIDDEN */
+/* ================= HIDDEN ================= */
 
 .hidden{
     display:none!important;
 }
 
-/* PRINT AREA */
+/* ================= MODAL KWITANSI ================= */
 
-.print-report{
-    display:none;
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
 }
 
-/* RESPONSIVE */
+.modal-content{
+    background:white;
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:18px;
+    padding:20px;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.close{
+    background:#edf2f7;
+    font-size:18px;
+}
+
+/* ================= KWITANSI ================= */
+
+.kwitansi{
+    background:white;
+    border:1px solid #d5dbe2;
+    padding:30px;
+    max-width:600px;
+    margin:auto;
+}
+
+.kwitansi-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-bottom:3px solid #07366f;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.kwitansi-logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+}
+
+.kwitansi-header h2{
+    margin:0;
+    color:#07366f;
+    font-size:20px;
+}
+
+.kwitansi-header p{
+    margin:4px 0;
+    font-size:12px;
+}
+
+.kwitansi-title{
+    text-align:center;
+    margin:20px 0;
+}
+
+.kwitansi-title h1{
+    margin:0;
+    font-size:22px;
+    color:#07366f;
+}
+
+.kwitansi-title p{
+    margin:5px 0;
+    font-size:13px;
+}
+
+.kwitansi-info{
+    margin-top:15px;
+}
+
+.kwitansi-row{
+    display:grid;
+    grid-template-columns:170px 20px 1fr;
+    padding:6px 0;
+    font-size:14px;
+}
+
+.nominal-box{
+    margin:20px 0;
+    padding:15px;
+    border:2px solid #07366f;
+    border-radius:10px;
+    text-align:center;
+}
+
+.nominal-box small{
+    display:block;
+    color:#718096;
+}
+
+.nominal-box strong{
+    display:block;
+    font-size:25px;
+    color:#07366f;
+    margin-top:5px;
+}
+
+.terbilang{
+    background:#f4f7fb;
+    padding:12px;
+    border-radius:8px;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.kwitansi-footer{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    text-align:center;
+    gap:40px;
+    margin-top:35px;
+}
+
+.ttd{
+    height:75px;
+}
+
+.kwitansi-footer strong{
+    text-decoration:underline;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    body *{
+        visibility:hidden;
+    }
+
+    #kwitansiPrint,
+    #kwitansiPrint *{
+        visibility:visible;
+    }
+
+    #kwitansiPrint{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        display:block!important;
+    }
+
+    .kwitansi{
+        border:0;
+        max-width:none;
+        padding:25px;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:800px){
 
@@ -308,128 +492,22 @@ tbody tr:hover{
         width:100%;
     }
 
-}
-
-/* =========================
-   CETAK PDF
-========================= */
-
-@media print{
-
-    body{
-        background:white;
-        color:black;
+    .kwitansi{
+        padding:18px;
     }
 
-    header,
-    #loginBox,
-    #dashboard,
-    .print-hide{
-        display:none!important;
+    .kwitansi-row{
+        grid-template-columns:120px 15px 1fr;
+        font-size:12px;
     }
 
-    .print-report{
-        display:block!important;
-    }
-
-    .print-report{
-        padding:20px;
-    }
-
-    .print-header{
-        display:flex;
-        align-items:center;
-        gap:18px;
-        border-bottom:3px solid #07366f;
-        padding-bottom:15px;
-        margin-bottom:20px;
-    }
-
-    .print-logo{
-        width:75px;
-        height:75px;
-        object-fit:contain;
-    }
-
-    .print-header h1{
-        margin:0;
-        font-size:22px;
-    }
-
-    .print-header p{
-        margin:3px 0;
-        font-size:13px;
-    }
-
-    .report-title{
-        text-align:center;
-        margin:20px 0;
-    }
-
-    .report-title h2{
-        margin:0;
-        font-size:20px;
-    }
-
-    .report-title p{
-        margin:5px 0;
-        font-size:13px;
-    }
-
-    .report-summary{
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:10px;
-        margin-bottom:20px;
-    }
-
-    .report-summary div{
-        border:1px solid #ddd;
-        padding:12px;
-        text-align:center;
-    }
-
-    .report-summary strong{
-        display:block;
-        margin-top:5px;
-    }
-
-    .print-report table{
-        width:100%;
-        border-collapse:collapse;
-        font-size:10px;
-    }
-
-    .print-report th,
-    .print-report td{
-        border:1px solid #bbb;
-        padding:7px;
-    }
-
-    .print-report th{
-        background:#eee;
-    }
-
-    .signature{
-        margin-top:45px;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        text-align:center;
-        gap:80px;
-    }
-
-    .signature p{
-        margin-bottom:65px;
-    }
-
-    .signature strong{
-        text-decoration:underline;
+    .kwitansi-footer{
+        gap:15px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
@@ -528,42 +606,31 @@ Keluar
 
 <small>Saldo Kas</small>
 
-<h2 id="saldo">
-Rp 0
-</h2>
+<h2 id="saldo">Rp 0</h2>
 
 </div>
-
 
 <div class="box">
 
 <small>Total Pemasukan</small>
 
-<h2 id="totalMasuk">
-Rp 0
-</h2>
+<h2 id="totalMasuk">Rp 0</h2>
 
 </div>
-
 
 <div class="box">
 
 <small>Total Pengeluaran</small>
 
-<h2 id="totalKeluar">
-Rp 0
-</h2>
+<h2 id="totalKeluar">Rp 0</h2>
 
 </div>
-
 
 <div class="box">
 
 <small>Jumlah Transaksi</small>
 
-<h2 id="jumlahTransaksi">
-0
-</h2>
+<h2 id="jumlahTransaksi">0</h2>
 
 </div>
 
@@ -576,12 +643,14 @@ Rp 0
 
 <h2>➕ Input Keuangan</h2>
 
+
 <label>Tanggal</label>
 
 <input
 type="date"
 id="tanggal"
 >
+
 
 <label>Jenis Transaksi</label>
 
@@ -641,6 +710,24 @@ RT 04
 </select>
 
 
+<label>👤 Nama Pembayar</label>
+
+<input
+type="text"
+id="namaPembayar"
+placeholder="Contoh: Budi Santoso"
+>
+
+
+<label>📱 No. WhatsApp</label>
+
+<input
+type="tel"
+id="noWhatsapp"
+placeholder="Contoh: 081234567890"
+>
+
+
 <label>Nominal</label>
 
 <input
@@ -680,7 +767,7 @@ onclick="simpanTransaksi()"
 </div>
 
 
-<!-- ================= FILTER ================= -->
+<!-- ================= FILTER PDF ================= -->
 
 <div class="card">
 
@@ -691,6 +778,7 @@ Pilih periode laporan yang ingin dicetak.
 </p>
 
 <div class="filter-box">
+
 
 <div>
 
@@ -765,9 +853,11 @@ onclick="cetakPDF()"
 <th>Jenis</th>
 <th>Kategori</th>
 <th>RT</th>
+<th>Pembayar</th>
 <th>Nominal</th>
 <th>Metode</th>
 <th>Keterangan</th>
+<th>Aksi</th>
 
 </tr>
 
@@ -789,22 +879,43 @@ onclick="cetakPDF()"
 </div>
 
 
-<!-- ================= LAPORAN CETAK ================= -->
+<!-- ================= MODAL KWITANSI ================= -->
 
-<div class="print-report" id="printReport">
+<div
+id="kwitansiModal"
+class="modal hidden"
+>
 
-<div class="print-header">
+<div class="modal-content">
+
+<div class="modal-head">
+
+<h2>🧾 Kwitansi Digital</h2>
+
+<button
+class="close"
+onclick="tutupKwitansi()"
+>
+✕
+</button>
+
+</div>
+
+
+<div id="kwitansiPrint">
+
+<div class="kwitansi">
+
+<div class="kwitansi-header">
 
 <img
 src="logo-rw01-removebg-preview.png"
-class="print-logo"
+class="kwitansi-logo"
 >
 
 <div>
 
-<h1>
-RW 01 PONDOK SUKATANI PERMAI
-</h1>
+<h2>RW 01 PONDOK SUKATANI PERMAI</h2>
 
 <p>
 Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
@@ -815,106 +926,118 @@ Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
 </div>
 
 
-<div class="report-title">
+<div class="kwitansi-title">
 
-<h2>
-REKAPITULASI KEUANGAN RW 01
-</h2>
+<h1>KWITANSI PEMBAYARAN</h1>
 
-<p id="periodeCetak">
-Periode Semua Transaksi
+<p id="kwitansiNomor">
+No. Kwitansi: -
 </p>
 
 </div>
 
 
-<div class="report-summary">
+<div class="kwitansi-info">
 
-<div>
+<div class="kwitansi-row">
 
-Total Pemasukan
+<strong>Telah diterima dari</strong>
+<span>:</span>
+<span id="kwitansiPembayar">-</span>
 
-<strong id="printMasuk">
+</div>
+
+
+<div class="kwitansi-row">
+
+<strong>No. WhatsApp</strong>
+<span>:</span>
+<span id="kwitansiWhatsapp">-</span>
+
+</div>
+
+
+<div class="kwitansi-row">
+
+<strong>Untuk pembayaran</strong>
+<span>:</span>
+<span id="kwitansiKategori">-</span>
+
+</div>
+
+
+<div class="kwitansi-row">
+
+<strong>RT</strong>
+<span>:</span>
+<span id="kwitansiRT">Umum</span>
+
+</div>
+
+
+<div class="kwitansi-row">
+
+<strong>Tanggal</strong>
+<span>:</span>
+<span id="kwitansiTanggal">-</span>
+
+</div>
+
+
+<div class="kwitansi-row">
+
+<strong>Metode</strong>
+<span>:</span>
+<span id="kwitansiMetode">-</span>
+
+</div>
+
+
+</div>
+
+
+<div class="nominal-box">
+
+<small>JUMLAH PEMBAYARAN</small>
+
+<strong id="kwitansiNominal">
 Rp 0
 </strong>
 
 </div>
 
 
-<div>
+<div class="terbilang">
 
-Total Pengeluaran
+<strong>Terbilang:</strong>
 
-<strong id="printKeluar">
-Rp 0
-</strong>
-
-</div>
-
-
-<div>
-
-Saldo
-
-<strong id="printSaldo">
-Rp 0
-</strong>
-
-</div>
+<span id="kwitansiTerbilang">
+-
+</span>
 
 </div>
 
 
-<table>
+<div class="kwitansi-info">
 
-<thead>
+<div class="kwitansi-row">
 
-<tr>
+<strong>Keterangan</strong>
+<span>:</span>
+<span id="kwitansiKeterangan">-</span>
 
-<th>No</th>
-<th>Tanggal</th>
-<th>Jenis</th>
-<th>Kategori</th>
-<th>RT</th>
-<th>Keterangan</th>
-<th>Metode</th>
-<th>Nominal</th>
-
-</tr>
-
-</thead>
-
-<tbody id="printTable">
-
-</tbody>
-
-</table>
-
-
-<div class="signature">
-
-<div>
-
-Mengetahui,
-
-<p></p>
-
-<strong>
-Muhammad Irfani Abdur Rahman, S.Pd., Gr.
-</strong>
-
-<br>
-
-Ketua RW 01
+</div>
 
 </div>
 
 
+<div class="kwitansi-footer">
+
 <div>
 
-Bendahara,
+Penerima,
 
-<p></p>
+<div class="ttd"></div>
 
 <strong>
 Asri Ajrin Karima
@@ -926,8 +1049,65 @@ Bendahara RW 01
 
 </div>
 
+
+<div>
+
+Mengetahui,
+
+<div class="ttd"></div>
+
+<strong>
+Muhammad Irfani Abdur Rahman, S.Pd., Gr.
+</strong>
+
+<br>
+
+Ketua RW 01
+
 </div>
 
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+style="
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:15px;
+flex-wrap:wrap;
+"
+>
+
+<button
+class="print"
+onclick="printKwitansi()"
+>
+🖨️ CETAK KWITANSI
+</button>
+
+<button
+class="whatsapp"
+onclick="kirimWhatsApp()"
+>
+📱 KIRIM WHATSAPP
+</button>
+
+<button
+class="secondary"
+onclick="tutupKwitansi()"
+>
+TUTUP
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -951,9 +1131,13 @@ SUPABASE_KEY
 );
 
 
-/* DATA */
+/* =========================
+   DATA
+========================= */
 
 let semuaTransaksi = [];
+
+let transaksiKwitansi = null;
 
 
 /* =========================
@@ -970,6 +1154,112 @@ currency:"IDR",
 maximumFractionDigits:0
 }
 ).format(Number(angka)||0);
+
+}
+
+
+/* =========================
+   TERBILANG
+========================= */
+
+function terbilang(n){
+
+n = Math.floor(Number(n)||0);
+
+const angka = [
+"",
+"satu",
+"dua",
+"tiga",
+"empat",
+"lima",
+"enam",
+"tujuh",
+"delapan",
+"sembilan",
+"sepuluh",
+"sebelas"
+];
+
+if(n < 12){
+
+return angka[n];
+
+}
+
+if(n < 20){
+
+return terbilang(n-10)+" belas";
+
+}
+
+if(n < 100){
+
+return terbilang(Math.floor(n/10))+
+" puluh "+
+terbilang(n%10);
+
+}
+
+if(n < 200){
+
+return "seratus "+terbilang(n-100);
+
+}
+
+if(n < 1000){
+
+return terbilang(Math.floor(n/100))+
+" ratus "+
+terbilang(n%100);
+
+}
+
+if(n < 2000){
+
+return "seribu "+terbilang(n-1000);
+
+}
+
+if(n < 1000000){
+
+return terbilang(Math.floor(n/1000))+
+" ribu "+
+terbilang(n%1000);
+
+}
+
+if(n < 1000000000){
+
+return terbilang(Math.floor(n/1000000))+
+" juta "+
+terbilang(n%1000000);
+
+}
+
+if(n < 1000000000000){
+
+return terbilang(Math.floor(n/1000000000))+
+" miliar "+
+terbilang(n%1000000000);
+
+}
+
+return "nominal terlalu besar";
+
+}
+
+
+function terbilangRupiah(n){
+
+let hasil =
+terbilang(n)
+.replace(/\s+/g," ")
+.trim();
+
+return hasil.charAt(0).toUpperCase()+
+hasil.slice(1)+
+" rupiah";
 
 }
 
@@ -1064,10 +1354,12 @@ console.log(error);
 document.getElementById("tabelTransaksi").innerHTML =
 `
 <tr>
-<td colspan="7">
+<td colspan="9">
+
 <div class="error">
 Gagal mengambil data keuangan.
 </div>
+
 </td>
 </tr>
 `;
@@ -1142,7 +1434,6 @@ function tampilkanTransaksi(){
 const tbody =
 document.getElementById("tabelTransaksi");
 
-
 tbody.innerHTML = "";
 
 
@@ -1151,7 +1442,7 @@ if(semuaTransaksi.length === 0){
 tbody.innerHTML =
 `
 <tr>
-<td colspan="7">
+<td colspan="9">
 Belum ada transaksi.
 </td>
 </tr>
@@ -1162,7 +1453,7 @@ return;
 }
 
 
-semuaTransaksi.forEach(function(item){
+semuaTransaksi.forEach(function(item,index){
 
 const row =
 document.createElement("tr");
@@ -1178,11 +1469,28 @@ row.innerHTML = `
 
 <td>${item.rt || "Umum"}</td>
 
+<td>${item.nama_pembayar || "-"}</td>
+
 <td>${rupiah(item.nominal)}</td>
 
 <td>${item.metode || "-"}</td>
 
 <td>${item.keterangan || "-"}</td>
+
+<td>
+
+<div class="action-buttons">
+
+<button
+class="receipt"
+onclick="bukaKwitansi(${index})"
+>
+🧾 Kwitansi
+</button>
+
+</div>
+
+</td>
 
 `;
 
@@ -1212,6 +1520,12 @@ document.getElementById("kategori").value;
 const rt =
 document.getElementById("rt").value;
 
+const namaPembayar =
+document.getElementById("namaPembayar").value.trim();
+
+const noWhatsapp =
+document.getElementById("noWhatsapp").value.trim();
+
 const nominal =
 Number(document.getElementById("nominal").value);
 
@@ -1225,6 +1539,15 @@ document.getElementById("keterangan").value.trim();
 if(!tanggal){
 
 alert("Tanggal belum diisi.");
+
+return;
+
+}
+
+
+if(!namaPembayar){
+
+alert("Nama pembayar wajib diisi.");
 
 return;
 
@@ -1249,6 +1572,8 @@ tanggal: tanggal,
 jenis: jenis,
 kategori: kategori,
 rt: rt || null,
+nama_pembayar: namaPembayar,
+no_whatsapp: noWhatsapp || null,
 nominal: nominal,
 metode: metode,
 keterangan: keterangan || null
@@ -1272,12 +1597,13 @@ document.getElementById("saveMessage").innerHTML =
 '<div class="success">✅ Transaksi berhasil disimpan.</div>';
 
 
+document.getElementById("namaPembayar").value = "";
+document.getElementById("noWhatsapp").value = "";
 document.getElementById("nominal").value = "";
-
 document.getElementById("keterangan").value = "";
 
 
-loadData();
+await loadData();
 
 }
 
@@ -1291,14 +1617,11 @@ function isiTahun(){
 const select =
 document.getElementById("filterTahun");
 
-
 const tahunSekarang =
 new Date().getFullYear();
 
-
 const tahunSet =
 new Set();
-
 
 tahunSet.add(tahunSekarang);
 
@@ -1487,7 +1810,6 @@ document.getElementById("periodeCetak").innerText =
 
 
 let masuk = 0;
-
 let keluar = 0;
 
 
@@ -1508,75 +1830,547 @@ keluar += Number(item.nominal)||0;
 });
 
 
-document.getElementById("printMasuk").innerText =
-rupiah(masuk);
+/*
+Untuk kompatibilitas dengan cetak PDF
+kita buat laporan sementara.
+*/
 
-document.getElementById("printKeluar").innerText =
-rupiah(keluar);
+let html = `
+<div style="font-family:Arial;padding:25px;">
 
-document.getElementById("printSaldo").innerText =
-rupiah(masuk-keluar);
+<div style="display:flex;align-items:center;gap:15px;border-bottom:3px solid #07366f;padding-bottom:15px;">
 
+<img src="logo-rw01-removebg-preview.png"
+style="width:70px;height:70px;object-fit:contain;">
 
-/* TABEL PDF */
+<div>
 
-const table =
-document.getElementById("printTable");
+<h2 style="margin:0;color:#07366f;">
+RW 01 PONDOK SUKATANI PERMAI
+</h2>
 
+<div>
+Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
+</div>
 
-table.innerHTML = "";
+</div>
 
+</div>
 
-if(data.length === 0){
+<h2 style="text-align:center;margin-top:25px;">
+REKAPITULASI KEUANGAN RW 01
+</h2>
 
-table.innerHTML =
-`
+<p style="text-align:center;">
+Periode: ${periode}
+</p>
+
+<table style="width:100%;border-collapse:collapse;margin-top:20px;">
+
 <tr>
-<td colspan="8" style="text-align:center;">
-Tidak ada transaksi pada periode ini.
+<td style="border:1px solid #bbb;padding:10px;">
+<b>Total Pemasukan</b>
+</td>
+
+<td style="border:1px solid #bbb;padding:10px;">
+${rupiah(masuk)}
+</td>
+
+<td style="border:1px solid #bbb;padding:10px;">
+<b>Total Pengeluaran</b>
+</td>
+
+<td style="border:1px solid #bbb;padding:10px;">
+${rupiah(keluar)}
 </td>
 </tr>
+
+<tr>
+
+<td style="border:1px solid #bbb;padding:10px;">
+<b>Saldo</b>
+</td>
+
+<td colspan="3" style="border:1px solid #bbb;padding:10px;">
+${rupiah(masuk-keluar)}
+</td>
+
+</tr>
+
+</table>
+
+<table style="width:100%;border-collapse:collapse;margin-top:20px;font-size:11px;">
+
+<thead>
+
+<tr>
+
+<th style="border:1px solid #bbb;padding:7px;">No</th>
+<th style="border:1px solid #bbb;padding:7px;">Tanggal</th>
+<th style="border:1px solid #bbb;padding:7px;">Jenis</th>
+<th style="border:1px solid #bbb;padding:7px;">Kategori</th>
+<th style="border:1px solid #bbb;padding:7px;">RT</th>
+<th style="border:1px solid #bbb;padding:7px;">Pembayar</th>
+<th style="border:1px solid #bbb;padding:7px;">Nominal</th>
+<th style="border:1px solid #bbb;padding:7px;">Metode</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+${data.map((item,index)=>`
+
+<tr>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${index+1}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.tanggal || "-"}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.jenis || "-"}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.kategori || "-"}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.rt || "Umum"}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.nama_pembayar || "-"}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${rupiah(item.nominal)}
+</td>
+
+<td style="border:1px solid #bbb;padding:7px;">
+${item.metode || "-"}
+</td>
+
+</tr>
+
+`).join("")}
+
+</tbody>
+
+</table>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;text-align:center;margin-top:60px;">
+
+<div>
+
+Mengetahui,
+
+<br><br><br><br>
+
+<b>
+Muhammad Irfani Abdur Rahman, S.Pd., Gr.
+</b>
+
+<br>
+
+Ketua RW 01
+
+</div>
+
+<div>
+
+Bendahara,
+
+<br><br><br><br>
+
+<b>
+Asri Ajrin Karima
+</b>
+
+<br>
+
+Bendahara RW 01
+
+</div>
+
+</div>
+
+</div>
 `;
 
-}else{
 
-data.forEach(function(item,index){
-
-const row =
-document.createElement("tr");
+const win =
+window.open("","_blank");
 
 
-row.innerHTML = `
+if(!win){
 
-<td>${index+1}</td>
+alert("Pop-up diblokir browser. Izinkan pop-up untuk mencetak PDF.");
 
-<td>${item.tanggal || "-"}</td>
-
-<td>${item.jenis || "-"}</td>
-
-<td>${item.kategori || "-"}</td>
-
-<td>${item.rt || "Umum"}</td>
-
-<td>${item.keterangan || "-"}</td>
-
-<td>${item.metode || "-"}</td>
-
-<td>${rupiah(item.nominal)}</td>
-
-`;
-
-
-table.appendChild(row);
-
-});
+return;
 
 }
 
 
-/* BUKA PRINT */
+win.document.write(`
+<html>
+<head>
+<title>Rekap Keuangan RW 01</title>
+</head>
 
+<body>
+
+${html}
+
+<script>
+window.onload=function(){
 window.print();
+}
+<\/script>
+
+</body>
+
+</html>
+`);
+
+win.document.close();
+
+}
+
+
+/* =========================
+   KWITANSI
+========================= */
+
+function bukaKwitansi(index){
+
+transaksiKwitansi =
+semuaTransaksi[index];
+
+
+if(!transaksiKwitansi){
+
+return;
+
+}
+
+
+const item =
+transaksiKwitansi;
+
+
+/*
+Nomor kwitansi dibuat berdasarkan ID
+jika tersedia.
+*/
+
+let nomor =
+item.id ||
+(index+1);
+
+
+nomor =
+String(nomor)
+.substring(0,12);
+
+
+document.getElementById("kwitansiNomor").innerText =
+"No. Kwitansi: RW01-"+nomor;
+
+
+document.getElementById("kwitansiPembayar").innerText =
+item.nama_pembayar || "-";
+
+
+document.getElementById("kwitansiWhatsapp").innerText =
+item.no_whatsapp || "-";
+
+
+document.getElementById("kwitansiKategori").innerText =
+item.kategori || "-";
+
+
+document.getElementById("kwitansiRT").innerText =
+item.rt || "Umum";
+
+
+document.getElementById("kwitansiTanggal").innerText =
+item.tanggal || "-";
+
+
+document.getElementById("kwitansiMetode").innerText =
+item.metode || "-";
+
+
+document.getElementById("kwitansiNominal").innerText =
+rupiah(item.nominal);
+
+
+document.getElementById("kwitansiTerbilang").innerText =
+terbilangRupiah(item.nominal);
+
+
+document.getElementById("kwitansiKeterangan").innerText =
+item.keterangan || "-";
+
+
+document
+.getElementById("kwitansiModal")
+.classList.remove("hidden");
+
+}
+
+
+/* =========================
+   TUTUP KWITANSI
+========================= */
+
+function tutupKwitansi(){
+
+document
+.getElementById("kwitansiModal")
+.classList.add("hidden");
+
+}
+
+
+/* =========================
+   CETAK KWITANSI
+========================= */
+
+function printKwitansi(){
+
+const isi =
+document.getElementById("kwitansiPrint").innerHTML;
+
+
+const win =
+window.open("","_blank");
+
+
+if(!win){
+
+alert("Pop-up diblokir browser. Izinkan pop-up untuk mencetak kwitansi.");
+
+return;
+
+}
+
+
+win.document.write(`
+<html>
+
+<head>
+
+<title>Kwitansi RW 01</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:white;
+margin:0;
+padding:20px;
+}
+
+.kwitansi{
+border:1px solid #ccc;
+padding:30px;
+max-width:650px;
+margin:auto;
+}
+
+.kwitansi-header{
+display:flex;
+align-items:center;
+gap:15px;
+border-bottom:3px solid #07366f;
+padding-bottom:15px;
+}
+
+.kwitansi-logo{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+.kwitansi-header h2{
+margin:0;
+color:#07366f;
+}
+
+.kwitansi-header p{
+font-size:12px;
+}
+
+.kwitansi-title{
+text-align:center;
+margin:20px 0;
+}
+
+.kwitansi-title h1{
+color:#07366f;
+}
+
+.kwitansi-row{
+display:grid;
+grid-template-columns:170px 20px 1fr;
+padding:6px 0;
+font-size:14px;
+}
+
+.nominal-box{
+margin:20px 0;
+padding:15px;
+border:2px solid #07366f;
+text-align:center;
+}
+
+.nominal-box strong{
+display:block;
+font-size:25px;
+color:#07366f;
+}
+
+.terbilang{
+background:#f4f7fb;
+padding:12px;
+margin-bottom:20px;
+}
+
+.kwitansi-footer{
+display:grid;
+grid-template-columns:1fr 1fr;
+text-align:center;
+gap:40px;
+margin-top:35px;
+}
+
+.ttd{
+height:75px;
+}
+
+.kwitansi-footer strong{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+${isi}
+
+<script>
+window.onload=function(){
+window.print();
+}
+<\/script>
+
+</body>
+
+</html>
+`);
+
+win.document.close();
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function kirimWhatsApp(){
+
+if(!transaksiKwitansi){
+
+return;
+
+}
+
+
+let nomor =
+transaksiKwitansi.no_whatsapp || "";
+
+
+nomor =
+nomor.replace(/\D/g,"");
+
+
+if(nomor.startsWith("0")){
+
+nomor =
+"62"+nomor.substring(1);
+
+}
+
+
+if(!nomor){
+
+alert(
+"No. WhatsApp pembayar belum tersedia."
+);
+
+return;
+
+}
+
+
+let nomorKwitansi =
+transaksiKwitansi.id ||
+"1";
+
+
+let pesan =
+
+`*KWITANSI PEMBAYARAN RW 01*
+
+RW 01 Pondok Sukatani Permai
+
+No. Kwitansi: RW01-${nomorKwitansi}
+
+Telah diterima dari:
+${transaksiKwitansi.nama_pembayar || "-"}
+
+Untuk pembayaran:
+${transaksiKwitansi.kategori || "-"}
+
+RT:
+${transaksiKwitansi.rt || "Umum"}
+
+Tanggal:
+${transaksiKwitansi.tanggal || "-"}
+
+Nominal:
+${rupiah(transaksiKwitansi.nominal)}
+
+Metode:
+${transaksiKwitansi.metode || "-"}
+
+Keterangan:
+${transaksiKwitansi.keterangan || "-"}
+
+Terima kasih.
+
+Bendahara RW 01
+Asri Ajrin Karima`;
+
+
+const url =
+"https://wa.me/"+
+nomor+
+"?text="+
+encodeURIComponent(pesan);
+
+
+window.open(url,"_blank");
 
 }
 
