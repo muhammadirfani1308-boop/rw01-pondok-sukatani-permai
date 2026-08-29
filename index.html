@@ -12,6 +12,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
@@ -25,36 +29,36 @@ header{
     background:linear-gradient(135deg,#07366f,#16833b);
     color:white;
     text-align:center;
-    padding:40px 20px 45px;
+    padding:35px 20px 45px;
 }
 
 .logo{
-    width:110px;
-    height:110px;
+    width:105px;
+    height:105px;
     object-fit:contain;
     background:white;
     border-radius:50%;
-    padding:8px;
-    box-shadow:0 8px 25px rgba(0,0,0,.20);
+    padding:7px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
 header h1{
-    margin:18px 0 6px;
+    margin:15px 0 7px;
     font-size:30px;
 }
 
 header p{
     margin:0;
-    font-size:15px;
-    opacity:.9;
+    font-size:16px;
+    opacity:.92;
 }
 
 /* ================= CONTAINER ================= */
 
 .container{
-    max-width:1000px;
-    margin:-25px auto 0;
-    padding:0 15px 40px;
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 40px;
 }
 
 /* ================= WELCOME ================= */
@@ -62,115 +66,185 @@ header p{
 .welcome{
     background:white;
     border-radius:20px;
-    padding:25px;
+    padding:30px;
     text-align:center;
-    box-shadow:0 6px 22px rgba(0,0,0,.08);
-    margin-bottom:25px;
+    margin-top:-15px;
+    position:relative;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .welcome h2{
-    margin:0 0 8px;
+    margin:0 0 10px;
     color:#07366f;
+    font-size:25px;
 }
 
 .welcome p{
-    margin:0;
+    margin:0 auto;
+    max-width:750px;
+    line-height:1.7;
     color:#64748b;
-    line-height:1.6;
 }
 
-/* ================= LAYANAN ================= */
+/* ================= MENU ================= */
 
-.judul-layanan{
+.menu-title{
     text-align:center;
-    margin:25px 0 15px;
+    margin:35px 0 20px;
 }
 
-.judul-layanan h2{
+.menu-title h2{
+    margin:0;
     color:#07366f;
-    margin-bottom:5px;
 }
 
-.judul-layanan p{
+.menu-title p{
     color:#718096;
-    margin-top:0;
+    margin-top:7px;
 }
 
-/* ================= TOMBOL ================= */
-
-.layanan{
+.menu{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
 
-.layanan-card{
+.menu-card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
     text-decoration:none;
-    color:white;
-    padding:28px 25px;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    box-shadow:0 7px 22px rgba(0,0,0,.12);
+    color:#17324d;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
     transition:.25s;
+    border:1px solid #edf1f5;
 }
 
-.layanan-card:hover{
+.menu-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(0,0,0,.18);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
 
-.keuangan{
-    background:linear-gradient(135deg,#07366f,#0d5fa8);
-}
-
-.surat{
-    background:linear-gradient(135deg,#16833b,#24a85a);
-}
-
-.icon{
-    width:65px;
-    height:65px;
-    min-width:65px;
-    border-radius:16px;
-    background:rgba(255,255,255,.18);
+.menu-icon{
+    width:60px;
+    height:60px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:34px;
+    border-radius:15px;
+    font-size:30px;
+    margin-bottom:18px;
 }
 
-.layanan-card h3{
-    margin:0 0 7px;
-    font-size:19px;
+.keuangan .menu-icon{
+    background:#e8f7ed;
 }
 
-.layanan-card p{
-    margin:0;
-    font-size:13px;
-    line-height:1.5;
-    opacity:.9;
+.surat .menu-icon{
+    background:#eaf1fb;
 }
 
-/* ================= INFO ================= */
-
-.info{
-    margin-top:25px;
-    background:white;
-    border-radius:20px;
-    padding:23px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
-}
-
-.info h3{
-    margin-top:0;
+.menu-card h3{
+    margin:0 0 8px;
+    font-size:20px;
     color:#07366f;
 }
 
-.info p{
-    margin:7px 0;
-    color:#64748b;
+.menu-card p{
+    margin:0;
+    line-height:1.6;
+    color:#718096;
+    font-size:14px;
+}
+
+.menu-button{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 16px;
+    border-radius:9px;
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.keuangan .menu-button{
+    background:#16833b;
+}
+
+.surat .menu-button{
+    background:#07366f;
+}
+
+/* ================= PROFIL ================= */
+
+.section{
+    background:white;
+    margin-top:25px;
+    padding:28px;
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.section h2{
+    text-align:center;
+    color:#07366f;
+    margin-top:0;
+    margin-bottom:22px;
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.profile-item{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:10px;
+}
+
+.profile-item small{
+    display:block;
+    color:#718096;
+    margin-bottom:5px;
+}
+
+.profile-item strong{
+    color:#17324d;
+}
+
+/* ================= STAFF ================= */
+
+.staff{
+    margin-top:18px;
+}
+
+.staff ol{
+    margin:0;
+    padding-left:25px;
+    line-height:2;
+}
+
+/* ================= SOSMED ================= */
+
+.social{
+    text-align:center;
+}
+
+.social p{
+    color:#718096;
+}
+
+.instagram{
+    display:inline-block;
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+    color:white;
+    padding:12px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:5px;
 }
 
 /* ================= FOOTER ================= */
@@ -180,15 +254,17 @@ footer{
     color:white;
     text-align:center;
     padding:25px 15px;
-    line-height:1.7;
+    margin-top:35px;
 }
 
 footer strong{
     font-size:16px;
 }
 
-footer small{
-    opacity:.8;
+footer p{
+    margin:7px 0 0;
+    font-size:13px;
+    opacity:.85;
 }
 
 /* ================= MOBILE ================= */
@@ -199,26 +275,37 @@ footer small{
         padding:30px 15px 40px;
     }
 
+    header h1{
+        font-size:24px;
+    }
+
+    header p{
+        font-size:14px;
+    }
+
     .logo{
         width:90px;
         height:90px;
     }
 
-    header h1{
-        font-size:24px;
+    .welcome{
+        padding:24px 18px;
     }
 
-    .container{
-        padding-left:12px;
-        padding-right:12px;
+    .welcome h2{
+        font-size:21px;
     }
 
-    .layanan{
+    .menu{
         grid-template-columns:1fr;
     }
 
-    .layanan-card{
-        padding:23px 20px;
+    .profile-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:22px 18px;
     }
 
 }
@@ -226,128 +313,220 @@ footer small{
 </style>
 </head>
 
+
 <body>
 
 <!-- ================= HEADER ================= -->
 
 <header>
 
-<img
-src="logo-rw01-removebg-preview.png"
-class="logo"
-alt="Logo RW 01"
->
+    <img
+        src="logo-rw01-removebg-preview.png"
+        class="logo"
+        alt="Logo RW 01"
+    >
 
-<h1>RW 01 PONDOK SUKATANI PERMAI</h1>
+    <h1>RW 01 Pondok Sukatani Permai</h1>
 
-<p>
-Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
-</p>
+    <p>
+        Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
+    </p>
 
 </header>
 
 
-<!-- ================= ISI ================= -->
-
 <div class="container">
+
+<!-- ================= WELCOME ================= -->
 
 <div class="welcome">
 
-<h2>Selamat Datang 👋</h2>
+    <h2>Selamat Datang di Website RW 01</h2>
 
-<p>
-Website resmi RW 01 Pondok Sukatani Permai.
-<br>
-Silakan pilih layanan yang ingin digunakan.
-</p>
-
-</div>
-
-
-<!-- ================= LAYANAN ================= -->
-
-<div class="judul-layanan">
-
-<h2>Layanan Warga</h2>
-
-<p>Pilih layanan yang tersedia untuk warga RW 01</p>
+    <p>
+        Website resmi RW 01 Pondok Sukatani Permai sebagai sarana
+        informasi, pelayanan administrasi, transparansi keuangan,
+        dan kemudahan pelayanan bagi seluruh warga.
+    </p>
 
 </div>
 
 
-<div class="layanan">
+<!-- ================= MENU UTAMA ================= -->
 
+<div class="menu-title">
 
-<!-- KEUANGAN -->
+    <h2>Pelayanan Warga</h2>
 
-<a
-href="transparansi-keuangan.html"
-class="layanan-card keuangan"
->
-
-<div class="icon">
-💰
-</div>
-
-<div>
-
-<h3>Transparansi Keuangan</h3>
-
-<p>
-Lihat pemasukan, pengeluaran,
-dan saldo keuangan RW 01 secara terbuka.
-</p>
-
-</div>
-
-</a>
-
-
-<!-- SURAT -->
-
-<a
-href="surat-pengantar.html"
-class="layanan-card surat"
->
-
-<div class="icon">
-📄
-</div>
-
-<div>
-
-<h3>Surat Pengantar Online</h3>
-
-<p>
-Buat surat pengantar secara online,
-kemudian cetak dan minta tanda tangan pengurus.
-</p>
-
-</div>
-
-</a>
+    <p>
+        Silakan pilih layanan yang ingin digunakan
+    </p>
 
 </div>
 
 
-<!-- ================= INFORMASI ================= -->
+<div class="menu">
 
-<div class="info">
+    <!-- TRANSPARANSI -->
 
-<h3>📢 Informasi</h3>
+    <a
+        href="keuangan.html"
+        class="menu-card keuangan"
+    >
 
-<p>
-Website ini merupakan media pelayanan dan informasi
-warga RW 01 Pondok Sukatani Permai.
-</p>
+        <div class="menu-icon">
+            💰
+        </div>
 
-<p>
-Untuk pengesahan dokumen, warga tetap perlu membawa
-hasil cetak surat kepada pengurus RT/RW untuk tanda tangan
-dan stempel.
-</p>
+        <h3>
+            Transparansi Keuangan
+        </h3>
+
+        <p>
+            Lihat informasi pemasukan, pengeluaran,
+            saldo kas, serta riwayat transaksi
+            keuangan RW 01 secara transparan.
+        </p>
+
+        <span class="menu-button">
+            Lihat Keuangan →
+        </span>
+
+    </a>
+
+
+    <!-- SURAT PENGANTAR -->
+
+    <a
+        href="surat-pengantar.html"
+        class="menu-card surat"
+    >
+
+        <div class="menu-icon">
+            📄
+        </div>
+
+        <h3>
+            Surat Pengantar Online
+        </h3>
+
+        <p>
+            Buat surat pengantar secara online.
+            Isi data sendiri, kemudian cetak surat
+            dan bawa ke rumah RT/RW untuk tanda tangan
+            dan stempel.
+        </p>
+
+        <span class="menu-button">
+            Buat Surat →
+        </span>
+
+    </a>
 
 </div>
+
+
+<!-- ================= PROFIL PENGURUS ================= -->
+
+<div class="section">
+
+    <h2>👥 Pengurus RW 01</h2>
+
+    <div class="profile-grid">
+
+        <div class="profile-item">
+
+            <small>Ketua RW 01</small>
+
+            <strong>
+                Muhammad Irfani Abdur Rahman, S.Pd., Gr.
+            </strong>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <small>Ketua TP PKK RW 01</small>
+
+            <strong>
+                Suci Cahyati Alkurniasih, S.Pd.
+            </strong>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <small>Sekretaris</small>
+
+            <strong>
+                Rahmad Pramudji
+            </strong>
+
+        </div>
+
+
+        <div class="profile-item">
+
+            <small>Bendahara</small>
+
+            <strong>
+                Asri Ajrin Karima
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="staff">
+
+        <div class="profile-item">
+
+            <small>Staff Khusus RW 01</small>
+
+            <ol>
+
+                <li>M. Raynata Purbaya</li>
+
+                <li>Akmal Khoirudin</li>
+
+                <li>Galih Ramadhan</li>
+
+                <li>Dea Amalia</li>
+
+                <li>Rofie Hermansyah</li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MEDIA SOSIAL ================= -->
+
+<div class="section social">
+
+    <h2>📱 Media Sosial</h2>
+
+    <p>
+        Ikuti informasi dan kegiatan terbaru RW 01
+    </p>
+
+    <a
+        href="https://www.instagram.com/seputarrw01/"
+        target="_blank"
+        class="instagram"
+    >
+        Instagram / TikTok @seputarrw01
+    </a>
+
+</div>
+
 
 </div>
 
@@ -356,19 +535,18 @@ dan stempel.
 
 <footer>
 
-<strong>
-RW 01 Pondok Sukatani Permai
-</strong>
+    <strong>
+        RW 01 Pondok Sukatani Permai
+    </strong>
 
-<br>
+    <p>
+        Bersama Membangun Lingkungan yang Aman,
+        Nyaman, Transparan dan Harmonis
+    </p>
 
-Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
-
-<br>
-
-<small>
-Instagram & TikTok: @seputarrw01
-</small>
+    <p>
+        © 2026 RW 01 Pondok Sukatani Permai
+    </p>
 
 </footer>
 
