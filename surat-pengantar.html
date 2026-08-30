@@ -21,7 +21,7 @@ body{
     color:#17324d;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER WEBSITE ================= */
 
 header{
     background:linear-gradient(135deg,#07366f,#16833b);
@@ -203,9 +203,10 @@ button{
     padding:14px;
     border-radius:9px;
     margin-top:15px;
+    line-height:1.6;
 }
 
-/* ================= SURAT ================= */
+/* ================= PREVIEW ================= */
 
 #suratPreview{
     background:#eee;
@@ -218,54 +219,63 @@ button{
     width:210mm;
     min-height:297mm;
     margin:auto;
-    padding:18mm 18mm 20mm 18mm;
+    padding:15mm 17mm 18mm 17mm;
     color:#111;
     box-shadow:0 3px 15px rgba(0,0,0,.12);
 }
 
+/* ================= KOP SURAT ================= */
+
 .kop{
-    display:flex;
+    display:grid;
+    grid-template-columns:80px 1fr 80px;
     align-items:center;
-    gap:18px;
+    gap:15px;
     border-bottom:3px solid #111;
-    padding-bottom:10px;
+    padding-bottom:11px;
 }
 
-.kop img{
-    width:75px;
-    height:75px;
+.kop-logo{
+    width:72px;
+    height:72px;
     object-fit:contain;
 }
 
 .kop-text{
     text-align:center;
-    flex:1;
 }
 
 .kop-text h1{
-    font-size:18px;
+    font-size:19px;
     margin:0 0 3px;
+    font-weight:800;
 }
 
 .kop-text h2{
-    font-size:20px;
-    margin:0 0 3px;
+    font-size:21px;
+    margin:0 0 5px;
+    color:#111;
+    font-weight:800;
 }
 
 .kop-text p{
     font-size:11px;
     margin:2px 0;
+    color:#222;
 }
+
+/* ================= JUDUL ================= */
 
 .surat-judul{
     text-align:center;
-    margin:25px 0 20px;
+    margin:23px 0 20px;
 }
 
 .surat-judul h3{
     margin:0;
-    font-size:17px;
+    font-size:18px;
     text-decoration:underline;
+    font-weight:800;
 }
 
 .nomor{
@@ -273,13 +283,19 @@ button{
     font-size:12px;
 }
 
+/* ================= ISI ================= */
+
 .isi-surat{
     font-size:13px;
     line-height:1.7;
 }
 
+.isi-surat p{
+    margin:0 0 12px;
+}
+
 .data-pemohon{
-    margin:15px 0 15px 25px;
+    margin:13px 0 15px 25px;
 }
 
 .data-pemohon table{
@@ -293,38 +309,50 @@ button{
 }
 
 .data-pemohon td:first-child{
-    width:145px;
+    width:150px;
 }
 
-.keperluan{
-    margin-top:15px;
+.keperluan-box{
+    margin:8px 0 15px 0;
+    padding:10px 13px;
+    border:1px solid #777;
+    border-radius:5px;
+    min-height:55px;
+    line-height:1.6;
 }
+
+.keperluan-label{
+    font-weight:bold;
+}
+
+/* ================= TTD ================= */
 
 .ttd{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:50px;
-    margin-top:55px;
+    gap:60px;
+    margin-top:45px;
     text-align:center;
     font-size:13px;
 }
 
 .ttd-space{
-    height:70px;
+    height:65px;
 }
 
 .ttd strong{
     text-decoration:underline;
 }
 
-/* ================= IDENTITAS PORTAL ================= */
+/* ================= IDENTITAS DIGITAL ================= */
 
 .identitas-digital{
-    margin-top:45px;
-    padding-top:12px;
-    border-top:1px solid #cfcfcf;
+    margin-top:38px;
+    padding:10px 12px;
+    border:1px solid #7891aa;
+    border-radius:6px;
     text-align:center;
-    font-size:10px;
+    font-size:9.5px;
     color:#555;
     line-height:1.5;
 }
@@ -337,14 +365,14 @@ button{
 }
 
 .identitas-digital small{
-    font-size:9px;
+    font-size:8.5px;
     color:#777;
 }
 
 .identitas-digital em{
     display:block;
     margin-top:3px;
-    font-size:8.5px;
+    font-size:8px;
     color:#888;
 }
 
@@ -385,7 +413,6 @@ footer{
     }
 
     .surat{
-        transform-origin:top left;
         width:210mm;
     }
 
@@ -435,12 +462,11 @@ footer{
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ================= HEADER WEBSITE ================= -->
 
 <header>
 
@@ -453,7 +479,8 @@ footer{
     <h1>Surat Pengantar Online</h1>
 
     <p>
-        RW 01 Pondok Sukatani Permai
+        Portal Resmi Pelayanan Warga RW 01
+        Pondok Sukatani Permai
     </p>
 
 </header>
@@ -473,9 +500,10 @@ footer{
         Silakan isi data dengan benar.
 
         Surat yang sudah dibuat dapat langsung
-        dicetak atau disimpan sebagai PDF,
-        kemudian dibawa ke Ketua RT dan Ketua RW
-        untuk tanda tangan dan stempel.
+        dicetak atau disimpan sebagai PDF.
+
+        Setelah dicetak, silakan dibawa ke Ketua RT
+        dan Ketua RW untuk tanda tangan dan stempel.
 
     </div>
 
@@ -489,7 +517,10 @@ footer{
 
             <label>RT</label>
 
-            <select id="rt" onchange="ubahRT()">
+            <select
+                id="rt"
+                onchange="ubahRT()"
+            >
 
                 <option value="">
                     -- Pilih RT --
@@ -513,61 +544,13 @@ footer{
 
             </select>
 
+
             <div
                 id="ketuaRT"
                 class="ketua-box"
             >
                 Ketua RT akan muncul di sini.
             </div>
-
-        </div>
-
-
-        <!-- JENIS SURAT -->
-
-        <div class="form-group">
-
-            <label>Jenis Surat</label>
-
-            <select id="jenisSurat">
-
-                <option value="">
-                    -- Pilih Jenis Surat --
-                </option>
-
-                <option>
-                    Surat Pengantar KTP
-                </option>
-
-                <option>
-                    Surat Pengantar KK
-                </option>
-
-                <option>
-                    Surat Pengantar SKCK
-                </option>
-
-                <option>
-                    Surat Pengantar Akta Kelahiran
-                </option>
-
-                <option>
-                    Surat Pengantar Domisili
-                </option>
-
-                <option>
-                    Surat Pengantar Keterangan Usaha
-                </option>
-
-                <option>
-                    Surat Pengantar Pernikahan
-                </option>
-
-                <option>
-                    Surat Keterangan Lainnya
-                </option>
-
-            </select>
 
         </div>
 
@@ -657,7 +640,7 @@ footer{
         </div>
 
 
-        <!-- NO WA -->
+        <!-- WHATSAPP -->
 
         <div class="form-group">
 
@@ -690,11 +673,11 @@ footer{
 
         <div class="form-group full">
 
-            <label>Keperluan / Keterangan</label>
+            <label>Keperluan Surat</label>
 
             <textarea
                 id="keperluan"
-                placeholder="Tuliskan keperluan surat..."
+                placeholder="Contoh: Untuk keperluan pembuatan SKCK."
             ></textarea>
 
         </div>
@@ -743,17 +726,25 @@ footer{
 
     <div id="suratPreview">
 
+
         <div class="surat">
 
 
-            <!-- KOP -->
+            <!-- ================= KOP ================= -->
 
             <div class="kop">
 
+
+                <!-- LOGO KABUPATEN -->
+
                 <img
-                    src="logo-rw01-removebg-preview.png"
-                    alt="Logo RW 01"
+                    src="logo-kabupaten-tangerang.png"
+                    class="kop-logo"
+                    alt="Logo Kabupaten Tangerang"
                 >
+
+
+                <!-- IDENTITAS -->
 
                 <div class="kop-text">
 
@@ -767,78 +758,139 @@ footer{
 
                     <p>
                         Kelurahan Sukatani • Kecamatan Rajeg
-                        • Kabupaten Tangerang
                     </p>
 
                     <p>
-                        Banten
+                        Kabupaten Tangerang • Banten
                     </p>
 
                 </div>
 
+
+                <!-- LOGO RW -->
+
+                <img
+                    src="logo-rw01-removebg-preview.png"
+                    class="kop-logo"
+                    alt="Logo RW 01"
+                >
+
             </div>
 
 
-            <!-- JUDUL -->
+            <!-- ================= JUDUL ================= -->
 
             <div class="surat-judul">
 
-                <h3 id="judulSurat">
+                <h3>
                     SURAT PENGANTAR
                 </h3>
 
                 <div class="nomor">
-                    Nomor: ______________________
+                    Nomor: ______________________________
                 </div>
 
             </div>
 
 
-            <!-- ISI -->
+            <!-- ================= ISI ================= -->
 
             <div class="isi-surat">
+
 
                 <p>
 
                     Yang bertanda tangan di bawah ini,
-                    Ketua RW 01 Pondok Sukatani Permai,
+                    <strong id="outKalimatRT">
+                        Ketua RT dan Ketua RW 01
+                    </strong>
+                    Pondok Sukatani Permai,
                     menerangkan bahwa:
 
                 </p>
 
+
+                <!-- DATA WARGA -->
 
                 <div class="data-pemohon">
 
                     <table>
 
                         <tr>
-                            <td>Nama</td>
-                            <td>: <span id="outNama"></span></td>
+
+                            <td>
+                                Nama
+                            </td>
+
+                            <td>
+                                : <span id="outNama"></span>
+                            </td>
+
                         </tr>
 
-                        <tr>
-                            <td>NIK</td>
-                            <td>: <span id="outNik"></span></td>
-                        </tr>
 
                         <tr>
-                            <td>Tempat, Tanggal Lahir</td>
-                            <td>: <span id="outTTL"></span></td>
+
+                            <td>
+                                NIK
+                            </td>
+
+                            <td>
+                                : <span id="outNik"></span>
+                            </td>
+
                         </tr>
 
-                        <tr>
-                            <td>Jenis Kelamin</td>
-                            <td>: <span id="outJK"></span></td>
-                        </tr>
 
                         <tr>
-                            <td>Alamat</td>
-                            <td>: <span id="outAlamat"></span></td>
+
+                            <td>
+                                Tempat, Tanggal Lahir
+                            </td>
+
+                            <td>
+                                : <span id="outTTL"></span>
+                            </td>
+
                         </tr>
 
+
                         <tr>
-                            <td>RT / RW</td>
-                            <td>: <span id="outRT"></span> / RW 01</td>
+
+                            <td>
+                                Jenis Kelamin
+                            </td>
+
+                            <td>
+                                : <span id="outJK"></span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Alamat
+                            </td>
+
+                            <td>
+                                : <span id="outAlamat"></span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                RT / RW
+                            </td>
+
+                            <td>
+                                : <span id="outRT"></span> / RW 01
+                            </td>
+
                         </tr>
 
                     </table>
@@ -849,24 +901,28 @@ footer{
                 <p>
 
                     Adalah benar warga yang berdomisili
-                    di wilayah RW 01 Pondok Sukatani Permai.
+                    di wilayah RT
+                    <strong id="outRT2"></strong>
+                    / RW 01 Pondok Sukatani Permai.
 
                 </p>
 
 
-                <p class="keperluan">
+                <!-- KEPERLUAN -->
 
-                    Surat pengantar ini dibuat untuk keperluan:
+                <p class="keperluan-label">
 
-                    <br>
+                    Surat pengantar ini dibuat atas permohonan
+                    yang bersangkutan untuk keperluan:
 
-                    <strong id="outJenis"></strong>
+                </p>
 
-                    <br>
+
+                <div class="keperluan-box">
 
                     <span id="outKeperluan"></span>
 
-                </p>
+                </div>
 
 
                 <p>
@@ -878,9 +934,12 @@ footer{
                 </p>
 
 
-                <!-- TTD -->
+                <!-- ================= TANDA TANGAN ================= -->
 
                 <div class="ttd">
+
+
+                    <!-- RT -->
 
                     <div>
 
@@ -901,6 +960,8 @@ footer{
                     </div>
 
 
+                    <!-- RW -->
+
                     <div>
 
                         Sukatani,
@@ -920,10 +981,11 @@ footer{
 
                     </div>
 
+
                 </div>
 
 
-                <!-- IDENTITAS PORTAL -->
+                <!-- ================= IDENTITAS PORTAL ================= -->
 
                 <div class="identitas-digital">
 
@@ -940,11 +1002,14 @@ footer{
                     </div>
 
                     <small>
-                        Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
+                        Kelurahan Sukatani • Kecamatan Rajeg
+                        • Kabupaten Tangerang
                     </small>
 
                     <em>
-                        Surat dibuat secara digital melalui portal pelayanan resmi RW 01.
+                        Surat dibuat secara digital melalui
+                        portal pelayanan resmi RW 01
+                        dan tersimpan dalam arsip digital RW 01.
                     </em>
 
                 </div>
@@ -957,6 +1022,8 @@ footer{
     </div>
 
 
+    <!-- CETAK -->
+
     <div class="button-area">
 
         <button
@@ -968,11 +1035,14 @@ footer{
 
     </div>
 
-</div>
-
 
 </div>
 
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -982,7 +1052,7 @@ footer{
 
     <br>
 
-    Surat Pengantar Online
+    Portal Resmi Pelayanan Warga
 
 </footer>
 
@@ -1105,14 +1175,22 @@ function tanggalHariIni(){
     new Date();
 
 
+    const tahun =
+    sekarang.getFullYear();
+
+    const bulan =
+    String(
+        sekarang.getMonth()+1
+    ).padStart(2,"0");
+
+    const hari =
+    String(
+        sekarang.getDate()
+    ).padStart(2,"0");
+
+
     return formatTanggalIndonesia(
-
-        sekarang.getFullYear()+
-        "-"+
-        String(sekarang.getMonth()+1).padStart(2,"0")+
-        "-"+
-        String(sekarang.getDate()).padStart(2,"0")
-
+        tahun+"-"+bulan+"-"+hari
     );
 
 }
@@ -1124,51 +1202,59 @@ function tanggalHariIni(){
 
 async function buatSurat(){
 
+
     const rt =
     document.getElementById("rt").value;
 
-    const jenisSurat =
-    document.getElementById("jenisSurat").value;
 
     const nama =
-    document.getElementById("nama").value.trim();
+    document.getElementById("nama")
+    .value.trim();
+
 
     const nik =
-    document.getElementById("nik").value.trim();
+    document.getElementById("nik")
+    .value.trim();
+
 
     const tempatLahir =
-    document.getElementById("tempatLahir").value.trim();
+    document.getElementById("tempatLahir")
+    .value.trim();
+
 
     const tanggalLahir =
-    document.getElementById("tanggalLahir").value;
+    document.getElementById("tanggalLahir")
+    .value;
+
 
     const jenisKelamin =
-    document.getElementById("jenisKelamin").value;
+    document.getElementById("jenisKelamin")
+    .value;
+
 
     const whatsapp =
-    document.getElementById("whatsapp").value.trim();
+    document.getElementById("whatsapp")
+    .value.trim();
+
 
     const alamat =
-    document.getElementById("alamat").value.trim();
+    document.getElementById("alamat")
+    .value.trim();
+
 
     const keperluan =
-    document.getElementById("keperluan").value.trim();
+    document.getElementById("keperluan")
+    .value.trim();
 
 
-    /* VALIDASI */
+    /* ================= VALIDASI ================= */
+
 
     if(!rt){
 
-        alert("Silakan pilih RT.");
-
-        return;
-
-    }
-
-
-    if(!jenisSurat){
-
-        alert("Silakan pilih jenis surat.");
+        alert(
+            "Silakan pilih RT."
+        );
 
         return;
 
@@ -1177,7 +1263,9 @@ async function buatSurat(){
 
     if(!nama){
 
-        alert("Nama lengkap wajib diisi.");
+        alert(
+            "Nama lengkap wajib diisi."
+        );
 
         return;
 
@@ -1186,7 +1274,9 @@ async function buatSurat(){
 
     if(!nik){
 
-        alert("NIK wajib diisi.");
+        alert(
+            "NIK wajib diisi."
+        );
 
         return;
 
@@ -1195,7 +1285,9 @@ async function buatSurat(){
 
     if(!alamat){
 
-        alert("Alamat wajib diisi.");
+        alert(
+            "Alamat wajib diisi."
+        );
 
         return;
 
@@ -1204,7 +1296,9 @@ async function buatSurat(){
 
     if(!keperluan){
 
-        alert("Keperluan surat wajib diisi.");
+        alert(
+            "Keperluan surat wajib diisi."
+        );
 
         return;
 
@@ -1212,12 +1306,19 @@ async function buatSurat(){
 
 
     /* =================================================
-       SIMPAN ARSIP
+       SIMPAN ARSIP DIGITAL
+       
+       Kolom jenis_surat tetap diisi
+       "Surat Pengantar" agar struktur
+       database lama tetap aman.
     ================================================= */
+
 
     const {error} =
     await supabaseClient
+
     .from("arsip_surat")
+
     .insert({
 
         tanggal_dibuat:
@@ -1225,30 +1326,43 @@ async function buatSurat(){
         .toISOString()
         .substring(0,10),
 
-        nama_pemohon:nama,
+        nama_pemohon:
+        nama,
 
-        nik:nik,
+        nik:
+        nik,
 
-        rt:rt,
+        rt:
+        rt,
 
-        jenis_surat:jenisSurat,
+        jenis_surat:
+        "Surat Pengantar",
 
-        keperluan:keperluan,
+        keperluan:
+        keperluan,
 
-        no_whatsapp:whatsapp
+        no_whatsapp:
+        whatsapp
 
     });
 
 
     if(error){
 
-        console.error(error);
+        console.error(
+            "Gagal menyimpan arsip:",
+            error
+        );
 
-        document.getElementById("message").innerHTML =
+
+        document
+        .getElementById("message")
+        .innerHTML =
 
         '<div class="error">'+
 
         'Surat belum dapat dibuat karena arsip gagal disimpan. '+
+
         'Silakan coba lagi.'+
 
         '</div>';
@@ -1262,15 +1376,16 @@ async function buatSurat(){
        ISI PREVIEW
     ================================================= */
 
-    document.getElementById("judulSurat").innerText =
-    jenisSurat.toUpperCase();
 
-
-    document.getElementById("outNama").innerText =
+    document
+    .getElementById("outNama")
+    .innerText =
     nama;
 
 
-    document.getElementById("outNik").innerText =
+    document
+    .getElementById("outNik")
+    .innerText =
     nik;
 
 
@@ -1282,44 +1397,83 @@ async function buatSurat(){
 
         ttl +=
         ", "+
-        formatTanggalIndonesia(tanggalLahir);
+        formatTanggalIndonesia(
+            tanggalLahir
+        );
 
     }
 
 
-    document.getElementById("outTTL").innerText =
+    document
+    .getElementById("outTTL")
+    .innerText =
     ttl;
 
 
-    document.getElementById("outJK").innerText =
+    document
+    .getElementById("outJK")
+    .innerText =
     jenisKelamin || "-";
 
 
-    document.getElementById("outAlamat").innerText =
+    document
+    .getElementById("outAlamat")
+    .innerText =
     alamat;
 
 
-    document.getElementById("outRT").innerText =
+    document
+    .getElementById("outRT")
+    .innerText =
     rt;
 
 
-    document.getElementById("outJenis").innerText =
-    jenisSurat;
+    document
+    .getElementById("outRT2")
+    .innerText =
+    rt;
 
 
-    document.getElementById("outKeperluan").innerText =
-    keperluan;
+    /* KALIMAT PEMBUKA */
 
 
-    document.getElementById("outKetuaRT").innerText =
+    document
+    .getElementById("outKalimatRT")
+    .innerText =
+    "Ketua "+rt+
+    " dan Ketua RW 01";
+
+
+    /* KETUA RT */
+
+
+    document
+    .getElementById("outKetuaRT")
+    .innerText =
     "Ketua "+rt;
 
 
-    document.getElementById("outNamaKetuaRT").innerText =
+    document
+    .getElementById("outNamaKetuaRT")
+    .innerText =
     ketuaRT[rt];
 
 
-    document.getElementById("outTanggal").innerText =
+    /* KEPERLUAN */
+
+
+    document
+    .getElementById("outKeperluan")
+    .innerText =
+    keperluan;
+
+
+    /* TANGGAL */
+
+
+    document
+    .getElementById("outTanggal")
+    .innerText =
     tanggalHariIni();
 
 
@@ -1327,12 +1481,16 @@ async function buatSurat(){
        TAMPILKAN PREVIEW
     ================================================= */
 
+
     document
     .getElementById("previewCard")
-    .classList.remove("hidden");
+    .classList
+    .remove("hidden");
 
 
-    document.getElementById("message").innerHTML =
+    document
+    .getElementById("message")
+    .innerHTML =
 
     '<div class="success">'+
 
@@ -1355,7 +1513,7 @@ async function buatSurat(){
 
 
 /* =====================================================
-   CETAK
+   CETAK / SIMPAN PDF
 ===================================================== */
 
 function cetakSurat(){
@@ -1371,13 +1529,9 @@ function cetakSurat(){
 
 function resetForm(){
 
+
     document
     .getElementById("rt")
-    .value="";
-
-
-    document
-    .getElementById("jenisSurat")
     .value="";
 
 
@@ -1429,7 +1583,8 @@ function resetForm(){
 
     document
     .getElementById("previewCard")
-    .classList.add("hidden");
+    .classList
+    .add("hidden");
 
 
     document
