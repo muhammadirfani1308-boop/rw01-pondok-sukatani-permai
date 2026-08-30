@@ -317,6 +317,37 @@ button{
     text-decoration:underline;
 }
 
+/* ================= IDENTITAS PORTAL ================= */
+
+.identitas-digital{
+    margin-top:45px;
+    padding-top:12px;
+    border-top:1px solid #cfcfcf;
+    text-align:center;
+    font-size:10px;
+    color:#555;
+    line-height:1.5;
+}
+
+.identitas-digital .portal{
+    color:#07366f;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:.2px;
+}
+
+.identitas-digital small{
+    font-size:9px;
+    color:#777;
+}
+
+.identitas-digital em{
+    display:block;
+    margin-top:3px;
+    font-size:8.5px;
+    color:#888;
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -404,8 +435,8 @@ footer{
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -440,6 +471,7 @@ footer{
     <div class="info">
 
         Silakan isi data dengan benar.
+
         Surat yang sudah dibuat dapat langsung
         dicetak atau disimpan sebagai PDF,
         kemudian dibawa ke Ketua RT dan Ketua RW
@@ -767,9 +799,11 @@ footer{
             <div class="isi-surat">
 
                 <p>
+
                     Yang bertanda tangan di bawah ini,
                     Ketua RW 01 Pondok Sukatani Permai,
                     menerangkan bahwa:
+
                 </p>
 
 
@@ -813,8 +847,10 @@ footer{
 
 
                 <p>
+
                     Adalah benar warga yang berdomisili
                     di wilayah RW 01 Pondok Sukatani Permai.
+
                 </p>
 
 
@@ -834,9 +870,11 @@ footer{
 
 
                 <p>
+
                     Demikian surat pengantar ini dibuat
                     dengan sebenar-benarnya untuk dapat
                     dipergunakan sebagaimana mestinya.
+
                 </p>
 
 
@@ -881,6 +919,33 @@ footer{
                         </strong>
 
                     </div>
+
+                </div>
+
+
+                <!-- IDENTITAS PORTAL -->
+
+                <div class="identitas-digital">
+
+                    <div>
+                        Dokumen ini dibuat melalui
+                    </div>
+
+                    <div class="portal">
+                        PORTAL RESMI PELAYANAN WARGA RW 01
+                    </div>
+
+                    <div>
+                        PONDOK SUKATANI PERMAI
+                    </div>
+
+                    <small>
+                        Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
+                    </small>
+
+                    <em>
+                        Surat dibuat secara digital melalui portal pelayanan resmi RW 01.
+                    </em>
 
                 </div>
 
@@ -995,9 +1060,7 @@ function ubahRT(){
 function formatTanggalIndonesia(tanggal){
 
     if(!tanggal){
-
         return "";
-
     }
 
 
@@ -1040,6 +1103,7 @@ function tanggalHariIni(){
 
     const sekarang =
     new Date();
+
 
     return formatTanggalIndonesia(
 
@@ -1152,7 +1216,6 @@ async function buatSurat(){
     ================================================= */
 
     const {error} =
-
     await supabaseClient
     .from("arsip_surat")
     .insert({
@@ -1184,8 +1247,10 @@ async function buatSurat(){
         document.getElementById("message").innerHTML =
 
         '<div class="error">'+
+
         'Surat belum dapat dibuat karena arsip gagal disimpan. '+
         'Silakan coba lagi.'+
+
         '</div>';
 
         return;
@@ -1209,7 +1274,8 @@ async function buatSurat(){
     nik;
 
 
-    let ttl = tempatLahir || "-";
+    let ttl =
+    tempatLahir || "-";
 
 
     if(tanggalLahir){
@@ -1269,15 +1335,20 @@ async function buatSurat(){
     document.getElementById("message").innerHTML =
 
     '<div class="success">'+
+
     '✅ Surat berhasil dibuat dan sudah masuk ke arsip digital.'+
+
     '<br>Silakan periksa surat di bawah sebelum dicetak.'+
+
     '</div>';
 
 
     document
     .getElementById("previewCard")
     .scrollIntoView({
+
         behavior:"smooth"
+
     });
 
 }
