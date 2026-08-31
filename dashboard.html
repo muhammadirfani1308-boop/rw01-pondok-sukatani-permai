@@ -22,8 +22,6 @@ body{
     color:#17324d;
 }
 
-/* ================= HEADER ================= */
-
 header{
     background:linear-gradient(135deg,#07366f,#16833b);
     color:white;
@@ -49,15 +47,11 @@ header p{
     opacity:.9;
 }
 
-/* ================= CONTAINER ================= */
-
 .container{
-    max-width:1150px;
+    max-width:1200px;
     margin:auto;
     padding:25px 15px;
 }
-
-/* ================= CARD ================= */
 
 .card{
     background:white;
@@ -72,14 +66,10 @@ header p{
     margin-top:0;
 }
 
-/* ================= LOGIN ================= */
-
 .login-card{
     max-width:450px;
     margin:35px auto;
 }
-
-/* ================= FORM ================= */
 
 label{
     display:block;
@@ -105,8 +95,6 @@ textarea{
     resize:vertical;
 }
 
-/* ================= BUTTON ================= */
-
 button{
     border:0;
     padding:12px 18px;
@@ -116,13 +104,18 @@ button{
     font-size:14px;
 }
 
-button:hover{
-    opacity:.9;
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
 }
 
 .btn{
     background:#16833b;
     color:white;
+}
+
+.btn:hover{
+    background:#116c31;
 }
 
 .logout{
@@ -160,7 +153,10 @@ button:hover{
     color:white;
 }
 
-/* ================= DASHBOARD HEAD ================= */
+.cancel{
+    background:#edf2f7;
+    color:#17324d;
+}
 
 .dashboard-head{
     display:flex;
@@ -173,8 +169,6 @@ button:hover{
     margin:4px 0 0;
     color:#718096;
 }
-
-/* ================= SUMMARY ================= */
 
 .grid{
     display:grid;
@@ -214,40 +208,12 @@ button:hover{
     font-size:22px;
 }
 
-/* ================= INFO SAMPAH ================= */
-
-.sampah-info{
-    background:#fff8df;
-    border-left:5px solid #f2bd32;
-    padding:13px 15px;
-    border-radius:9px;
-    margin-bottom:20px;
-    font-size:13px;
-    line-height:1.6;
-}
-
-/* ================= FORM GRID ================= */
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0 15px;
-}
-
-.form-full{
-    grid-column:1/-1;
-}
-
-/* ================= FILTER ================= */
-
 .filter-box{
     display:grid;
     grid-template-columns:1fr 1fr auto;
     gap:12px;
     align-items:end;
 }
-
-/* ================= TABLE ================= */
 
 .table-wrapper{
     overflow-x:auto;
@@ -256,7 +222,7 @@ button:hover{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:1100px;
+    min-width:1050px;
 }
 
 th,
@@ -265,6 +231,7 @@ td{
     border-bottom:1px solid #edf1f5;
     text-align:left;
     font-size:13px;
+    vertical-align:top;
 }
 
 th{
@@ -287,33 +254,6 @@ tbody tr:hover{
     font-size:12px;
 }
 
-/* ================= BADGE ================= */
-
-.badge{
-    display:inline-block;
-    padding:5px 8px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.badge-masuk{
-    background:#e8f7ed;
-    color:#16723a;
-}
-
-.badge-keluar{
-    background:#fdeaea;
-    color:#a52e2e;
-}
-
-.badge-sampah{
-    background:#fff4c7;
-    color:#876400;
-}
-
-/* ================= STATUS ================= */
-
 .success{
     background:#e8f7ed;
     color:#16723a;
@@ -331,36 +271,16 @@ tbody tr:hover{
 }
 
 .warning{
-    background:#fff8df;
-    color:#806000;
+    background:#fff7df;
+    color:#856404;
     padding:12px;
     border-radius:9px;
     margin-top:12px;
 }
 
-/* ================= EDIT MODE ================= */
-
-.edit-mode{
-    border:2px solid #2563eb;
-}
-
-.edit-title{
-    color:#2563eb!important;
-}
-
-.cancel-edit{
-    background:#edf2f7;
-    color:#17324d;
-    margin-left:8px;
-}
-
-/* ================= HIDDEN ================= */
-
 .hidden{
     display:none!important;
 }
-
-/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
@@ -376,8 +296,8 @@ tbody tr:hover{
 .modal-content{
     background:white;
     width:100%;
-    max-width:650px;
-    max-height:90vh;
+    max-width:700px;
+    max-height:92vh;
     overflow-y:auto;
     border-radius:18px;
     padding:20px;
@@ -395,13 +315,28 @@ tbody tr:hover{
     font-size:18px;
 }
 
-/* ================= KWITANSI ================= */
+.confirm-content{
+    max-width:450px;
+    text-align:center;
+}
+
+.confirm-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.confirm-buttons{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:20px;
+}
 
 .kwitansi{
     background:white;
     border:1px solid #d5dbe2;
     padding:30px;
-    max-width:600px;
+    max-width:650px;
     margin:auto;
 }
 
@@ -502,7 +437,25 @@ tbody tr:hover{
     text-decoration:underline;
 }
 
-/* ================= PRINT ================= */
+.edit-title{
+    color:#2563eb!important;
+}
+
+.form-note{
+    font-size:12px;
+    color:#718096;
+    margin-top:-8px;
+    margin-bottom:15px;
+}
+
+.sampah-note{
+    background:#fff8e6;
+    border-left:4px solid #f2bd32;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px;
+    margin-bottom:18px;
+}
 
 @media print{
 
@@ -532,11 +485,10 @@ tbody tr:hover{
         max-width:none;
         padding:25px;
     }
+
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:800px){
+@media(max-width:900px){
 
     .grid{
         grid-template-columns:1fr 1fr;
@@ -548,14 +500,6 @@ tbody tr:hover{
 
     .filter-box button{
         grid-column:1/-1;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-full{
-        grid-column:auto;
     }
 
 }
@@ -600,7 +544,6 @@ tbody tr:hover{
 }
 
 </style>
-
 </head>
 
 <body>
@@ -623,7 +566,9 @@ alt="Logo RW 01"
 <div class="container">
 
 
-<!-- ================= LOGIN ================= -->
+<!-- ==================================================
+     LOGIN
+================================================== -->
 
 <div id="loginBox" class="card login-card">
 
@@ -661,7 +606,9 @@ LOGIN
 </div>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- ==================================================
+     DASHBOARD
+================================================== -->
 
 <div id="dashboard" class="hidden">
 
@@ -675,7 +622,7 @@ LOGIN
 <h2>💰 Dashboard Bendahara</h2>
 
 <p>
-Kelola keuangan RW 01 dan arsip iuran sampah.
+Kelola pemasukan, pengeluaran, iuran sampah dan arsip keuangan RW 01.
 </p>
 
 </div>
@@ -692,19 +639,9 @@ Keluar
 </div>
 
 
-<!-- ================= INFO ================= -->
-
-<div class="sampah-info">
-
-<strong>ℹ️ Informasi Iuran Sampah</strong><br>
-
-Iuran sampah tetap dicatat dan disimpan sebagai arsip administrasi serta dapat dicetak kwitansinya.
-<strong>Iuran sampah tidak dihitung sebagai kas RW dan tidak masuk transparansi maupun rekap PDF keuangan RW.</strong>
-
-</div>
-
-
-<!-- ================= RINGKASAN ================= -->
+<!-- ==================================================
+     RINGKASAN
+================================================== -->
 
 <div class="grid">
 
@@ -712,7 +649,9 @@ Iuran sampah tetap dicatat dan disimpan sebagai arsip administrasi serta dapat d
 
 <small>Saldo Kas RW</small>
 
-<h2 id="saldo">Rp 0</h2>
+<h2 id="saldo">
+Rp 0
+</h2>
 
 </div>
 
@@ -720,7 +659,9 @@ Iuran sampah tetap dicatat dan disimpan sebagai arsip administrasi serta dapat d
 
 <small>Total Pemasukan Kas RW</small>
 
-<h2 id="totalMasuk">Rp 0</h2>
+<h2 id="totalMasuk">
+Rp 0
+</h2>
 
 </div>
 
@@ -728,41 +669,45 @@ Iuran sampah tetap dicatat dan disimpan sebagai arsip administrasi serta dapat d
 
 <small>Total Pengeluaran Kas RW</small>
 
-<h2 id="totalKeluar">Rp 0</h2>
+<h2 id="totalKeluar">
+Rp 0
+</h2>
 
 </div>
 
 <div class="box">
 
-<small>Transaksi Kas RW</small>
+<small>Jumlah Transaksi Kas RW</small>
 
-<h2 id="jumlahTransaksi">0</h2>
-
-</div>
-
-</div>
-
-
-<!-- ================= INPUT ================= -->
-
-<div id="formCard" class="card">
-
-<h2 id="formTitle">➕ Input Keuangan</h2>
-
-<div class="warning">
-
-<strong>Catatan:</strong>
-Jika memilih <strong>Iuran Sampah</strong>, transaksi hanya digunakan untuk arsip dan kwitansi. Transaksi tersebut tidak memengaruhi saldo kas RW.
+<h2 id="jumlahTransaksi">
+0
+</h2>
 
 </div>
 
-<br>
+</div>
 
 
-<div class="form-grid">
+<!-- ==================================================
+     INPUT / EDIT
+================================================== -->
 
+<div class="card">
 
-<div>
+<h2 id="formTitle">
+➕ Input Keuangan
+</h2>
+
+<div class="sampah-note">
+
+<strong>ℹ️ Catatan Iuran Sampah:</strong><br>
+
+Iuran Sampah tetap dicatat dan tersimpan sebagai arsip
+serta dapat dicetak menjadi kwitansi, tetapi
+<strong>tidak dihitung sebagai Kas RW dan tidak masuk Rekap PDF Kas RW.</strong>
+
+</div>
+
 
 <label>Tanggal</label>
 
@@ -771,10 +716,6 @@ type="date"
 id="tanggal"
 >
 
-</div>
-
-
-<div>
 
 <label>Jenis Transaksi</label>
 
@@ -790,10 +731,6 @@ Pengeluaran
 
 </select>
 
-</div>
-
-
-<div>
 
 <label>Kategori</label>
 
@@ -807,6 +744,18 @@ Iuran Kas RW
 Donasi / CSR
 </option>
 
+<option value="Kegiatan RW">
+Kegiatan RW
+</option>
+
+<option value="Operasional RW">
+Operasional RW
+</option>
+
+<option value="Infrastruktur">
+Infrastruktur
+</option>
+
 <option value="Lain-lain">
 Lain-lain
 </option>
@@ -817,10 +766,6 @@ Iuran Sampah
 
 </select>
 
-</div>
-
-
-<div>
 
 <label>RT</label>
 
@@ -848,10 +793,6 @@ RT 04
 
 </select>
 
-</div>
-
-
-<div>
 
 <label>👤 Nama Pembayar</label>
 
@@ -861,10 +802,6 @@ id="namaPembayar"
 placeholder="Contoh: Budi Santoso"
 >
 
-</div>
-
-
-<div>
 
 <label>📱 No. WhatsApp</label>
 
@@ -874,10 +811,6 @@ id="noWhatsapp"
 placeholder="Contoh: 081234567890"
 >
 
-</div>
-
-
-<div>
 
 <label>Nominal</label>
 
@@ -887,10 +820,6 @@ id="nominal"
 placeholder="Contoh: 500000"
 >
 
-</div>
-
-
-<div>
 
 <label>Metode Pembayaran</label>
 
@@ -906,27 +835,20 @@ Tunai
 
 </select>
 
-</div>
-
-
-<div class="form-full">
 
 <label>Keterangan</label>
 
 <textarea
 id="keterangan"
-placeholder="Tuliskan keterangan transaksi"
+placeholder="Contoh: Iuran Kas RW bulan Agustus 2026"
 ></textarea>
 
-</div>
 
-
-</div>
-
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
 
 <button
-id="saveButton"
 class="btn"
+id="saveButton"
 onclick="simpanTransaksi()"
 >
 💾 SIMPAN TRANSAKSI
@@ -934,12 +856,14 @@ onclick="simpanTransaksi()"
 
 
 <button
+class="secondary hidden"
 id="cancelEditButton"
-class="cancel-edit hidden"
 onclick="batalEdit()"
 >
 ✕ BATAL EDIT
 </button>
+
+</div>
 
 
 <div id="saveMessage"></div>
@@ -947,23 +871,20 @@ onclick="batalEdit()"
 </div>
 
 
-<!-- ================= FILTER PDF ================= -->
+<!-- ==================================================
+     FILTER PDF
+================================================== -->
 
 <div class="card">
 
 <h2>📅 Rekap & Cetak PDF</h2>
 
 <p>
-
-Rekap PDF hanya menampilkan transaksi
-<strong>Kas RW</strong>.
-Iuran Sampah otomatis dikeluarkan dari laporan.
-
+Rekap PDF hanya berisi transaksi <strong>Kas RW</strong>.
+Iuran Sampah otomatis dikeluarkan dari rekap.
 </p>
 
-
 <div class="filter-box">
-
 
 <div>
 
@@ -1015,25 +936,24 @@ onclick="cetakPDF()"
 🖨️ CETAK REKAP PDF
 </button>
 
-
 </div>
 
 </div>
 
 
-<!-- ================= RIWAYAT ================= -->
+<!-- ==================================================
+     RIWAYAT
+================================================== -->
 
 <div class="card">
 
-<h2>📋 Arsip Transaksi Admin</h2>
+<h2>📋 Riwayat Transaksi</h2>
 
-<p>
-
-Semua transaksi ditampilkan di sini untuk kebutuhan administrasi.
-<strong>Iuran Sampah tetap terlihat oleh admin sebagai arsip, tetapi tidak masuk perhitungan kas RW.</strong>
-
+<p class="form-note">
+Iuran Sampah tetap terlihat di sini untuk keperluan
+arsip dan administrasi admin, tetapi tidak masuk
+perhitungan Kas RW.
 </p>
-
 
 <div class="table-wrapper">
 
@@ -1048,6 +968,7 @@ Semua transaksi ditampilkan di sini untuk kebutuhan administrasi.
 <th>Kategori</th>
 <th>RT</th>
 <th>Pembayar</th>
+<th>No. WhatsApp</th>
 <th>Nominal</th>
 <th>Metode</th>
 <th>Keterangan</th>
@@ -1073,7 +994,9 @@ Semua transaksi ditampilkan di sini untuk kebutuhan administrasi.
 </div>
 
 
-<!-- ================= MODAL KWITANSI ================= -->
+<!-- ==================================================
+     MODAL KWITANSI
+================================================== -->
 
 <div
 id="kwitansiModal"
@@ -1105,12 +1028,13 @@ onclick="tutupKwitansi()"
 <img
 src="logo-rw01-removebg-preview.png"
 class="kwitansi-logo"
-alt="Logo RW 01"
 >
 
 <div>
 
-<h2>RW 01 PONDOK SUKATANI PERMAI</h2>
+<h2>
+RW 01 PONDOK SUKATANI PERMAI
+</h2>
 
 <p>
 Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
@@ -1123,7 +1047,9 @@ Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
 
 <div class="kwitansi-title">
 
-<h1>KWITANSI PEMBAYARAN</h1>
+<h1>
+KWITANSI PEMBAYARAN
+</h1>
 
 <p id="kwitansiNomor">
 No. Kwitansi: -
@@ -1134,67 +1060,103 @@ No. Kwitansi: -
 
 <div class="kwitansi-info">
 
-
 <div class="kwitansi-row">
 
-<strong>Telah diterima dari</strong>
+<strong>
+Telah diterima dari
+</strong>
+
 <span>:</span>
-<span id="kwitansiPembayar">-</span>
+
+<span id="kwitansiPembayar">
+-
+</span>
 
 </div>
 
 
 <div class="kwitansi-row">
 
-<strong>No. WhatsApp</strong>
+<strong>
+No. WhatsApp
+</strong>
+
 <span>:</span>
-<span id="kwitansiWhatsapp">-</span>
+
+<span id="kwitansiWhatsapp">
+-
+</span>
 
 </div>
 
 
 <div class="kwitansi-row">
 
-<strong>Untuk pembayaran</strong>
+<strong>
+Untuk pembayaran
+</strong>
+
 <span>:</span>
-<span id="kwitansiKategori">-</span>
+
+<span id="kwitansiKategori">
+-
+</span>
 
 </div>
 
 
 <div class="kwitansi-row">
 
-<strong>RT</strong>
+<strong>
+RT
+</strong>
+
 <span>:</span>
-<span id="kwitansiRT">Umum</span>
+
+<span id="kwitansiRT">
+Umum
+</span>
 
 </div>
 
 
 <div class="kwitansi-row">
 
-<strong>Tanggal</strong>
+<strong>
+Tanggal
+</strong>
+
 <span>:</span>
-<span id="kwitansiTanggal">-</span>
+
+<span id="kwitansiTanggal">
+-
+</span>
 
 </div>
 
 
 <div class="kwitansi-row">
 
-<strong>Metode</strong>
+<strong>
+Metode
+</strong>
+
 <span>:</span>
-<span id="kwitansiMetode">-</span>
+
+<span id="kwitansiMetode">
+-
+</span>
 
 </div>
-
 
 </div>
 
 
 <div class="nominal-box">
 
-<small>JUMLAH PEMBAYARAN</small>
+<small>
+JUMLAH PEMBAYARAN
+</small>
 
 <strong id="kwitansiNominal">
 Rp 0
@@ -1205,7 +1167,9 @@ Rp 0
 
 <div class="terbilang">
 
-<strong>Terbilang:</strong>
+<strong>
+Terbilang:
+</strong>
 
 <span id="kwitansiTerbilang">
 -
@@ -1218,9 +1182,15 @@ Rp 0
 
 <div class="kwitansi-row">
 
-<strong>Keterangan</strong>
+<strong>
+Keterangan
+</strong>
+
 <span>:</span>
-<span id="kwitansiKeterangan">-</span>
+
+<span id="kwitansiKeterangan">
+-
+</span>
 
 </div>
 
@@ -1228,7 +1198,6 @@ Rp 0
 
 
 <div class="kwitansi-footer">
-
 
 <div>
 
@@ -1263,7 +1232,6 @@ Ketua RW 01
 
 </div>
 
-
 </div>
 
 
@@ -1289,14 +1257,12 @@ onclick="printKwitansi()"
 🖨️ CETAK KWITANSI
 </button>
 
-
 <button
 class="whatsapp"
 onclick="kirimWhatsApp()"
 >
 📱 KIRIM WHATSAPP
 </button>
-
 
 <button
 class="secondary"
@@ -1312,11 +1278,57 @@ TUTUP
 </div>
 
 
+<!-- ==================================================
+     MODAL KONFIRMASI HAPUS
+================================================== -->
+
+<div
+id="deleteModal"
+class="modal hidden"
+>
+
+<div class="modal-content confirm-content">
+
+<div class="confirm-icon">
+⚠️
+</div>
+
+<h2>
+Hapus Transaksi?
+</h2>
+
+<p id="deleteText">
+Data transaksi akan dihapus secara permanen.
+</p>
+
+<div class="confirm-buttons">
+
+<button
+class="cancel"
+onclick="tutupHapus()"
+>
+BATAL
+</button>
+
+<button
+class="delete"
+onclick="konfirmasiHapus()"
+>
+YA, HAPUS
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <script>
 
-/* =========================================================
+/* =====================================================
    SUPABASE
-========================================================= */
+===================================================== */
 
 const SUPABASE_URL =
 "https://uvkroruendiuunckuaki.supabase.co";
@@ -1326,14 +1338,14 @@ const SUPABASE_KEY =
 
 const supabaseClient =
 supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
+    SUPABASE_URL,
+    SUPABASE_KEY
 );
 
 
-/* =========================================================
+/* =====================================================
    DATA
-========================================================= */
+===================================================== */
 
 let semuaTransaksi = [];
 
@@ -1341,1757 +1353,1817 @@ let transaksiKwitansi = null;
 
 let transaksiEditId = null;
 
-
-/* =========================================================
-   KATEGORI KHUSUS
-========================================================= */
-
-function isIuranSampah(item){
-
-return String(item.kategori || "")
-.trim()
-.toLowerCase() === "iuran sampah";
-
-}
+let transaksiHapusId = null;
 
 
-/* =========================================================
-   TRANSAKSI KAS RW
-========================================================= */
-
-function transaksiKasRW(item){
-
-return !isIuranSampah(item);
-
-}
-
-
-/* =========================================================
+/* =====================================================
    RUPIAH
-========================================================= */
+===================================================== */
 
 function rupiah(angka){
 
-return new Intl.NumberFormat(
-"id-ID",
-{
-style:"currency",
-currency:"IDR",
-maximumFractionDigits:0
-}
-).format(Number(angka)||0);
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(Number(angka)||0);
 
 }
 
 
-/* =========================================================
-   TERBILANG
-========================================================= */
+/* =====================================================
+   CEK IURAN SAMPAH
+===================================================== */
 
-function terbilang(n){
+function isIuranSampah(item){
 
-n = Math.floor(Number(n)||0);
+    const kategori =
+        String(item.kategori || "")
+        .trim()
+        .toLowerCase();
 
-const angka = [
-"",
-"satu",
-"dua",
-"tiga",
-"empat",
-"lima",
-"enam",
-"tujuh",
-"delapan",
-"sembilan",
-"sepuluh",
-"sebelas"
-];
+    const keterangan =
+        String(item.keterangan || "")
+        .trim()
+        .toLowerCase();
 
-if(n < 12){
 
-return angka[n];
+    if(
+        kategori === "iuran sampah" ||
+        kategori.includes("iuran sampah") ||
+        kategori === "sampah" ||
+        kategori.includes("sampah")
+    ){
 
-}
+        return true;
 
-if(n < 20){
+    }
 
-return terbilang(n-10)+" belas";
 
-}
+    if(
+        keterangan.includes("iuran sampah") ||
+        keterangan.includes("setoran sampah") ||
+        keterangan.includes("uang sampah")
+    ){
 
-if(n < 100){
+        return true;
 
-return terbilang(Math.floor(n/10))+
-" puluh "+
-terbilang(n%10);
+    }
 
-}
 
-if(n < 200){
-
-return "seratus "+terbilang(n-100);
-
-}
-
-if(n < 1000){
-
-return terbilang(Math.floor(n/100))+
-" ratus "+
-terbilang(n%100);
-
-}
-
-if(n < 2000){
-
-return "seribu "+terbilang(n-1000);
-
-}
-
-if(n < 1000000){
-
-return terbilang(Math.floor(n/1000))+
-" ribu "+
-terbilang(n%1000);
-
-}
-
-if(n < 1000000000){
-
-return terbilang(Math.floor(n/1000000))+
-" juta "+
-terbilang(n%1000000);
-
-}
-
-if(n < 1000000000000){
-
-return terbilang(Math.floor(n/1000000000))+
-" miliar "+
-terbilang(n%1000000000);
-
-}
-
-return "nominal terlalu besar";
+    return false;
 
 }
 
 
-function terbilangRupiah(n){
+/* =====================================================
+   DATA KAS RW SAJA
+===================================================== */
 
-let hasil =
-terbilang(n)
-.replace(/\s+/g," ")
-.trim();
+function dataKasRW(){
 
-return hasil.charAt(0).toUpperCase()+
-hasil.slice(1)+
-" rupiah";
+    return semuaTransaksi.filter(function(item){
+
+        return !isIuranSampah(item);
+
+    });
 
 }
 
 
-/* =========================================================
+/* =====================================================
    LOGIN
-========================================================= */
+===================================================== */
 
 async function login(){
 
-const email =
-document.getElementById("email")
-.value
-.trim();
+    const email =
+        document.getElementById("email")
+        .value
+        .trim();
 
-const password =
-document.getElementById("password")
-.value;
+    const password =
+        document.getElementById("password")
+        .value;
 
 
-if(!email || !password){
+    if(!email || !password){
 
-document.getElementById("loginMessage").innerHTML =
-'<div class="error">Email dan password wajib diisi.</div>';
+        document.getElementById("loginMessage").innerHTML =
+        '<div class="error">Email dan password wajib diisi.</div>';
 
-return;
+        return;
+
+    }
+
+
+    const {error} =
+        await supabaseClient.auth
+        .signInWithPassword({
+
+            email:email,
+            password:password
+
+        });
+
+
+    if(error){
+
+        document.getElementById("loginMessage").innerHTML =
+        '<div class="error">'+
+        escapeHTML(error.message)+
+        '</div>';
+
+        return;
+
+    }
+
+
+    document
+    .getElementById("loginBox")
+    .classList.add("hidden");
+
+
+    document
+    .getElementById("dashboard")
+    .classList.remove("hidden");
+
+
+    loadData();
 
 }
 
 
-const {error} =
-await supabaseClient.auth.signInWithPassword({
-
-email:email,
-password:password
-
-});
-
-
-if(error){
-
-document.getElementById("loginMessage").innerHTML =
-'<div class="error">'+
-error.message+
-'</div>';
-
-return;
-
-}
-
-
-document
-.getElementById("loginBox")
-.classList.add("hidden");
-
-document
-.getElementById("dashboard")
-.classList.remove("hidden");
-
-loadData();
-
-}
-
-
-/* =========================================================
+/* =====================================================
    LOGOUT
-========================================================= */
+===================================================== */
 
 async function logout(){
 
-await supabaseClient.auth.signOut();
+    await supabaseClient.auth.signOut();
 
-location.reload();
+    location.reload();
 
 }
 
 
-/* =========================================================
+/* =====================================================
    LOAD DATA
-========================================================= */
+===================================================== */
 
 async function loadData(){
 
-const {data,error} =
-await supabaseClient
-.from("transaksi_keuangan")
-.select("*")
-.order("tanggal",{ascending:false});
+    const {data,error} =
+        await supabaseClient
+        .from("transaksi_keuangan")
+        .select("*")
+        .order("tanggal",{ascending:false});
 
 
-if(error){
+    if(error){
 
-console.log(error);
+        console.error(error);
 
-document.getElementById("tabelTransaksi").innerHTML =
-`
-<tr>
-<td colspan="9">
+        document.getElementById("tabelTransaksi").innerHTML =
+        `
+        <tr>
+            <td colspan="10">
+                <div class="error">
+                    Gagal mengambil data keuangan.
+                    <br>
+                    ${escapeHTML(error.message)}
+                </div>
+            </td>
+        </tr>
+        `;
 
-<div class="error">
-Gagal mengambil data keuangan.
-<br>
-${error.message || ""}
-</div>
+        return;
 
-</td>
-</tr>
-`;
-
-return;
-
-}
+    }
 
 
-semuaTransaksi =
-data || [];
+    semuaTransaksi =
+        data || [];
 
 
-hitungRingkasan();
+    hitungRingkasan();
 
-tampilkanTransaksi();
+    tampilkanTransaksi();
 
-isiTahun();
+    isiTahun();
 
 }
 
 
-/* =========================================================
+/* =====================================================
    RINGKASAN KAS RW
-   IURAN SAMPAH DIKECUALIKAN
-========================================================= */
+===================================================== */
 
 function hitungRingkasan(){
 
-let masuk = 0;
-
-let keluar = 0;
-
-let jumlah = 0;
+    const data =
+        dataKasRW();
 
 
-semuaTransaksi.forEach(function(item){
+    let masuk = 0;
 
-/* IURAN SAMPAH TIDAK DIHITUNG */
+    let keluar = 0;
 
-if(isIuranSampah(item)){
 
-return;
+    data.forEach(function(item){
+
+        if(
+            String(item.jenis || "")
+            .toLowerCase()
+            === "pemasukan"
+        ){
+
+            masuk +=
+                Number(item.nominal)||0;
+
+        }
+
+
+        if(
+            String(item.jenis || "")
+            .toLowerCase()
+            === "pengeluaran"
+        ){
+
+            keluar +=
+                Number(item.nominal)||0;
+
+        }
+
+    });
+
+
+    document.getElementById("saldo").innerText =
+        rupiah(masuk-keluar);
+
+
+    document.getElementById("totalMasuk").innerText =
+        rupiah(masuk);
+
+
+    document.getElementById("totalKeluar").innerText =
+        rupiah(keluar);
+
+
+    document.getElementById("jumlahTransaksi").innerText =
+        data.length;
 
 }
 
 
-jumlah++;
-
-
-if(item.jenis === "pemasukan"){
-
-masuk += Number(item.nominal)||0;
-
-}
-
-
-if(item.jenis === "pengeluaran"){
-
-keluar += Number(item.nominal)||0;
-
-}
-
-});
-
-
-document.getElementById("saldo").innerText =
-rupiah(masuk-keluar);
-
-document.getElementById("totalMasuk").innerText =
-rupiah(masuk);
-
-document.getElementById("totalKeluar").innerText =
-rupiah(keluar);
-
-document.getElementById("jumlahTransaksi").innerText =
-jumlah;
-
-}
-
-
-/* =========================================================
+/* =====================================================
    TAMPIL TRANSAKSI ADMIN
-   SEMUA TRANSAKSI TERMASUK SAMPAH
-========================================================= */
+===================================================== */
 
 function tampilkanTransaksi(){
 
-const tbody =
-document.getElementById("tabelTransaksi");
-
-tbody.innerHTML = "";
+    const tbody =
+        document.getElementById("tabelTransaksi");
 
 
-if(semuaTransaksi.length === 0){
+    tbody.innerHTML = "";
 
-tbody.innerHTML =
-`
-<tr>
-<td colspan="9">
-Belum ada transaksi.
-</td>
-</tr>
-`;
 
-return;
+    if(semuaTransaksi.length === 0){
+
+        tbody.innerHTML =
+        `
+        <tr>
+            <td colspan="10">
+                Belum ada transaksi.
+            </td>
+        </tr>
+        `;
+
+        return;
+
+    }
+
+
+    semuaTransaksi.forEach(function(item,index){
+
+        const row =
+            document.createElement("tr");
+
+
+        const sampah =
+            isIuranSampah(item);
+
+
+        const kategoriDisplay =
+            sampah
+            ? "🗑️ Iuran Sampah"
+            : escapeHTML(item.kategori || "-");
+
+
+        const jenisClass =
+            String(item.jenis || "")
+            .toLowerCase()
+            === "pemasukan"
+            ? "color:#16833b;font-weight:bold;"
+            : "color:#c33d3d;font-weight:bold;";
+
+
+        row.innerHTML = `
+
+        <td>
+            ${escapeHTML(item.tanggal || "-")}
+        </td>
+
+        <td style="${jenisClass}">
+            ${escapeHTML(item.jenis || "-")}
+        </td>
+
+        <td>
+            ${kategoriDisplay}
+        </td>
+
+        <td>
+            ${escapeHTML(item.rt || "Umum")}
+        </td>
+
+        <td>
+            ${escapeHTML(item.nama_pembayar || "-")}
+        </td>
+
+        <td>
+            ${escapeHTML(item.no_whatsapp || "-")}
+        </td>
+
+        <td style="${jenisClass}">
+            ${rupiah(item.nominal)}
+        </td>
+
+        <td>
+            ${escapeHTML(item.metode || "-")}
+        </td>
+
+        <td>
+            ${escapeHTML(item.keterangan || "-")}
+        </td>
+
+        <td>
+
+            <div class="action-buttons">
+
+                <button
+                    class="receipt"
+                    onclick="bukaKwitansi(${index})"
+                >
+                    🧾 Kwitansi
+                </button>
+
+                <button
+                    class="edit"
+                    onclick="editTransaksi(${index})"
+                >
+                    ✏️ Edit
+                </button>
+
+                <button
+                    class="delete"
+                    onclick="hapusTransaksi(${index})"
+                >
+                    🗑️ Hapus
+                </button>
+
+            </div>
+
+        </td>
+
+        `;
+
+
+        tbody.appendChild(row);
+
+    });
 
 }
 
 
-semuaTransaksi.forEach(function(item,index){
-
-const row =
-document.createElement("tr");
-
-
-let badgeJenis =
-item.jenis === "pemasukan"
-?
-'<span class="badge badge-masuk">PEMASUKAN</span>'
-:
-'<span class="badge badge-keluar">PENGELUARAN</span>';
-
-
-let kategoriTampilan =
-isIuranSampah(item)
-?
-'<span class="badge badge-sampah">IURAN SAMPAH</span>'
-:
-(item.kategori || "-");
-
-
-row.innerHTML = `
-
-<td>${item.tanggal || "-"}</td>
-
-<td>${badgeJenis}</td>
-
-<td>${kategoriTampilan}</td>
-
-<td>${item.rt || "Umum"}</td>
-
-<td>${item.nama_pembayar || "-"}</td>
-
-<td>${rupiah(item.nominal)}</td>
-
-<td>${item.metode || "-"}</td>
-
-<td>${item.keterangan || "-"}</td>
-
-<td>
-
-<div class="action-buttons">
-
-
-<button
-class="receipt"
-onclick="bukaKwitansi(${index})"
->
-🧾 Kwitansi
-</button>
-
-
-<button
-class="edit"
-onclick="editTransaksi(${index})"
->
-✏️ Edit
-</button>
-
-
-<button
-class="delete"
-onclick="hapusTransaksi(${index})"
->
-🗑️ Hapus
-</button>
-
-
-</div>
-
-</td>
-
-`;
-
-
-tbody.appendChild(row);
-
-});
-
-}
-
-
-/* =========================================================
-   SIMPAN / UPDATE TRANSAKSI
-========================================================= */
+/* =====================================================
+   SIMPAN TRANSAKSI
+===================================================== */
 
 async function simpanTransaksi(){
 
-const tanggal =
-document.getElementById("tanggal").value;
+    const tanggal =
+        document.getElementById("tanggal").value;
 
-const jenis =
-document.getElementById("jenis").value;
+    const jenis =
+        document.getElementById("jenis").value;
 
-const kategori =
-document.getElementById("kategori").value;
+    const kategori =
+        document.getElementById("kategori").value;
 
-const rt =
-document.getElementById("rt").value;
+    const rt =
+        document.getElementById("rt").value;
 
-const namaPembayar =
-document.getElementById("namaPembayar")
-.value
-.trim();
+    const namaPembayar =
+        document.getElementById("namaPembayar")
+        .value
+        .trim();
 
-const noWhatsapp =
-document.getElementById("noWhatsapp")
-.value
-.trim();
+    const noWhatsapp =
+        document.getElementById("noWhatsapp")
+        .value
+        .trim();
 
-const nominal =
-Number(document.getElementById("nominal").value);
+    const nominal =
+        Number(
+            document.getElementById("nominal").value
+        );
 
-const metode =
-document.getElementById("metode").value;
+    const metode =
+        document.getElementById("metode").value;
 
-const keterangan =
-document.getElementById("keterangan")
-.value
-.trim();
+    const keterangan =
+        document.getElementById("keterangan")
+        .value
+        .trim();
 
 
-if(!tanggal){
+    if(!tanggal){
 
-alert("Tanggal belum diisi.");
+        alert("Tanggal belum diisi.");
 
-return;
+        return;
+
+    }
+
+
+    if(!namaPembayar){
+
+        alert("Nama pembayar wajib diisi.");
+
+        return;
+
+    }
+
+
+    if(!nominal || nominal <= 0){
+
+        alert("Nominal belum diisi.");
+
+        return;
+
+    }
+
+
+    const payload = {
+
+        tanggal: tanggal,
+        jenis: jenis,
+        kategori: kategori,
+        rt: rt || null,
+        nama_pembayar: namaPembayar,
+        no_whatsapp: noWhatsapp || null,
+        nominal: nominal,
+        metode: metode,
+        keterangan: keterangan || null
+
+    };
+
+
+    const button =
+        document.getElementById("saveButton");
+
+
+    button.disabled = true;
+
+
+    let result;
+
+
+    /* ================================
+       EDIT
+    ================================= */
+
+    if(transaksiEditId){
+
+        result =
+            await supabaseClient
+            .from("transaksi_keuangan")
+            .update(payload)
+            .eq("id",transaksiEditId);
+
+    }
+
+
+    /* ================================
+       INSERT
+    ================================= */
+
+    else{
+
+        result =
+            await supabaseClient
+            .from("transaksi_keuangan")
+            .insert(payload);
+
+    }
+
+
+    button.disabled = false;
+
+
+    if(result.error){
+
+        document.getElementById("saveMessage").innerHTML =
+        `
+        <div class="error">
+            ${escapeHTML(result.error.message)}
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    if(transaksiEditId){
+
+        document.getElementById("saveMessage").innerHTML =
+        `
+        <div class="success">
+            ✅ Transaksi berhasil diperbarui.
+        </div>
+        `;
+
+    }
+
+    else{
+
+        document.getElementById("saveMessage").innerHTML =
+        `
+        <div class="success">
+            ✅ Transaksi berhasil disimpan.
+        </div>
+        `;
+
+    }
+
+
+    resetForm();
+
+    await loadData();
 
 }
-
-
-if(!namaPembayar){
-
-alert("Nama pembayar wajib diisi.");
-
-return;
-
-}
-
-
-if(!nominal || nominal <= 0){
-
-alert("Nominal belum diisi.");
-
-return;
-
-}
-
-
-const payload = {
-
-tanggal: tanggal,
-jenis: jenis,
-kategori: kategori,
-rt: rt || null,
-nama_pembayar: namaPembayar,
-no_whatsapp: noWhatsapp || null,
-nominal: nominal,
-metode: metode,
-keterangan: keterangan || null
-
-};
 
 
 /* =====================================================
-   MODE EDIT
-===================================================== */
-
-if(transaksiEditId){
-
-const {error} =
-await supabaseClient
-.from("transaksi_keuangan")
-.update(payload)
-.eq("id", transaksiEditId);
-
-
-if(error){
-
-document.getElementById("saveMessage").innerHTML =
-'<div class="error">'+
-error.message+
-'</div>';
-
-return;
-
-}
-
-
-document.getElementById("saveMessage").innerHTML =
-'<div class="success">✅ Transaksi berhasil diperbarui.</div>';
-
-
-batalEdit();
-
-await loadData();
-
-return;
-
-}
-
-
-/* =====================================================
-   MODE INSERT
-===================================================== */
-
-const {error} =
-await supabaseClient
-.from("transaksi_keuangan")
-.insert(payload);
-
-
-if(error){
-
-document.getElementById("saveMessage").innerHTML =
-'<div class="error">'+
-error.message+
-'</div>';
-
-return;
-
-}
-
-
-document.getElementById("saveMessage").innerHTML =
-'<div class="success">✅ Transaksi berhasil disimpan.</div>';
-
-
-bersihkanForm();
-
-await loadData();
-
-}
-
-
-/* =========================================================
    EDIT TRANSAKSI
-========================================================= */
+===================================================== */
 
 function editTransaksi(index){
 
-const item =
-semuaTransaksi[index];
+    const item =
+        semuaTransaksi[index];
 
 
-if(!item){
+    if(!item){
 
-return;
+        return;
 
-}
+    }
 
 
-if(!item.id){
+    transaksiEditId =
+        item.id;
 
-alert(
-"Transaksi ini tidak memiliki ID. Tidak dapat diedit."
-);
 
-return;
+    document.getElementById("formTitle").innerText =
+        "✏️ Edit Transaksi";
 
-}
 
+    document
+    .getElementById("formTitle")
+    .classList.add("edit-title");
 
-transaksiEditId =
-item.id;
 
+    document.getElementById("tanggal").value =
+        item.tanggal || "";
 
-document.getElementById("tanggal").value =
-item.tanggal || "";
 
+    document.getElementById("jenis").value =
+        item.jenis || "pemasukan";
 
-document.getElementById("jenis").value =
-item.jenis || "pemasukan";
 
+    document.getElementById("kategori").value =
+        item.kategori || "Iuran Kas RW";
 
-document.getElementById("kategori").value =
-item.kategori || "Lain-lain";
 
+    document.getElementById("rt").value =
+        item.rt || "";
 
-document.getElementById("rt").value =
-item.rt || "";
 
+    document.getElementById("namaPembayar").value =
+        item.nama_pembayar || "";
 
-document.getElementById("namaPembayar").value =
-item.nama_pembayar || "";
 
+    document.getElementById("noWhatsapp").value =
+        item.no_whatsapp || "";
 
-document.getElementById("noWhatsapp").value =
-item.no_whatsapp || "";
 
+    document.getElementById("nominal").value =
+        item.nominal || "";
 
-document.getElementById("nominal").value =
-item.nominal || "";
 
+    document.getElementById("metode").value =
+        item.metode || "Transfer";
 
-document.getElementById("metode").value =
-item.metode || "Transfer";
 
+    document.getElementById("keterangan").value =
+        item.keterangan || "";
 
-document.getElementById("keterangan").value =
-item.keterangan || "";
 
+    document.getElementById("saveButton").innerText =
+        "💾 SIMPAN PERUBAHAN";
 
-document
-.getElementById("formCard")
-.classList.add("edit-mode");
 
+    document
+    .getElementById("cancelEditButton")
+    .classList.remove("hidden");
 
-document
-.getElementById("formTitle")
-.classList.add("edit-title");
 
-
-document.getElementById("formTitle")
-.innerText =
-"✏️ Edit Transaksi";
-
-
-document.getElementById("saveButton")
-.innerText =
-"💾 SIMPAN PERUBAHAN";
-
-
-document
-.getElementById("cancelEditButton")
-.classList.remove("hidden");
-
-
-document.getElementById("saveMessage").innerHTML =
-'<div class="warning">Mode edit aktif. Periksa data sebelum menyimpan.</div>';
-
-
-document
-.getElementById("formCard")
-.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-
-
-/* =========================================================
-   BATAL EDIT
-========================================================= */
-
-function batalEdit(){
-
-transaksiEditId = null;
-
-
-document
-.getElementById("formCard")
-.classList.remove("edit-mode");
-
-
-document
-.getElementById("formTitle")
-.classList.remove("edit-title");
-
-
-document.getElementById("formTitle")
-.innerText =
-"➕ Input Keuangan";
-
-
-document.getElementById("saveButton")
-.innerText =
-"💾 SIMPAN TRANSAKSI";
-
-
-document
-.getElementById("cancelEditButton")
-.classList.add("hidden");
-
-
-bersihkanForm();
-
-}
-
-
-/* =========================================================
-   BERSIHKAN FORM
-========================================================= */
-
-function bersihkanForm(){
-
-document.getElementById("tanggal").value =
-new Date()
-.toISOString()
-.substring(0,10);
-
-document.getElementById("jenis").value =
-"pemasukan";
-
-document.getElementById("kategori").value =
-"Iuran Kas RW";
-
-document.getElementById("rt").value =
-"";
-
-document.getElementById("namaPembayar").value =
-"";
-
-document.getElementById("noWhatsapp").value =
-"";
-
-document.getElementById("nominal").value =
-"";
-
-document.getElementById("metode").value =
-"Transfer";
-
-document.getElementById("keterangan").value =
-"";
-
-}
-
-
-/* =========================================================
-   HAPUS TRANSAKSI
-========================================================= */
-
-async function hapusTransaksi(index){
-
-const item =
-semuaTransaksi[index];
-
-
-if(!item){
-
-return;
-
-}
-
-
-if(!item.id){
-
-alert(
-"Transaksi ini tidak memiliki ID. Tidak dapat dihapus."
-);
-
-return;
-
-}
-
-
-const yakin =
-confirm(
-"Yakin ingin menghapus transaksi ini?\n\n"+
-"Kategori: "+(item.kategori || "-")+
-"\nNominal: "+rupiah(item.nominal)+
-"\nPembayar: "+(item.nama_pembayar || "-")+
-"\n\nData yang dihapus tidak dapat dikembalikan."
-);
-
-
-if(!yakin){
-
-return;
-
-}
-
-
-const {error} =
-await supabaseClient
-.from("transaksi_keuangan")
-.delete()
-.eq("id",item.id);
-
-
-if(error){
-
-alert(
-"Gagal menghapus transaksi:\n"+
-error.message
-);
-
-return;
-
-}
-
-
-alert("✅ Transaksi berhasil dihapus.");
-
-
-await loadData();
-
-}
-
-
-/* =========================================================
-   TAHUN FILTER
-========================================================= */
-
-function isiTahun(){
-
-const select =
-document.getElementById("filterTahun");
-
-const tahunSekarang =
-new Date().getFullYear();
-
-const tahunSet =
-new Set();
-
-
-tahunSet.add(tahunSekarang);
-
-
-semuaTransaksi.forEach(function(item){
-
-/* IURAN SAMPAH TIDAK DIPERLUKAN DALAM FILTER PDF */
-
-if(isIuranSampah(item)){
-
-return;
-
-}
-
-
-if(item.tanggal){
-
-const tahun =
-String(item.tanggal)
-.substring(0,4);
-
-if(tahun){
-
-tahunSet.add(Number(tahun));
-
-}
-
-}
-
-});
-
-
-select.innerHTML =
-'<option value="semua">Semua Tahun</option>';
-
-
-Array.from(tahunSet)
-.sort((a,b)=>b-a)
-.forEach(function(tahun){
-
-select.innerHTML +=
-`
-<option value="${tahun}">
-${tahun}
-</option>
-`;
-
-});
-
-}
-
-
-/* =========================================================
-   FILTER DATA UNTUK PDF
-   IURAN SAMPAH DIKECUALIKAN
-========================================================= */
-
-function dataTerfilter(){
-
-const bulan =
-document.getElementById("filterBulan").value;
-
-const tahun =
-document.getElementById("filterTahun").value;
-
-
-return semuaTransaksi.filter(function(item){
-
-/* =========================================
-   PENTING:
-   IURAN SAMPAH TIDAK BOLEH MASUK PDF
-========================================= */
-
-if(isIuranSampah(item)){
-
-return false;
-
-}
-
-
-if(!item.tanggal){
-
-return false;
-
-}
-
-
-const tanggal =
-String(item.tanggal);
-
-const bulanData =
-tanggal.substring(5,7);
-
-const tahunData =
-tanggal.substring(0,4);
-
-
-if(
-bulan !== "semua" &&
-bulanData !== bulan
-){
-
-return false;
-
-}
-
-
-if(
-tahun !== "semua" &&
-tahunData !== String(tahun)
-){
-
-return false;
-
-}
-
-
-return true;
-
-});
-
-}
-
-
-/* =========================================================
-   CETAK PDF
-========================================================= */
-
-function cetakPDF(){
-
-const data =
-dataTerfilter();
-
-
-const bulan =
-document.getElementById("filterBulan").value;
-
-const tahun =
-document.getElementById("filterTahun").value;
-
-
-let namaBulan =
-"Semua Bulan";
-
-
-const daftarBulan = {
-
-"01":"Januari",
-"02":"Februari",
-"03":"Maret",
-"04":"April",
-"05":"Mei",
-"06":"Juni",
-"07":"Juli",
-"08":"Agustus",
-"09":"September",
-"10":"Oktober",
-"11":"November",
-"12":"Desember"
-
-};
-
-
-if(bulan !== "semua"){
-
-namaBulan =
-daftarBulan[bulan];
-
-}
-
-
-let periode =
-"Semua Transaksi";
-
-
-if(
-bulan !== "semua" &&
-tahun !== "semua"
-){
-
-periode =
-namaBulan+" "+tahun;
-
-}
-
-else if(
-bulan === "semua" &&
-tahun !== "semua"
-){
-
-periode =
-"Semua Bulan Tahun "+tahun;
-
-}
-
-else if(
-bulan !== "semua" &&
-tahun === "semua"
-){
-
-periode =
-namaBulan+" Semua Tahun";
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
 /* =====================================================
-   HITUNG KAS RW SAJA
+   BATAL EDIT
 ===================================================== */
 
-let masuk = 0;
+function batalEdit(){
 
-let keluar = 0;
-
-
-data.forEach(function(item){
-
-if(item.jenis === "pemasukan"){
-
-masuk += Number(item.nominal)||0;
+    resetForm();
 
 }
 
-if(item.jenis === "pengeluaran"){
 
-keluar += Number(item.nominal)||0;
+/* =====================================================
+   RESET FORM
+===================================================== */
 
-}
+function resetForm(){
 
-});
+    transaksiEditId = null;
 
 
-let html = `
+    document.getElementById("formTitle").innerText =
+        "➕ Input Keuangan";
 
-<div style="font-family:Arial;padding:25px;">
 
-<div style="
-display:flex;
-align-items:center;
-gap:15px;
-border-bottom:3px solid #07366f;
-padding-bottom:15px;
-">
+    document
+    .getElementById("formTitle")
+    .classList.remove("edit-title");
 
-<img
-src="logo-rw01-removebg-preview.png"
-style="
-width:70px;
-height:70px;
-object-fit:contain;
-"
->
 
-<div>
+    document.getElementById("saveButton").innerText =
+        "💾 SIMPAN TRANSAKSI";
 
-<h2 style="
-margin:0;
-color:#07366f;
-">
-RW 01 PONDOK SUKATANI PERMAI
-</h2>
 
-<div>
-Kelurahan Sukatani • Kecamatan Rajeg • Kabupaten Tangerang
-</div>
+    document
+    .getElementById("cancelEditButton")
+    .classList.add("hidden");
 
-</div>
 
-</div>
+    document.getElementById("tanggal").value =
+        new Date()
+        .toISOString()
+        .substring(0,10);
 
 
-<h2 style="
-text-align:center;
-margin-top:25px;
-">
+    document.getElementById("jenis").value =
+        "pemasukan";
 
-REKAPITULASI KEUANGAN RW 01
 
-</h2>
+    document.getElementById("kategori").value =
+        "Iuran Kas RW";
 
 
-<p style="text-align:center;">
+    document.getElementById("rt").value =
+        "";
 
-Periode: ${periode}
 
-</p>
+    document.getElementById("namaPembayar").value =
+        "";
 
 
-<div style="
-background:#fff8df;
-border:1px solid #e5c75a;
-padding:10px;
-font-size:11px;
-margin-top:15px;
-">
+    document.getElementById("noWhatsapp").value =
+        "";
 
-<strong>Catatan:</strong>
-Rekap ini merupakan laporan Kas RW 01.
-Iuran Sampah tidak termasuk dalam perhitungan laporan ini.
 
-</div>
+    document.getElementById("nominal").value =
+        "";
 
 
-<table style="
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-">
+    document.getElementById("metode").value =
+        "Transfer";
 
-<tr>
 
-<td style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-<b>Total Pemasukan Kas RW</b>
-
-</td>
-
-<td style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-${rupiah(masuk)}
-
-</td>
-
-
-<td style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-<b>Total Pengeluaran Kas RW</b>
-
-</td>
-
-<td style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-${rupiah(keluar)}
-
-</td>
-
-</tr>
-
-
-<tr>
-
-<td style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-<b>Saldo Kas RW</b>
-
-</td>
-
-<td colspan="3"
-style="
-border:1px solid #bbb;
-padding:10px;
-">
-
-${rupiah(masuk-keluar)}
-
-</td>
-
-</tr>
-
-</table>
-
-
-<table style="
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-font-size:11px;
-">
-
-<thead>
-
-<tr>
-
-<th style="border:1px solid #bbb;padding:7px;">
-No
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Tanggal
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Jenis
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Kategori
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-RT
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Pembayar
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Nominal
-</th>
-
-<th style="border:1px solid #bbb;padding:7px;">
-Metode
-</th>
-
-</tr>
-
-</thead>
-
-
-<tbody>
-
-${
-data.map((item,index)=>`
-
-<tr>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${index+1}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.tanggal || "-"}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.jenis || "-"}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.kategori || "-"}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.rt || "Umum"}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.nama_pembayar || "-"}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${rupiah(item.nominal)}
-</td>
-
-<td style="border:1px solid #bbb;padding:7px;">
-${item.metode || "-"}
-</td>
-
-</tr>
-
-`).join("")
-}
-
-</tbody>
-
-</table>
-
-
-<div style="
-display:grid;
-grid-template-columns:1fr 1fr;
-text-align:center;
-margin-top:60px;
-">
-
-
-<div>
-
-Mengetahui,
-
-<br><br><br><br>
-
-<b>
-Muhammad Irfani Abdur Rahman, S.Pd., Gr.
-</b>
-
-<br>
-
-Ketua RW 01
-
-</div>
-
-
-<div>
-
-Bendahara,
-
-<br><br><br><br>
-
-<b>
-Asri Ajrin Karima
-</b>
-
-<br>
-
-Bendahara RW 01
-
-</div>
-
-
-</div>
-
-
-</div>
-
-`;
-
-
-const win =
-window.open("","_blank");
-
-
-if(!win){
-
-alert(
-"Pop-up diblokir browser. Izinkan pop-up untuk mencetak PDF."
-);
-
-return;
+    document.getElementById("keterangan").value =
+        "";
 
 }
 
 
-win.document.write(`
+/* =====================================================
+   HAPUS TRANSAKSI
+===================================================== */
 
-<html>
+function hapusTransaksi(index){
 
-<head>
-
-<title>
-Rekap Keuangan RW 01
-</title>
-
-</head>
+    const item =
+        semuaTransaksi[index];
 
 
-<body>
+    if(!item){
 
-${html}
+        return;
+
+    }
 
 
-<script>
+    transaksiHapusId =
+        item.id;
 
-window.onload=function(){
 
-window.print();
+    document.getElementById("deleteText").innerHTML =
+    `
+    Transaksi <strong>
+    ${escapeHTML(item.kategori || "-")}
+    </strong>
+    sebesar <strong>
+    ${rupiah(item.nominal)}
+    </strong>
+    akan dihapus permanen.
+    `;
+
+
+    document
+    .getElementById("deleteModal")
+    .classList.remove("hidden");
 
 }
 
-<\/script>
+
+/* =====================================================
+   KONFIRMASI HAPUS
+===================================================== */
+
+async function konfirmasiHapus(){
+
+    if(!transaksiHapusId){
+
+        return;
+
+    }
 
 
-</body>
+    const {error} =
+        await supabaseClient
+        .from("transaksi_keuangan")
+        .delete()
+        .eq("id",transaksiHapusId);
 
-</html>
 
-`);
+    if(error){
+
+        alert(
+            "Gagal menghapus transaksi: "+
+            error.message
+        );
+
+        return;
+
+    }
 
 
-win.document.close();
+    tutupHapus();
+
+
+    await loadData();
+
+
+    document.getElementById("saveMessage").innerHTML =
+    `
+    <div class="success">
+        ✅ Transaksi berhasil dihapus.
+    </div>
+    `;
 
 }
 
 
-/* =========================================================
+/* =====================================================
+   TUTUP HAPUS
+===================================================== */
+
+function tutupHapus(){
+
+    transaksiHapusId = null;
+
+    document
+    .getElementById("deleteModal")
+    .classList.add("hidden");
+
+}
+
+
+/* =====================================================
+   TAHUN FILTER
+===================================================== */
+
+function isiTahun(){
+
+    const select =
+        document.getElementById("filterTahun");
+
+
+    const tahunSekarang =
+        new Date().getFullYear();
+
+
+    const tahunSet =
+        new Set();
+
+
+    tahunSet.add(tahunSekarang);
+
+
+    semuaTransaksi.forEach(function(item){
+
+        if(item.tanggal){
+
+            const tahun =
+                String(item.tanggal)
+                .substring(0,4);
+
+
+            if(tahun){
+
+                tahunSet.add(Number(tahun));
+
+            }
+
+        }
+
+    });
+
+
+    select.innerHTML =
+        '<option value="semua">Semua Tahun</option>';
+
+
+    Array.from(tahunSet)
+    .sort((a,b)=>b-a)
+    .forEach(function(tahun){
+
+        select.innerHTML +=
+        `
+        <option value="${tahun}">
+            ${tahun}
+        </option>
+        `;
+
+    });
+
+}
+
+
+/* =====================================================
+   FILTER DATA REKAP
+   IURAN SAMPAH SELALU DIKELUARKAN
+===================================================== */
+
+function dataTerfilter(){
+
+    const bulan =
+        document.getElementById("filterBulan").value;
+
+
+    const tahun =
+        document.getElementById("filterTahun").value;
+
+
+    /*
+       PENTING:
+       Gunakan dataKasRW(), bukan semuaTransaksi.
+    */
+
+    return dataKasRW().filter(function(item){
+
+        if(!item.tanggal){
+
+            return false;
+
+        }
+
+
+        const tanggal =
+            String(item.tanggal);
+
+
+        const bulanData =
+            tanggal.substring(5,7);
+
+
+        const tahunData =
+            tanggal.substring(0,4);
+
+
+        if(
+            bulan !== "semua" &&
+            bulanData !== bulan
+        ){
+
+            return false;
+
+        }
+
+
+        if(
+            tahun !== "semua" &&
+            tahunData !== String(tahun)
+        ){
+
+            return false;
+
+        }
+
+
+        return true;
+
+    });
+
+}
+
+
+/* =====================================================
+   CETAK PDF
+===================================================== */
+
+function cetakPDF(){
+
+    const data =
+        dataTerfilter();
+
+
+    const bulan =
+        document.getElementById("filterBulan").value;
+
+
+    const tahun =
+        document.getElementById("filterTahun").value;
+
+
+    let namaBulan =
+        "Semua Bulan";
+
+
+    const daftarBulan = {
+
+        "01":"Januari",
+        "02":"Februari",
+        "03":"Maret",
+        "04":"April",
+        "05":"Mei",
+        "06":"Juni",
+        "07":"Juli",
+        "08":"Agustus",
+        "09":"September",
+        "10":"Oktober",
+        "11":"November",
+        "12":"Desember"
+
+    };
+
+
+    if(bulan !== "semua"){
+
+        namaBulan =
+            daftarBulan[bulan];
+
+    }
+
+
+    let periode =
+        "Semua Transaksi";
+
+
+    if(
+        bulan !== "semua" &&
+        tahun !== "semua"
+    ){
+
+        periode =
+            namaBulan+" "+tahun;
+
+    }
+
+    else if(
+        bulan === "semua" &&
+        tahun !== "semua"
+    ){
+
+        periode =
+            "Semua Bulan Tahun "+tahun;
+
+    }
+
+    else if(
+        bulan !== "semua" &&
+        tahun === "semua"
+    ){
+
+        periode =
+            namaBulan+" Semua Tahun";
+
+    }
+
+
+    let masuk = 0;
+
+    let keluar = 0;
+
+
+    data.forEach(function(item){
+
+        if(item.jenis === "pemasukan"){
+
+            masuk +=
+                Number(item.nominal)||0;
+
+        }
+
+
+        if(item.jenis === "pengeluaran"){
+
+            keluar +=
+                Number(item.nominal)||0;
+
+        }
+
+    });
+
+
+    const saldo =
+        masuk-keluar;
+
+
+    let rows = "";
+
+
+    if(data.length === 0){
+
+        rows = `
+        <tr>
+            <td
+                colspan="9"
+                style="
+                border:1px solid #bbb;
+                padding:12px;
+                text-align:center;
+                "
+            >
+                Tidak ada transaksi pada periode ini.
+            </td>
+        </tr>
+        `;
+
+    }
+
+    else{
+
+        rows =
+            data.map(function(item,index){
+
+                return `
+
+                <tr>
+
+                    <td>
+                        ${index+1}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.tanggal || "-")}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.jenis || "-")}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.kategori || "-")}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.rt || "Umum")}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.nama_pembayar || "-")}
+                    </td>
+
+                    <td>
+                        ${rupiah(item.nominal)}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.metode || "-")}
+                    </td>
+
+                    <td>
+                        ${escapeHTML(item.keterangan || "-")}
+                    </td>
+
+                </tr>
+
+                `;
+
+            })
+            .join("");
+
+    }
+
+
+    const html = `
+
+    <div style="
+        font-family:Arial,Helvetica,sans-serif;
+        padding:25px;
+    ">
+
+
+        <div style="
+            display:flex;
+            align-items:center;
+            gap:15px;
+            border-bottom:3px solid #07366f;
+            padding-bottom:15px;
+        ">
+
+            <img
+                src="logo-rw01-removebg-preview.png"
+                style="
+                    width:70px;
+                    height:70px;
+                    object-fit:contain;
+                "
+            >
+
+            <div>
+
+                <h2 style="
+                    margin:0;
+                    color:#07366f;
+                ">
+                    RW 01 PONDOK SUKATANI PERMAI
+                </h2>
+
+                <div>
+                    Kelurahan Sukatani •
+                    Kecamatan Rajeg •
+                    Kabupaten Tangerang
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h2 style="
+            text-align:center;
+            margin-top:25px;
+        ">
+            REKAPITULASI KEUANGAN RW 01
+        </h2>
+
+
+        <p style="
+            text-align:center;
+        ">
+            Periode: ${escapeHTML(periode)}
+        </p>
+
+
+        <p style="
+            text-align:center;
+            font-size:11px;
+            color:#666;
+        ">
+            Iuran Sampah RT tidak termasuk dalam rekapitulasi
+            Kas RW.
+        </p>
+
+
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+        ">
+
+            <tr>
+
+                <td style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    <b>Total Pemasukan</b>
+                </td>
+
+                <td style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    ${rupiah(masuk)}
+                </td>
+
+                <td style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    <b>Total Pengeluaran</b>
+                </td>
+
+                <td style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    ${rupiah(keluar)}
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    <b>Saldo Kas RW</b>
+                </td>
+
+                <td
+                    colspan="3"
+                    style="
+                    border:1px solid #bbb;
+                    padding:10px;
+                ">
+                    ${rupiah(saldo)}
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+            font-size:10px;
+        ">
+
+            <thead>
+
+                <tr>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        No
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Tanggal
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Jenis
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Kategori
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        RT
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Pembayar
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Nominal
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Metode
+                    </th>
+
+                    <th style="
+                        border:1px solid #bbb;
+                        padding:7px;
+                    ">
+                        Keterangan
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                ${rows}
+
+            </tbody>
+
+        </table>
+
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            text-align:center;
+            margin-top:60px;
+            gap:30px;
+        ">
+
+
+            <div>
+
+                Mengetahui,
+
+                <br><br><br><br>
+
+                <b>
+                Muhammad Irfani Abdur Rahman, S.Pd., Gr.
+                </b>
+
+                <br>
+
+                Ketua RW 01
+
+            </div>
+
+
+            <div>
+
+                Bendahara,
+
+                <br><br><br><br>
+
+                <b>
+                Asri Ajrin Karima
+                </b>
+
+                <br>
+
+                Bendahara RW 01
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    `;
+
+
+    const win =
+        window.open("","_blank");
+
+
+    if(!win){
+
+        alert(
+            "Pop-up diblokir browser. Izinkan pop-up untuk mencetak PDF."
+        );
+
+        return;
+
+    }
+
+
+    win.document.write(`
+
+    <html>
+
+    <head>
+
+        <title>
+            Rekap Keuangan RW 01
+        </title>
+
+        <style>
+
+            @page{
+                size:A4 landscape;
+                margin:12mm;
+            }
+
+            body{
+                margin:0;
+                background:white;
+            }
+
+            table{
+                page-break-inside:auto;
+            }
+
+            tr{
+                page-break-inside:avoid;
+                page-break-after:auto;
+            }
+
+            thead{
+                display:table-header-group;
+            }
+
+        </style>
+
+    </head>
+
+
+    <body>
+
+        ${html}
+
+
+        <script>
+
+        window.onload=function(){
+
+            window.print();
+
+        }
+
+        <\/script>
+
+
+    </body>
+
+    </html>
+
+    `);
+
+
+    win.document.close();
+
+}
+
+
+/* =====================================================
    KWITANSI
-========================================================= */
+===================================================== */
 
 function bukaKwitansi(index){
 
-transaksiKwitansi =
-semuaTransaksi[index];
+    transaksiKwitansi =
+        semuaTransaksi[index];
 
 
-if(!transaksiKwitansi){
+    if(!transaksiKwitansi){
 
-return;
+        return;
+
+    }
+
+
+    const item =
+        transaksiKwitansi;
+
+
+    let nomor =
+        item.id ||
+        (index+1);
+
+
+    nomor =
+        String(nomor)
+        .substring(0,20);
+
+
+    document.getElementById("kwitansiNomor").innerText =
+        "No. Kwitansi: RW01-"+nomor;
+
+
+    document.getElementById("kwitansiPembayar").innerText =
+        item.nama_pembayar || "-";
+
+
+    document.getElementById("kwitansiWhatsapp").innerText =
+        item.no_whatsapp || "-";
+
+
+    document.getElementById("kwitansiKategori").innerText =
+        item.kategori || "-";
+
+
+    document.getElementById("kwitansiRT").innerText =
+        item.rt || "Umum";
+
+
+    document.getElementById("kwitansiTanggal").innerText =
+        item.tanggal || "-";
+
+
+    document.getElementById("kwitansiMetode").innerText =
+        item.metode || "-";
+
+
+    document.getElementById("kwitansiNominal").innerText =
+        rupiah(item.nominal);
+
+
+    document.getElementById("kwitansiTerbilang").innerText =
+        terbilangRupiah(item.nominal);
+
+
+    document.getElementById("kwitansiKeterangan").innerText =
+        item.keterangan || "-";
+
+
+    document
+    .getElementById("kwitansiModal")
+    .classList.remove("hidden");
 
 }
 
 
-const item =
-transaksiKwitansi;
-
-
-let nomor =
-item.id ||
-(index+1);
-
-
-nomor =
-String(nomor)
-.substring(0,20);
-
-
-document.getElementById("kwitansiNomor").innerText =
-"No. Kwitansi: RW01-"+nomor;
-
-
-document.getElementById("kwitansiPembayar").innerText =
-item.nama_pembayar || "-";
-
-
-document.getElementById("kwitansiWhatsapp").innerText =
-item.no_whatsapp || "-";
-
-
-document.getElementById("kwitansiKategori").innerText =
-item.kategori || "-";
-
-
-document.getElementById("kwitansiRT").innerText =
-item.rt || "Umum";
-
-
-document.getElementById("kwitansiTanggal").innerText =
-item.tanggal || "-";
-
-
-document.getElementById("kwitansiMetode").innerText =
-item.metode || "-";
-
-
-document.getElementById("kwitansiNominal").innerText =
-rupiah(item.nominal);
-
-
-document.getElementById("kwitansiTerbilang").innerText =
-terbilangRupiah(item.nominal);
-
-
-document.getElementById("kwitansiKeterangan").innerText =
-item.keterangan || "-";
-
-
-document
-.getElementById("kwitansiModal")
-.classList.remove("hidden");
-
-}
-
-
-/* =========================================================
+/* =====================================================
    TUTUP KWITANSI
-========================================================= */
+===================================================== */
 
 function tutupKwitansi(){
 
-document
-.getElementById("kwitansiModal")
-.classList.add("hidden");
+    document
+    .getElementById("kwitansiModal")
+    .classList.add("hidden");
 
 }
 
 
-/* =========================================================
+/* =====================================================
    CETAK KWITANSI
-========================================================= */
+===================================================== */
 
 function printKwitansi(){
 
-const isi =
-document.getElementById("kwitansiPrint")
-.innerHTML;
+    const isi =
+        document
+        .getElementById("kwitansiPrint")
+        .innerHTML;
 
 
-const win =
-window.open("","_blank");
+    const win =
+        window.open("","_blank");
 
 
-if(!win){
+    if(!win){
 
-alert(
-"Pop-up diblokir browser. Izinkan pop-up untuk mencetak kwitansi."
-);
+        alert(
+            "Pop-up diblokir browser. Izinkan pop-up untuk mencetak kwitansi."
+        );
 
-return;
+        return;
+
+    }
+
+
+    win.document.write(`
+
+    <html>
+
+    <head>
+
+        <title>
+            Kwitansi RW 01
+        </title>
+
+
+        <style>
+
+        @page{
+            size:A4 portrait;
+            margin:15mm;
+        }
+
+        body{
+            font-family:Arial,Helvetica,sans-serif;
+            background:white;
+            margin:0;
+            padding:20px;
+        }
+
+        .kwitansi{
+            border:1px solid #ccc;
+            padding:30px;
+            max-width:650px;
+            margin:auto;
+        }
+
+        .kwitansi-header{
+            display:flex;
+            align-items:center;
+            gap:15px;
+            border-bottom:3px solid #07366f;
+            padding-bottom:15px;
+        }
+
+        .kwitansi-logo{
+            width:70px;
+            height:70px;
+            object-fit:contain;
+        }
+
+        .kwitansi-header h2{
+            margin:0;
+            color:#07366f;
+        }
+
+        .kwitansi-header p{
+            font-size:12px;
+        }
+
+        .kwitansi-title{
+            text-align:center;
+            margin:20px 0;
+        }
+
+        .kwitansi-title h1{
+            color:#07366f;
+        }
+
+        .kwitansi-row{
+            display:grid;
+            grid-template-columns:170px 20px 1fr;
+            padding:6px 0;
+            font-size:14px;
+        }
+
+        .nominal-box{
+            margin:20px 0;
+            padding:15px;
+            border:2px solid #07366f;
+            text-align:center;
+        }
+
+        .nominal-box strong{
+            display:block;
+            font-size:25px;
+            color:#07366f;
+        }
+
+        .terbilang{
+            background:#f4f7fb;
+            padding:12px;
+            margin-bottom:20px;
+        }
+
+        .kwitansi-footer{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            text-align:center;
+            gap:40px;
+            margin-top:35px;
+        }
+
+        .ttd{
+            height:75px;
+        }
+
+        .kwitansi-footer strong{
+            text-decoration:underline;
+        }
+
+        </style>
+
+    </head>
+
+
+    <body>
+
+        ${isi}
+
+
+        <script>
+
+        window.onload=function(){
+
+            window.print();
+
+        }
+
+        <\/script>
+
+    </body>
+
+    </html>
+
+    `);
+
+
+    win.document.close();
 
 }
 
 
-win.document.write(`
-
-<html>
-
-<head>
-
-<title>
-Kwitansi RW 01
-</title>
-
-
-<style>
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:white;
-margin:0;
-padding:20px;
-}
-
-.kwitansi{
-border:1px solid #ccc;
-padding:30px;
-max-width:650px;
-margin:auto;
-}
-
-.kwitansi-header{
-display:flex;
-align-items:center;
-gap:15px;
-border-bottom:3px solid #07366f;
-padding-bottom:15px;
-}
-
-.kwitansi-logo{
-width:70px;
-height:70px;
-object-fit:contain;
-}
-
-.kwitansi-header h2{
-margin:0;
-color:#07366f;
-}
-
-.kwitansi-header p{
-font-size:12px;
-}
-
-.kwitansi-title{
-text-align:center;
-margin:20px 0;
-}
-
-.kwitansi-title h1{
-color:#07366f;
-}
-
-.kwitansi-row{
-display:grid;
-grid-template-columns:170px 20px 1fr;
-padding:6px 0;
-font-size:14px;
-}
-
-.nominal-box{
-margin:20px 0;
-padding:15px;
-border:2px solid #07366f;
-text-align:center;
-}
-
-.nominal-box strong{
-display:block;
-font-size:25px;
-color:#07366f;
-}
-
-.terbilang{
-background:#f4f7fb;
-padding:12px;
-margin-bottom:20px;
-}
-
-.kwitansi-footer{
-display:grid;
-grid-template-columns:1fr 1fr;
-text-align:center;
-gap:40px;
-margin-top:35px;
-}
-
-.ttd{
-height:75px;
-}
-
-.kwitansi-footer strong{
-text-decoration:underline;
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-${isi}
-
-
-<script>
-
-window.onload=function(){
-
-window.print();
-
-}
-
-<\/script>
-
-
-</body>
-
-</html>
-
-`);
-
-
-win.document.close();
-
-}
-
-
-/* =========================================================
+/* =====================================================
    WHATSAPP
-========================================================= */
+===================================================== */
 
 function kirimWhatsApp(){
 
-if(!transaksiKwitansi){
+    if(!transaksiKwitansi){
 
-return;
+        return;
 
-}
-
-
-let nomor =
-transaksiKwitansi.no_whatsapp || "";
+    }
 
 
-nomor =
-nomor.replace(/\D/g,"");
+    let nomor =
+        transaksiKwitansi.no_whatsapp || "";
 
 
-if(nomor.startsWith("0")){
-
-nomor =
-"62"+
-nomor.substring(1);
-
-}
+    nomor =
+        nomor.replace(/\D/g,"");
 
 
-if(!nomor){
+    if(nomor.startsWith("0")){
 
-alert(
-"No. WhatsApp pembayar belum tersedia."
-);
+        nomor =
+            "62"+nomor.substring(1);
 
-return;
-
-}
+    }
 
 
-let nomorKwitansi =
-transaksiKwitansi.id ||
-"1";
+    if(!nomor){
+
+        alert(
+            "No. WhatsApp pembayar belum tersedia."
+        );
+
+        return;
+
+    }
 
 
-let pesan =
+    let nomorKwitansi =
+        transaksiKwitansi.id ||
+        "1";
+
+
+    let pesan =
 
 `*KWITANSI PEMBAYARAN RW 01*
 
 RW 01 Pondok Sukatani Permai
 
-No. Kwitansi: RW01-${nomorKwitansi}
+No. Kwitansi:
+RW01-${nomorKwitansi}
 
 Telah diterima dari:
 ${transaksiKwitansi.nama_pembayar || "-"}
@@ -3120,51 +3192,230 @@ Bendahara RW 01
 Asri Ajrin Karima`;
 
 
-const url =
-"https://wa.me/"+
-nomor+
-"?text="+
-encodeURIComponent(pesan);
+    const url =
+        "https://wa.me/"+
+        nomor+
+        "?text="+
+        encodeURIComponent(pesan);
 
 
-window.open(url,"_blank");
+    window.open(
+        url,
+        "_blank"
+    );
 
 }
 
 
-/* =========================================================
+/* =====================================================
+   TERBILANG
+===================================================== */
+
+function terbilang(n){
+
+    n =
+        Math.floor(
+            Number(n)||0
+        );
+
+
+    const angka = [
+
+        "",
+        "satu",
+        "dua",
+        "tiga",
+        "empat",
+        "lima",
+        "enam",
+        "tujuh",
+        "delapan",
+        "sembilan",
+        "sepuluh",
+        "sebelas"
+
+    ];
+
+
+    if(n < 12){
+
+        return angka[n];
+
+    }
+
+
+    if(n < 20){
+
+        return terbilang(n-10)+" belas";
+
+    }
+
+
+    if(n < 100){
+
+        return (
+            terbilang(
+                Math.floor(n/10)
+            )+
+            " puluh "+
+            terbilang(n%10)
+        );
+
+    }
+
+
+    if(n < 200){
+
+        return (
+            "seratus "+
+            terbilang(n-100)
+        );
+
+    }
+
+
+    if(n < 1000){
+
+        return (
+            terbilang(
+                Math.floor(n/100)
+            )+
+            " ratus "+
+            terbilang(n%100)
+        );
+
+    }
+
+
+    if(n < 2000){
+
+        return (
+            "seribu "+
+            terbilang(n-1000)
+        );
+
+    }
+
+
+    if(n < 1000000){
+
+        return (
+            terbilang(
+                Math.floor(n/1000)
+            )+
+            " ribu "+
+            terbilang(n%1000)
+        );
+
+    }
+
+
+    if(n < 1000000000){
+
+        return (
+            terbilang(
+                Math.floor(n/1000000)
+            )+
+            " juta "+
+            terbilang(n%1000000)
+        );
+
+    }
+
+
+    if(n < 1000000000000){
+
+        return (
+            terbilang(
+                Math.floor(n/1000000000)
+            )+
+            " miliar "+
+            terbilang(n%1000000000)
+        );
+
+    }
+
+
+    return "nominal terlalu besar";
+
+}
+
+
+function terbilangRupiah(n){
+
+    let hasil =
+        terbilang(n)
+        .replace(/\s+/g," ")
+        .trim();
+
+
+    return (
+        hasil.charAt(0).toUpperCase()+
+        hasil.slice(1)+
+        " rupiah"
+    );
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
    TANGGAL DEFAULT
-========================================================= */
+===================================================== */
 
 document.getElementById("tanggal").value =
-new Date()
-.toISOString()
-.substring(0,10);
+    new Date()
+    .toISOString()
+    .substring(0,10);
 
 
-/* =========================================================
+/* =====================================================
    CEK SESSION
-========================================================= */
+===================================================== */
 
 async function cekLogin(){
 
-const {data} =
-await supabaseClient.auth.getSession();
+    const {data} =
+        await supabaseClient
+        .auth
+        .getSession();
 
 
-if(data.session){
+    if(data.session){
 
-document
-.getElementById("loginBox")
-.classList.add("hidden");
+        document
+        .getElementById("loginBox")
+        .classList.add("hidden");
 
-document
-.getElementById("dashboard")
-.classList.remove("hidden");
 
-loadData();
+        document
+        .getElementById("dashboard")
+        .classList.remove("hidden");
 
-}
+
+        loadData();
+
+    }
 
 }
 
